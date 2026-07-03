@@ -70,9 +70,9 @@ Sempre utilizar algoritmos seguros para hash.
 
 # Autorização
 
-Toda operação sensível deverá validar permissões no backend.
+Toda operação sensível deverá validar permissões no Backend.
 
-O frontend nunca será responsável pela segurança da aplicação.
+O Frontend nunca será responsável pela segurança da aplicação.
 
 ---
 
@@ -168,4 +168,4 @@ Construímos confiança antes mesmo de construir funcionalidades.
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

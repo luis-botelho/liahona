@@ -66,7 +66,7 @@ A API deve retornar apenas os dados necessários para cada operação.
 
 A comunicação ocorrerá através de uma API REST.
 
-Todas as aplicações consumirã a mesma API.
+Todas as aplicações consumirão a mesma API.
 
 ```text
 Web
@@ -188,9 +188,9 @@ Resultados deverão permitir ordenação quando fizer sentido.
 
 A autenticação inicial utilizará JWT.
 
-Todas as permissões serão controladas no backend.
+Todas as permissões serão controladas no Backend.
 
-Nenhuma autorização deverá depender exclusivamente do frontend.
+Nenhuma autorização deverá depender exclusivamente do Frontend.
 
 ---
 
@@ -235,4 +235,4 @@ Quanto menos o desenvolvedor precisar consultar a documentação, melhor será s
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

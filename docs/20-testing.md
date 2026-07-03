@@ -1,4 +1,4 @@
-# 🚀 Deployment
+# 🧪 Testing
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
@@ -10,152 +10,160 @@
 
 # Objetivo
 
-Este documento descreve a estratégia de publicação, entrega e operação do LIA.
+Este documento descreve a estratégia de testes do LIA.
 
-Seu objetivo é garantir que novas versões possam ser disponibilizadas de forma segura, previsível e com o menor impacto possível para os usuários.
+Seu objetivo é garantir que o produto evolua com qualidade, segurança e previsibilidade, reduzindo regressões e aumentando a confiança em cada entrega.
 
 ---
 
 # Filosofia
 
-Deploy não é o fim do desenvolvimento.
+Testes não existem apenas para encontrar erros.
 
-É o início da vida do software em produção.
+Eles existem para proteger o comportamento esperado do produto.
 
-Cada publicação deve aumentar a confiança no produto.
-
-Nunca diminuir.
+Cada teste deve aumentar a confiança da equipe para evoluir o sistema sem medo.
 
 ---
 
-# Ambientes
+# Pirâmide de Testes
 
-O projeto será dividido em ambientes independentes.
-
-## Desenvolvimento
-
-Utilizado diariamente pelos desenvolvedores.
-
-Características:
-
-- Dados de teste
-- Alterações frequentes
-- Ambiente instável
-
----
-
-## Homologação
-
-Utilizado para validação antes da publicação.
-
-Características:
-
-- Próximo ao ambiente de produção
-- Testes integrados
-- Validação funcional
-
----
-
-## Produção
-
-Ambiente utilizado pelos usuários finais.
-
-Características:
-
-- Alta disponibilidade
-- Monitoramento
-- Backups
-- Estabilidade
-
----
-
-# Estratégia de Deploy
-
-Toda publicação deverá seguir um fluxo previsível.
+A estratégia seguirá a pirâmide de testes.
 
 ```text
-Desenvolvimento
-
-↓
-
-Pull Request
-
-↓
-
-Code Review
-
-↓
-
-Testes
-
-↓
-
-Homologação
-
-↓
-
-Produção
+        E2E
+     Integration
+        Unit
 ```
 
----
+A base deverá ser composta por testes rápidos e focados.
 
-# Automação
-
-Sempre que possível, o processo deverá ser automatizado através de pipelines de CI/CD.
-
-A automação reduz erros humanos e aumenta a confiabilidade das entregas.
+Testes mais amplos deverão validar fluxos críticos, sem substituir os testes de unidade e integração.
 
 ---
 
-# Rollback
+# Testes Unitários
 
-Toda nova versão deverá permitir retorno rápido para a versão anterior em caso de falhas críticas.
+Testes unitários deverão validar pequenas partes do sistema de forma isolada.
+
+Devem cobrir principalmente:
+
+- Regras de negócio
+- Casos de uso
+- Validações
+- Funções utilitárias
+- Comportamentos de domínio
+
+Eles devem ser rápidos, claros e fáceis de manter.
 
 ---
 
-# Banco de Dados
+# Testes de Integração
 
-Alterações estruturais deverão ocorrer através de migrations versionadas.
+Testes de integração deverão validar a comunicação entre partes importantes do sistema.
 
-Nunca alterar o banco manualmente em produção.
+Devem cobrir principalmente:
+
+- Casos de uso com infraestrutura
+- Integração com banco de dados
+- Endpoints da API
+- Autenticação e autorização
+- Fluxos entre camadas
+
+Esses testes ajudam a garantir que os módulos funcionem corretamente em conjunto.
 
 ---
 
-# Observabilidade
+# Testes E2E
 
-Após cada deploy, acompanhar indicadores como:
+Testes end-to-end deverão validar jornadas críticas do usuário.
 
-- Disponibilidade
-- Tempo de resposta
-- Erros
-- Uso de recursos
+Exemplos de fluxos candidatos:
 
-Problemas deverão ser investigados imediatamente.
+- Cadastro
+- Login
+- Completar perfil
+- Publicar vaga
+- Candidatar-se
+- Publicar serviço
+- Conversar
+- Avaliar usuário
+
+Os testes E2E deverão ser usados com critério, priorizando fluxos essenciais para o MVP.
+
+---
+
+# Qualidade no CI
+
+Sempre que possível, o processo de CI deverá executar verificações automáticas.
+
+Exemplos:
+
+- Lint
+- Formatação
+- Testes unitários
+- Testes de integração
+- Build
+
+O objetivo é impedir que mudanças com falhas conhecidas avancem no fluxo de desenvolvimento.
+
+---
+
+# Cobertura
+
+Cobertura de testes será utilizada como indicador de qualidade, não como objetivo isolado.
+
+Mais importante do que atingir um número alto é garantir que comportamentos relevantes estejam protegidos.
+
+Prioridade:
+
+1. Regras de negócio
+2. Fluxos críticos
+3. Segurança
+4. Integrações importantes
+5. Componentes reutilizáveis
+
+---
+
+# Critérios
+
+Uma funcionalidade somente deverá ser considerada pronta quando seus comportamentos principais estiverem validados.
+
+A validação poderá incluir:
+
+- Testes automatizados
+- Testes manuais orientados por checklist
+- Revisão de critérios de aceite
+- Evidências no Pull Request
 
 ---
 
 # Evolução
 
-A infraestrutura poderá evoluir conforme o crescimento do projeto.
+A estratégia de testes poderá evoluir conforme o produto amadurecer.
 
-Novas tecnologias de hospedagem e automação poderão ser adotadas quando agregarem valor.
+Novas ferramentas ou níveis de teste somente deverão ser adicionados quando resolverem uma necessidade real do projeto.
 
 ---
 
 # Filosofia
 
-Deploys pequenos são mais seguros que deploys gigantes.
+Qualidade não deve depender de memória.
 
-Entregas frequentes reduzem riscos.
+Deve fazer parte do processo.
+
+Testes são uma forma de preservar confiança enquanto o produto cresce.
 
 ---
 
 ## Documentos Relacionados
 
+- 04-backlog.md
 - 05-architecture.md
-- 06-tech-stack.md
+- 10-api.md
+- 11-contributing.md
 - 18-security.md
-- 20-testing.md
+- 19-deployment.md
 
 ---
 
@@ -163,4 +171,4 @@ Entregas frequentes reduzem riscos.
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

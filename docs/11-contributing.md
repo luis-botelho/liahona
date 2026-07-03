@@ -222,4 +222,4 @@ Respeito, colaboração e aprendizado sempre terão prioridade.
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

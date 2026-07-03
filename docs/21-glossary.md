@@ -245,4 +245,4 @@ Sempre que um novo conceito surgir, ele deverá ser documentado para manter uma 
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

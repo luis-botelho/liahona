@@ -84,6 +84,10 @@ Quando uma decisão substituir outra, a ADR original deverá apontar para sua su
 
 ## ADR-001
 
+**Arquivo**
+
+docs/decisions/ADR-001-tech-stack.md
+
 **Título**
 
 Adoção da Stack JavaScript/TypeScript Full Stack
@@ -98,14 +102,155 @@ Define a utilização de React, React Native, Node.js, TypeScript, PostgreSQL e 
 
 ---
 
+## ADR-002
+
+**Arquivo**
+
+docs/decisions/ADR-002-postgresql.md
+
+**Título**
+
+PostgreSQL como banco de dados principal
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-003
+
+**Arquivo**
+
+docs/decisions/ADR-003-nodejs.md
+
+**Título**
+
+Node.js como tecnologia de Backend
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-004
+
+**Arquivo**
+
+docs/decisions/ADR-004-react-native.md
+
+**Título**
+
+React Native como tecnologia Mobile
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-005
+
+**Arquivo**
+
+docs/decisions/ADR-005-clean-architecture.md
+
+**Título**
+
+Arquitetura em camadas e separação de responsabilidades
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-006
+
+**Arquivo**
+
+docs/decisions/ADR-006-authentication.md
+
+**Título**
+
+Estratégia inicial de autenticação
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-007
+
+**Arquivo**
+
+docs/decisions/ADR-007-mvp-scope.md
+
+**Título**
+
+Escopo inicial do MVP
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-008
+
+**Arquivo**
+
+docs/decisions/ADR-008-folder-structure.md
+
+**Título**
+
+Estrutura de pastas do projeto
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-009
+
+**Arquivo**
+
+docs/decisions/ADR-009-git-workflow.md
+
+**Título**
+
+Fluxo de trabalho com Git
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-010
+
+**Arquivo**
+
+docs/decisions/ADR-010-design-system.md
+
+**Título**
+
+Design System inicial
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
 ## Próximas ADRs previstas
 
-- ADR-002 — Arquitetura REST
-- ADR-003 — Organização em Camadas
-- ADR-004 — Estratégia de Autenticação
-- ADR-005 — Modelagem Inicial do Banco
-- ADR-006 — Convenção de Branches
-- ADR-007 — Estratégia de Deploy
+- Arquitetura REST
+- Estratégia de Deploy
+- Estratégia de Testes
 
 Essas ADRs serão criadas apenas quando as respectivas decisões forem oficialmente tomadas.
 
@@ -135,4 +280,4 @@ As ADRs representam a memória técnica do projeto.
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

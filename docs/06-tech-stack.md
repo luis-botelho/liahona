@@ -91,7 +91,7 @@ Motivos da escolha:
 
 - Excelente desempenho para aplicações web
 - Grande ecossistema
-- Mesmo idioma utilizado no frontend
+- Mesmo idioma utilizado no Frontend
 - Facilidade de contratação futura
 - Alta produtividade
 

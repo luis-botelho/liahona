@@ -55,7 +55,7 @@ Sempre que aplicável.
 
 ---
 
-# [0.1.0] - 2026-07-04
+# [0.1.0] - 2026-07-03
 
 ## 🎉 Fundação do Projeto
 
@@ -107,7 +107,7 @@ Sprint 0
 - ADRs iniciais
 - Templates do GitHub
 - Planejamento do MVP
-- Refinamento das EPICs
+- Refinamento das Epics
 - User Stories
 - Definition of Done
 - Definition of Ready
@@ -118,8 +118,8 @@ Sprint 0
 
 Primeira Sprint de Desenvolvimento
 
-- Estrutura inicial do backend
-- Estrutura inicial do frontend
+- Estrutura inicial do Backend
+- Estrutura inicial do Frontend
 - Banco de dados
 - Autenticação
 - Primeiras funcionalidades
@@ -148,4 +148,4 @@ Pequenas entregas constantes criam grandes projetos.
 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
-| 04/07/2026 | 1.0.0 | Criação do documento |
+| 03/07/2026 | 1.0.0 | Criação do documento |

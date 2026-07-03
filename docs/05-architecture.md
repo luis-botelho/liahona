@@ -118,7 +118,7 @@ Prioridade para simplicidade, velocidade e acessibilidade.
 
 Responsável pelas regras de negócio.
 
-Nenhuma regra importante deverá existir apenas no frontend.
+Nenhuma regra importante deverá existir apenas no Frontend.
 
 ---
 
