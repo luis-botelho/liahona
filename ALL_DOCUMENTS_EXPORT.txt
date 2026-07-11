@@ -1,0 +1,8615 @@
+=== LIAHONA DOCUMENTS EXPORT ===
+Generated from repository root: /home/botelho/Documents/GitHub/liahona
+Total text documents: 72
+
+===== FILE: .github/PULL_REQUEST_TEMPLATE.md =====
+
+
+===== FILE: README.md =====
+# LIA — Local Intelligence for Assistance
+
+**Uma plataforma de empregabilidade comunitária para conectar pessoas, talentos, serviços e oportunidades locais.**
+
+O LIA nasce para resolver um problema simples e muito comum: em muitas comunidades, quem precisa trabalhar, contratar ou encontrar um prestador confiável depende de indicações soltas, grupos desorganizados e oportunidades que se perdem antes de chegar às pessoas certas.
+
+A primeira validação do produto será feita em **Mambucaba**, com foco em construir confiança local antes de escalar para outras regiões.
+
+---
+
+## O problema
+
+Em comunidades locais, oportunidades existem, mas nem sempre são visíveis.
+
+Trabalhadores deixam de encontrar vagas porque não existe um canal centralizado. Pequenos comerciantes levam tempo para contratar porque dependem de indicações informais. Prestadores de serviço têm dificuldade para construir reputação fora do boca a boca. Moradores, por sua vez, nem sempre sabem em quem confiar.
+
+O resultado é um mercado local fragmentado, onde talento e demanda estão próximos, mas desconectados.
+
+---
+
+## A solução
+
+O LIA propõe uma plataforma digital para aproximar quem oferece trabalho, quem procura oportunidades e quem precisa contratar serviços.
+
+No MVP, o produto será focado em:
+
+- Cadastro e login
+- Perfil profissional
+- Publicação de serviços
+- Busca de oportunidades
+- Chat
+- Avaliações
+- Banco de Talentos inicial
+
+A proposta é começar pequeno, validar o uso real e evoluir com base nas necessidades da comunidade.
+
+---
+
+## Visão do produto
+
+O LIA não pretende competir por volume com grandes plataformas nacionais de recrutamento.
+
+O foco é local: fortalecer relações de confiança, dar visibilidade a talentos próximos e criar um ponto central para oportunidades da comunidade.
+
+Mais do que gerar cadastros, o objetivo é gerar conexões úteis:
+
+- pessoas encontrando trabalho;
+- comerciantes contratando com mais rapidez;
+- prestadores construindo reputação;
+- moradores encontrando ajuda com mais confiança.
+
+---
+
+## Fundação técnica
+
+O projeto foi estruturado com documentação, arquitetura e decisões técnicas desde a fundação.
+
+Princípios adotados:
+
+- Simplicidade antes de escala
+- Separação de responsabilidades
+- Regras de negócio centralizadas no Backend
+- API REST como contrato entre aplicações
+- Evolução gradual da arquitetura
+- Documentação e ADRs para decisões relevantes
+
+---
+
+## Stack oficial
+
+| Camada | Tecnologia |
+|--------|------------|
+| Frontend Web | React |
+| Mobile | React Native |
+| Backend | Node.js |
+| Linguagem | TypeScript |
+| Banco de Dados | PostgreSQL |
+| ORM | Prisma |
+| API | REST |
+| Autenticação | JWT |
+| Versionamento | Git |
+| Repositório | GitHub |
+
+Ferramentas previstas para qualidade e automação:
+
+- GitHub Actions
+- ESLint
+- Prettier
+- Testes unitários, integração e E2E
+
+---
+
+## Arquitetura
+
+A arquitetura do LIA segue uma organização em camadas:
+
+```text
+Presentation
+Application
+Domain
+Infrastructure
+```
+
+As aplicações Web, Mobile e o Painel Administrativo se comunicam através da mesma API REST. Nenhuma aplicação acessa diretamente o banco de dados.
+
+Essa abordagem mantém as regras de negócio protegidas, reduz acoplamento e permite que o produto cresça de forma gradual.
+
+---
+
+## Estrutura planejada
+
+```text
+backend/
+mobile/
+web/
+design/
+docs/
+```
+
+Cada aplicação possui responsabilidade própria e evolui respeitando os mesmos princípios arquiteturais.
+
+---
+
+## Documentação
+
+A documentação do projeto está organizada em `docs/` e cobre a fundação do produto:
+
+- Vision
+- Branding
+- Roadmap
+- Backlog Master
+- Architecture
+- Tech Stack
+- Business Model
+- Design System
+- Database
+- API
+- Contributing
+- Changelog
+- ADRs
+- User Flows
+- Wireframes
+- Personas
+- KPIs
+- Security
+- Deployment
+- Testing
+- Glossary
+
+---
+
+## Roadmap resumido
+
+| Fase | Objetivo |
+|------|----------|
+| Foundation | Base documental, arquitetural e visual |
+| MVP | Validar o conceito em Mambucaba |
+| Beta | Melhorar experiência com base no uso real |
+| RH Central | Evoluir recrutamento e banco de talentos |
+| Expansão Regional | Levar o modelo para novas comunidades |
+| Plataforma Completa | Consolidar o ecossistema de empregabilidade |
+
+---
+
+## Status atual
+
+**Foundation concluída.**
+
+O projeto está pronto para avançar para a construção do MVP, começando pela organização pública do repositório, consolidação dos ADRs e setup inicial das aplicações.
+
+Este repositório ainda não representa um produto em produção. Ele representa a fundação pública de um produto real em construção.
+
+---
+
+## Como rodar
+
+O setup de execução será documentado junto com a criação das aplicações.
+
+No momento, o foco do repositório está na fundação do produto, arquitetura, decisões técnicas e preparação para o início do desenvolvimento do MVP.
+
+---
+
+## Contribuição
+
+Contribuições externas serão abertas futuramente.
+
+Por enquanto, o foco é consolidar o núcleo funcional do produto e preservar a coerência entre visão, arquitetura, backlog e execução.
+
+---
+
+## Licença
+
+A licença será definida antes da primeira versão pública de uso do produto.
+
+---
+
+## Propósito
+
+O LIA é construído sobre uma ideia simples:
+
+> oportunidades locais não deveriam depender apenas de sorte, contatos ou mensagens perdidas em grupos.
+
+Tecnologia, quando bem aplicada, pode aproximar pessoas, fortalecer comunidades e transformar pequenas oportunidades em caminhos reais de crescimento.
+
+===== FILE: docs/01-vision.md =====
+# 🌟 Vision
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define a visão de longo prazo do projeto LIA.
+
+Ele responde às perguntas fundamentais:
+
+- Por que o LIA existe?
+- Qual problema queremos resolver?
+- Qual impacto queremos gerar?
+- O que guia todas as decisões do projeto?
+
+Toda decisão de negócio, produto ou engenharia deverá estar alinhada com esta visão.
+
+---
+
+# Nossa Visão
+
+Acreditamos que oportunidades de trabalho não deveriam depender exclusivamente de contatos, sorte ou grandes centros urbanos.
+
+Toda comunidade possui talentos, necessidades e pessoas dispostas a ajudar umas às outras.
+
+Nosso objetivo é conectar essas pessoas através da tecnologia, tornando o acesso ao trabalho mais simples, rápido e acessível.
+
+O LIA nasce para ser a principal plataforma de empregabilidade, prestação de serviços e conexão profissional da comunidade, criando um ambiente onde trabalhadores, comerciantes e moradores possam crescer juntos.
+
+Mais do que gerar renda, queremos fortalecer comunidades.
+
+---
+
+# O Problema
+
+Hoje existem milhares de pessoas capazes de realizar serviços que permanecem invisíveis para quem precisa contratá-las.
+
+Ao mesmo tempo, pequenos comerciantes enfrentam dificuldades para encontrar profissionais rapidamente.
+
+Muitas oportunidades deixam de existir simplesmente porque não existe um ponto central de conexão.
+
+Currículos ficam esquecidos.
+
+Grupos de WhatsApp tornam-se desorganizados.
+
+Indicações dependem da pessoa certa conhecer alguém.
+
+O LIA nasce para eliminar essa distância.
+
+---
+
+# Nossa Missão
+
+Conectar pessoas, talentos e oportunidades através de uma plataforma simples, confiável e acessível, promovendo trabalho digno, desenvolvimento profissional e fortalecimento das comunidades locais.
+
+---
+
+# Nosso Propósito
+
+Transformar comunidades em ecossistemas colaborativos onde qualquer pessoa possa oferecer seus talentos, encontrar oportunidades e construir sua reputação profissional.
+
+Queremos que o trabalho seja acessível.
+
+Queremos que contratar seja simples.
+
+Queremos que ajudar alguém seja natural.
+
+---
+
+# O Que Somos
+
+O LIA é uma plataforma digital de empregabilidade comunitária.
+
+Nosso ecossistema conecta:
+
+- Trabalhadores
+- Comerciantes
+- Prestadores de serviço
+- Empresas
+- Profissionais autônomos
+- Pessoas em busca da primeira oportunidade
+- Moradores que precisam de ajuda
+
+Tudo dentro de uma única plataforma.
+
+---
+
+# O Que Não Somos
+
+O LIA não pretende substituir plataformas nacionais de recrutamento.
+
+Também não pretende competir apenas pelo volume de vagas.
+
+Nosso foco é conectar pessoas próximas geograficamente, fortalecendo economias locais e criando relações de confiança entre trabalhadores e contratantes.
+
+---
+
+# Nossa Inspiração
+
+O nome LIA é inspirado na Liahona, descrita no Livro de Mórmon como um instrumento que orientava seus usuários em direção ao caminho correto.
+
+Assim como a Liahona guiava pessoas durante sua jornada, o LIA busca orientar trabalhadores até oportunidades e conectar quem precisa de ajuda com quem está disposto a servir.
+
+A inspiração está no conceito de direção, propósito e progresso, independentemente da crença individual de cada usuário.
+
+---
+
+# Nossos Valores
+
+## Serviço
+
+A tecnologia existe para servir pessoas.
+
+Toda funcionalidade deve resolver um problema real.
+
+---
+
+## Comunidade
+
+O crescimento acontece quando toda a comunidade cresce junto.
+
+---
+
+## Confiança
+
+A reputação será um dos pilares mais importantes da plataforma.
+
+Confiança leva tempo para ser construída e segundos para ser perdida.
+
+---
+
+## Simplicidade
+
+A melhor solução normalmente é a mais simples.
+
+Não adicionaremos complexidade sem necessidade.
+
+---
+
+## Transparência
+
+As decisões do projeto serão documentadas.
+
+A evolução será pública.
+
+O aprendizado fará parte da construção do produto.
+
+---
+
+## Qualidade
+
+Preferimos entregar menos funcionalidades com alta qualidade do que muitas funcionalidades incompletas.
+
+---
+
+# Nossa Filosofia
+
+Antes de escrever código, buscamos compreender pessoas.
+
+Antes de criar funcionalidades, buscamos resolver problemas.
+
+Antes de escalar, buscamos validar.
+
+Cada linha de código deve existir porque entrega valor ao usuário.
+
+---
+
+# Visão de Longo Prazo
+
+O LIA começa como uma plataforma voltada para a comunidade de Mambucaba.
+
+Nosso objetivo inicial não é conquistar milhares de cidades.
+
+Nosso objetivo é conquistar a confiança de uma comunidade.
+
+Acreditamos que produtos sólidos crescem pela qualidade da experiência oferecida aos seus primeiros usuários.
+
+Após validar o modelo localmente, o projeto poderá expandir para outras regiões, mantendo o mesmo princípio:
+
+Fortalecer comunidades através da tecnologia.
+
+---
+
+# Como Mediremos Nosso Sucesso
+
+Nosso sucesso não será medido apenas por downloads.
+
+Também queremos acompanhar:
+
+- Pessoas que conseguiram trabalho através da plataforma.
+- Comerciantes que reduziram o tempo de contratação.
+- Prestadores que construíram reputação profissional.
+- Parcerias criadas na comunidade.
+- Usuários ativos e recorrentes.
+- Nível de satisfação dos usuários.
+
+Quando uma comunidade confiar no LIA para encontrar oportunidades e talentos, estaremos cumprindo nossa missão.
+
+---
+
+# Nossa Visão para Engenharia
+
+O LIA será desenvolvido seguindo princípios modernos de Engenharia de Software.
+
+Valorizamos:
+
+- Código limpo.
+- Arquitetura escalável.
+- Documentação.
+- Testes.
+- Boas práticas.
+- Evolução contínua.
+
+A qualidade técnica faz parte da experiência do usuário.
+
+---
+
+# Declaração de Visão
+
+Queremos construir muito mais do que um software.
+
+Queremos criar uma plataforma capaz de conectar pessoas, gerar oportunidades e fortalecer comunidades através do trabalho, da confiança e da colaboração.
+
+Se, no futuro, alguém disser:
+
+> "Consegui meu primeiro trabalho graças ao LIA."
+
+ou
+
+> "Encontrei a pessoa certa exatamente quando precisava."
+
+então teremos cumprido nosso propósito.
+
+---
+# Manifesto
+
+Acreditamos que oportunidades transformam vidas.
+
+Acreditamos que trabalho gera dignidade.
+
+Acreditamos que tecnologia deve aproximar pessoas, nunca afastá-las.
+
+Acreditamos que comunidades fortes são construídas quando pessoas ajudam pessoas.
+
+Acreditamos que toda habilidade possui valor.
+
+Toda profissão merece respeito.
+
+Todo talento merece uma oportunidade.
+
+Construímos tecnologia para resolver problemas reais.
+
+Não para impressionar com funcionalidades.
+
+Preferimos simplicidade à complexidade.
+
+Preferimos impacto à quantidade.
+
+Preferimos confiança ao crescimento acelerado.
+
+Queremos criar uma plataforma onde comerciantes encontrem pessoas confiáveis.
+
+Onde trabalhadores encontrem novas oportunidades.
+
+Onde moradores encontrem ajuda quando precisarem.
+
+Onde reputação seja construída através de atitudes.
+
+E onde tecnologia seja apenas o meio para aproximar pessoas.
+
+O sucesso do LIA não será medido apenas pelo número de usuários.
+
+Será medido pelas histórias criadas através dele.
+
+Cada contratação.
+
+Cada serviço realizado.
+
+Cada parceria.
+
+Cada primeiro emprego.
+
+Cada pequena oportunidade representa alguém mudando sua própria realidade.
+
+É para essas pessoas que construímos o LIA.
+
+---
+
+## Documentos Relacionados
+
+- 02-branding.md
+- 03-roadmap.md
+- 04-backlog.md
+- 07-business-model.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/02-branding.md =====
+# 🎨 Branding
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define a identidade da marca LIA.
+
+Mais do que estabelecer elementos visuais, este documento descreve a personalidade, o posicionamento e os princípios que orientam toda a comunicação do projeto.
+
+Toda decisão relacionada à identidade visual, linguagem, experiência do usuário e comunicação deverá respeitar estas diretrizes.
+
+---
+
+# Nossa Marca
+
+O LIA nasce para ser muito mais do que um aplicativo.
+
+Somos uma plataforma que aproxima pessoas, fortalece comunidades e cria oportunidades através da tecnologia.
+
+Nossa marca deve transmitir confiança, proximidade, simplicidade e inovação.
+
+Queremos que usuários sintam que o LIA é um lugar seguro para trabalhar, contratar e crescer profissionalmente.
+
+---
+
+# Origem do Nome
+
+LIA é inspirado na **Liahona**, instrumento descrito no Livro de Mórmon como um guia capaz de indicar o caminho para aqueles que avançavam com fé e diligência.
+
+Para o projeto, utilizamos essa inspiração como símbolo de direção, propósito e orientação.
+
+O significado da marca é universal:
+
+> A tecnologia deve ajudar pessoas a encontrar o caminho para novas oportunidades.
+
+O nome não representa uma plataforma religiosa.
+
+Representa um propósito.
+
+---
+
+# Posicionamento
+
+O LIA posiciona-se como uma plataforma de empregabilidade comunitária.
+
+Enquanto grandes plataformas conectam milhões de pessoas, nosso foco inicial é fortalecer comunidades locais através de relações de confiança.
+
+Começamos pequenos para crescer de forma sustentável.
+
+---
+
+# Propósito da Marca
+
+Conectar talentos às oportunidades certas, fortalecendo comunidades através do trabalho, da colaboração e da confiança.
+
+---
+
+# Personalidade da Marca
+
+Se o LIA fosse uma pessoa, ela seria:
+
+- Prestativa
+- Confiável
+- Simples
+- Próxima
+- Organizada
+- Humilde
+- Moderna
+- Acessível
+
+Nunca queremos parecer uma empresa distante.
+
+Queremos transmitir a sensação de alguém disposto a ajudar.
+
+---
+
+# Valores da Marca
+
+## Confiança
+
+A reputação é nosso maior patrimônio.
+
+---
+
+## Comunidade
+
+Crescemos quando nossos usuários crescem.
+
+---
+
+## Trabalho Digno
+
+Toda profissão merece respeito.
+
+Toda oportunidade tem valor.
+
+---
+
+## Simplicidade
+
+Resolver problemas não precisa ser complicado.
+
+---
+
+## Evolução
+
+Estamos em constante aprendizado.
+
+Assim como nossos usuários, evoluímos continuamente.
+
+---
+
+# Público-Alvo
+
+O LIA conecta diferentes perfis em um único ecossistema.
+
+## Trabalhadores
+
+Pessoas em busca de:
+
+- Primeiro emprego
+- Renda extra
+- Serviços temporários
+- Trabalho autônomo
+- Desenvolvimento profissional
+
+---
+
+## Comerciantes
+
+Pequenos e médios negócios que precisam contratar com rapidez e confiança.
+
+---
+
+## Empresas
+
+Organizações que desejam utilizar a plataforma como apoio para recrutamento e formação de banco de talentos.
+
+---
+
+## Comunidade
+
+Moradores que desejam contratar serviços locais de forma simples e segura.
+
+---
+
+# Promessa da Marca
+
+Sempre que alguém abrir o LIA deverá sentir que existe uma oportunidade esperando por ela.
+
+---
+
+# Tom de Voz
+
+Nossa comunicação será:
+
+- Humana
+- Clara
+- Direta
+- Positiva
+- Respeitosa
+- Motivadora
+
+Evitamos linguagem excessivamente técnica.
+
+Falamos de forma simples, sem perder profissionalismo.
+
+---
+
+# Identidade Visual
+
+A identidade visual deverá refletir os princípios da marca.
+
+Buscamos um design:
+
+- Limpo
+- Moderno
+- Acessível
+- Minimalista
+- Atemporal
+
+Cada elemento visual deve transmitir organização e confiança.
+
+---
+
+# Experiência do Usuário
+
+A experiência deve seguir alguns princípios fundamentais.
+
+## Simplicidade
+
+Poucos cliques.
+
+Pouca complexidade.
+
+Muito resultado.
+
+---
+
+## Clareza
+
+O usuário sempre deve entender onde está e qual será o próximo passo.
+
+---
+
+## Rapidez
+
+Encontrar uma oportunidade deve levar poucos minutos.
+
+Publicar uma vaga deve ser simples.
+
+---
+
+## Inclusão
+
+O produto deverá ser acessível para diferentes níveis de conhecimento tecnológico.
+
+---
+
+# Diferenciais da Marca
+
+O LIA não compete apenas por funcionalidades.
+
+Nosso diferencial está na combinação de:
+
+- Comunidade
+- Reputação
+- Empregabilidade
+- Serviços
+- Banco de Talentos
+- RH Digital
+- Tecnologia
+
+---
+
+# Visão de Longo Prazo
+
+Queremos que o nome LIA seja associado à confiança.
+
+Quando alguém precisar contratar, encontrar trabalho ou descobrir novos talentos, desejamos que a primeira lembrança seja nossa plataforma.
+
+Assim como algumas marcas se tornaram sinônimo de categorias inteiras, queremos que o LIA seja reconhecido como referência em empregabilidade comunitária.
+
+---
+
+# Declaração da Marca
+
+O LIA acredita que tecnologia deve aproximar pessoas.
+
+Cada serviço realizado representa uma oportunidade criada.
+
+Cada contratação fortalece uma família.
+
+Cada talento descoberto fortalece uma comunidade.
+
+Nosso propósito não é apenas conectar usuários.
+
+Nosso propósito é criar oportunidades que transformem vidas.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 03-roadmap.md
+- 07-business-model.md
+- 08-design-system.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/03-roadmap.md =====
+# 🗺 Roadmap
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento apresenta a evolução planejada do LIA.
+
+O Roadmap organiza a construção da plataforma em fases, permitindo validar hipóteses, entregar valor continuamente e evoluir de forma sustentável.
+
+As funcionalidades descritas representam a visão atual do produto e poderão evoluir conforme aprendizados obtidos durante o desenvolvimento e a utilização da plataforma.
+
+---
+
+# Princípios
+
+Nosso Roadmap segue cinco princípios fundamentais.
+
+## Validar antes de escalar
+
+Primeiro resolvemos um problema.
+
+Depois pensamos em crescer.
+
+---
+
+## Entregar valor continuamente
+
+Cada milestone deve gerar valor para usuários reais.
+
+---
+
+## Crescimento sustentável
+
+Não construiremos funcionalidades que ainda não possuem necessidade comprovada.
+
+---
+
+## Simplicidade
+
+Começaremos pequenos.
+
+A complexidade será adicionada apenas quando fizer sentido.
+
+---
+
+## Comunidade em primeiro lugar
+
+Todas as fases devem fortalecer a comunidade antes de ampliar o alcance da plataforma.
+
+---
+
+# Milestone 0 — Foundation
+
+Objetivo
+
+Construir a base técnica, visual e documental do projeto.
+
+Entregas
+
+- Branding
+- Design System
+- Arquitetura
+- Banco de Dados
+- API
+- Backlog
+- Wireframes
+- Infraestrutura
+- Setup do projeto
+
+Resultado esperado
+
+Equipe preparada para iniciar o desenvolvimento do MVP.
+
+---
+
+# Milestone 1 — MVP
+
+Objetivo
+
+Validar o conceito do LIA em Mambucaba.
+
+Principais funcionalidades
+
+- Cadastro
+- Login
+- Perfil
+- Publicação de serviços
+- Busca de oportunidades
+- Chat
+- Avaliações
+- Banco de Talentos inicial
+
+Resultado esperado
+
+Primeiros usuários ativos.
+
+Primeiros comerciantes utilizando a plataforma.
+
+Validação do problema.
+
+---
+
+# Milestone 2 — Beta
+
+Objetivo
+
+Melhorar a experiência baseada no uso real.
+
+Funcionalidades
+
+- Notificações
+- Geolocalização
+- Melhorias de UX
+- Painel administrativo
+- Sistema de denúncias
+- Relatórios
+- Analytics
+
+Resultado esperado
+
+Produto estável para crescimento.
+
+---
+
+# Milestone 3 — RH Central
+
+Objetivo
+
+Transformar o LIA na principal plataforma de contratação da comunidade.
+
+Funcionalidades
+
+- Banco de currículos
+- Gestão de vagas
+- Processo seletivo
+- Empresas
+- Painéis administrativos
+- Gestão de candidatos
+
+Resultado esperado
+
+Empresas utilizando o LIA como ferramenta de recrutamento.
+
+---
+
+# Milestone 4 — Expansão Regional
+
+Objetivo
+
+Expandir o produto para novas comunidades.
+
+Funcionalidades
+
+- Multi cidades
+- Configurações regionais
+- Parceiros locais
+- Gestão por município
+
+Resultado esperado
+
+Modelo validado fora de Mambucaba.
+
+---
+
+# Milestone 5 — Plataforma Completa
+
+Objetivo
+
+Consolidar o LIA como um ecossistema completo.
+
+Possíveis evoluções
+
+- Pagamentos
+- Clube de Benefícios
+- Parceiros
+- Cursos
+- Certificações
+- IA para recomendações
+- API pública
+
+Resultado esperado
+
+Ecossistema completo de empregabilidade comunitária.
+
+---
+
+# Filosofia do Roadmap
+
+Não buscamos construir todas as funcionalidades rapidamente.
+
+Buscamos construir as funcionalidades certas no momento certo.
+
+Cada etapa existe para validar aprendizados e reduzir riscos antes da próxima evolução.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 02-branding.md
+- 04-backlog.md
+- 07-business-model.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/04-backlog.md =====
+# 📚 Backlog Master
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento estabelece as regras de organização do desenvolvimento do LIA.
+
+O Backlog Master define como funcionalidades são propostas, planejadas, priorizadas, implementadas e entregues.
+
+Este documento deve ser considerado a principal referência para o gerenciamento do produto.
+
+---
+
+# Princípios
+
+O backlog existe para organizar ideias, reduzir riscos e garantir que o desenvolvimento permaneça alinhado à visão do projeto.
+
+Nenhuma funcionalidade será desenvolvida sem antes passar pelo processo de planejamento descrito neste documento.
+
+---
+
+# Hierarquia de Planejamento
+
+Todo trabalho deverá seguir a seguinte estrutura:
+
+```text
+Vision
+
+↓
+
+Roadmap
+
+↓
+
+Milestone
+
+↓
+
+Epic
+
+↓
+
+User Story
+
+↓
+
+Task
+
+↓
+
+Subtask
+
+↓
+
+Código
+```
+
+Nenhuma etapa deve ser ignorada.
+
+---
+
+# Fluxo de Desenvolvimento
+
+Todo item seguirá obrigatoriamente o fluxo abaixo:
+
+```text
+Idea
+
+↓
+
+Backlog
+
+↓
+
+Ready
+
+↓
+
+In Progress
+
+↓
+
+Review
+
+↓
+
+Testing
+
+↓
+
+Done
+```
+
+Caso uma atividade seja bloqueada, ela receberá a label **blocked** até que o impedimento seja resolvido.
+
+---
+
+# Organização das Milestones
+
+As milestones representam as grandes fases do produto.
+
+Cada Epic pertence obrigatoriamente a uma milestone.
+
+Cada User Story pertence obrigatoriamente a uma Epic.
+
+Cada Task pertence obrigatoriamente a uma User Story.
+
+Essa estrutura garante rastreabilidade entre visão, planejamento e implementação.
+
+---
+
+# Organização das Issues
+
+Toda Issue deverá conter:
+
+- Título
+- Descrição
+- Objetivo
+- Contexto
+- Critérios de Aceite
+- Dependências
+- Checklist
+- Labels
+- Milestone
+
+Nenhuma Issue poderá ser criada incompleta.
+
+---
+
+# Definition of Ready
+
+Uma tarefa somente poderá iniciar desenvolvimento quando possuir:
+
+- Objetivo claramente definido
+- Escopo compreendido
+- Critérios de aceite
+- Dependências identificadas
+- Labels atribuídas
+- Milestone definida
+- Epic relacionada
+
+---
+
+# Definition of Done
+
+Uma tarefa será considerada concluída somente quando:
+
+- Código implementado
+- Revisão concluída
+- Testes realizados
+- Documentação atualizada
+- Build sem erros
+- Merge realizado
+
+---
+
+# Critérios de Priorização
+
+Toda priorização seguirá a seguinte ordem:
+
+1. Valor entregue ao usuário
+2. Dependências técnicas
+3. Impacto estratégico
+4. Complexidade de implementação
+
+Ideias interessantes não possuem prioridade automática.
+
+---
+
+# Estimativa de Tamanho
+
+Todas as Tasks deverão possuir uma estimativa.
+
+| Label | Descrição |
+|--------|-----------|
+| XS | Muito pequena |
+| S | Pequena |
+| M | Média |
+| L | Grande |
+| XL | Muito grande |
+
+Caso uma Task seja classificada como XL, deve ser avaliada a possibilidade de dividi-la em tarefas menores.
+
+---
+
+# Convenção de Branches
+
+Seguiremos a seguinte estratégia:
+
+```text
+main
+
+develop
+
+feature/
+
+fix/
+
+hotfix/
+
+release/
+```
+
+Branches devem possuir nomes claros e relacionados à Issue correspondente.
+
+---
+
+# Convenção de Commits
+
+Sempre que possível, seguiremos o padrão Conventional Commits.
+
+Exemplos:
+
+```text
+feat:
+
+fix:
+
+docs:
+
+refactor:
+
+test:
+
+chore:
+```
+
+---
+
+# Filosofia de Desenvolvimento
+
+No LIA acreditamos que:
+
+- Pensar vem antes de programar.
+- Documentar vem antes de implementar.
+- Validar vem antes de escalar.
+- Simplicidade vence complexidade.
+- Qualidade supera velocidade.
+
+---
+
+# Regras do Projeto
+
+## Consistência
+
+As labels oficiais do projeto são permanentes.
+
+Novas labels somente poderão ser adicionadas após revisão da organização geral do projeto.
+
+---
+
+## Milestones
+
+As milestones representam fases estratégicas do produto.
+
+Mudanças devem ser excepcionais.
+
+---
+
+## Documentação
+
+Toda decisão relevante deverá ser documentada.
+
+Sempre que possível, utilizar ADRs para registrar decisões arquiteturais importantes.
+
+---
+
+## Código
+
+Código deve ser escrito para pessoas.
+
+Computadores apenas executam.
+
+---
+
+# Objetivo Final
+
+Construir um produto sustentável, organizado e escalável, capaz de evoluir durante anos sem perder clareza, qualidade ou consistência.
+
+Mais do que entregar funcionalidades, buscamos construir um software que possa ser compreendido, mantido e expandido por qualquer colaborador que venha a participar do projeto.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 03-roadmap.md
+- 05-architecture.md
+- 11-contributing.md
+- docs/decisions/README.md
+
+---
+
+## Future Ideas (Icebox)
+
+- Programa de Embaixadores
+
+- Patrocínio
+
+- Open Source
+
+- API Pública
+
+- Marketplace
+
+- Mentorias
+
+- Eventos
+
+- Newsletter
+
+- Instagram Oficial
+
+- LinkedIn Oficial
+
+- Campanhas de Divulgação
+
+- Crowdfunding
+
+- Analytics Público
+
+- Dashboard da Comunidade
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/05-architecture.md =====
+# 🏗 Architecture
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve a arquitetura de alto nível do LIA.
+
+Seu objetivo é definir como o sistema será organizado para garantir escalabilidade, manutenção, evolução contínua e independência entre suas partes.
+
+A arquitetura representa a estrutura permanente do produto.
+
+Tecnologias podem evoluir ao longo do tempo.
+
+A arquitetura deve permanecer sólida.
+
+---
+
+# Princípios Arquiteturais
+
+Toda decisão arquitetural deverá respeitar os seguintes princípios.
+
+## Simplicidade
+
+Escolher sempre a solução mais simples capaz de resolver o problema.
+
+Complexidade somente será adicionada quando necessária.
+
+---
+
+## Separação de Responsabilidades
+
+Cada módulo possui uma única responsabilidade.
+
+Cada camada conhece apenas aquilo que realmente precisa conhecer.
+
+---
+
+## Escalabilidade
+
+O sistema deve permitir crescimento gradual sem necessidade de reescrita completa.
+
+---
+
+## Manutenibilidade
+
+Código deve ser fácil de compreender, modificar e evoluir.
+
+---
+
+## Reutilização
+
+Sempre que possível, componentes e regras de negócio devem ser reutilizados.
+
+---
+
+## Independência
+
+As regras de negócio não devem depender de frameworks, bibliotecas ou interfaces específicas.
+
+---
+
+# Visão Geral
+
+O LIA será composto por diferentes aplicações que trabalham de forma integrada.
+
+```text
+                 Usuários
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+      ▼              ▼              ▼
+ Web Application  Mobile App   Admin Panel
+      │              │              │
+      └──────────────┼──────────────┘
+                     │
+                     ▼
+                 REST API
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+      ▼              ▼              ▼
+ Authentication   Business Rules   Notifications
+                     │
+                     ▼
+                 Database
+```
+
+Cada aplicação possui responsabilidades específicas.
+
+Todas compartilham as mesmas regras de negócio através da API.
+
+---
+
+# Componentes
+
+## Web
+
+Interface utilizada por empresas, comerciantes e usuários em ambiente desktop.
+
+---
+
+## Mobile
+
+Aplicação voltada para o uso diário da comunidade.
+
+Prioridade para simplicidade, velocidade e acessibilidade.
+
+---
+
+## Backend
+
+Responsável pelas regras de negócio.
+
+Nenhuma regra importante deverá existir apenas no Frontend.
+
+---
+
+## Banco de Dados
+
+Responsável pela persistência das informações da plataforma.
+
+Toda comunicação deverá ocorrer através da API.
+
+---
+
+## Painel Administrativo
+
+Ferramenta destinada à administração da plataforma.
+
+Permitirá gerenciamento de usuários, conteúdo, denúncias e indicadores.
+
+---
+
+# Camadas da Aplicação
+
+A aplicação seguirá uma arquitetura em camadas.
+
+```text
+Presentation
+
+↓
+
+Application
+
+↓
+
+Domain
+
+↓
+
+Infrastructure
+```
+
+---
+
+## Presentation
+
+Responsável pela interação com o usuário.
+
+Não contém regras de negócio.
+
+---
+
+## Application
+
+Orquestra os casos de uso.
+
+Coordena operações entre domínio e infraestrutura.
+
+---
+
+## Domain
+
+Centro da aplicação.
+
+Contém regras de negócio, entidades e casos de uso.
+
+Esta camada deve ser independente de frameworks.
+
+---
+
+## Infrastructure
+
+Implementa acesso a banco, autenticação, serviços externos e integrações.
+
+---
+
+# Comunicação
+
+Toda comunicação ocorrerá através da API.
+
+Nenhuma aplicação acessará diretamente o banco de dados.
+
+Isso garante:
+
+- Segurança
+- Consistência
+- Escalabilidade
+- Reutilização
+
+---
+
+# Organização dos Projetos
+
+Cada aplicação poderá evoluir de forma independente.
+
+```text
+backend/
+
+mobile/
+
+web/
+
+design/
+
+docs/
+```
+
+Cada projeto possui responsabilidades próprias.
+
+---
+
+# Escalabilidade
+
+A arquitetura foi planejada para permitir crescimento gradual.
+
+Inicialmente todos os serviços poderão existir em um único backend.
+
+Conforme o produto evoluir, módulos poderão ser separados sem necessidade de alterar os clientes.
+
+---
+
+# Segurança
+
+Toda autenticação será centralizada.
+
+Autorização será baseada em papéis (roles) e permissões.
+
+Dados sensíveis deverão ser protegidos tanto em trânsito quanto em armazenamento.
+
+---
+
+# Observabilidade
+
+Desde o início, a arquitetura deverá facilitar:
+
+- Logs
+- Monitoramento
+- Tratamento de erros
+- Métricas
+- Auditoria
+
+Esses recursos serão fundamentais para acompanhar a evolução do produto.
+
+---
+
+# Evolução
+
+A arquitetura foi projetada para crescer junto com o negócio.
+
+Novos módulos poderão ser adicionados respeitando os mesmos princípios definidos neste documento.
+
+Mudanças arquiteturais relevantes deverão ser registradas através de ADRs.
+
+---
+
+# Filosofia Arquitetural
+
+Arquitetura não existe para impressionar.
+
+Existe para permitir evolução.
+
+Cada decisão tomada deverá reduzir complexidade futura, facilitar manutenção e aumentar a qualidade do produto.
+
+Nosso objetivo não é construir a arquitetura mais sofisticada.
+
+Nosso objetivo é construir a arquitetura certa para o momento do LIA.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 04-backlog.md
+- 06-tech-stack.md
+- 09-database.md
+- 10-api.md
+- docs/decisions/README.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/06-tech-stack.md =====
+# 💻 Tech Stack
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento apresenta as tecnologias utilizadas no desenvolvimento do LIA e os motivos que justificam cada escolha.
+
+A stack foi definida considerando simplicidade, produtividade, comunidade, escalabilidade e facilidade de manutenção.
+
+Novas tecnologias somente deverão ser adotadas quando agregarem valor real ao produto.
+
+---
+
+# Filosofia
+
+A escolha de tecnologias segue alguns princípios fundamentais.
+
+## Resolver problemas antes de seguir tendências.
+
+## Priorizar ecossistemas maduros.
+
+## Reduzir complexidade.
+
+## Facilitar manutenção.
+
+## Maximizar reaproveitamento de conhecimento.
+
+---
+
+# Visão Geral da Stack
+
+| Camada | Tecnologia |
+|----------|------------|
+| Frontend Web | React |
+| Mobile | React Native |
+| Backend | Node.js |
+| Linguagem | TypeScript |
+| Banco de Dados | PostgreSQL |
+| ORM | Prisma |
+| API | REST |
+| Autenticação | JWT |
+| Versionamento | Git |
+| Repositório | GitHub |
+
+---
+
+# Frontend Web
+
+## React
+
+Escolhido por possuir:
+
+- Ecossistema consolidado
+- Grande comunidade
+- Alta produtividade
+- Excelente integração com TypeScript
+- Componentização
+- Facilidade de manutenção
+
+---
+
+# Mobile
+
+## React Native
+
+Permite compartilhar conhecimento entre Web e Mobile.
+
+Benefícios:
+
+- Curva de aprendizado reduzida
+- Comunidade madura
+- Grande quantidade de bibliotecas
+- Desenvolvimento multiplataforma
+
+---
+
+# Backend
+
+## Node.js
+
+Responsável pelas regras de negócio.
+
+Motivos da escolha:
+
+- Excelente desempenho para aplicações web
+- Grande ecossistema
+- Mesmo idioma utilizado no Frontend
+- Facilidade de contratação futura
+- Alta produtividade
+
+---
+
+# Linguagem
+
+## TypeScript
+
+Toda aplicação utilizará TypeScript.
+
+Objetivos:
+
+- Segurança de tipos
+- Melhor documentação do código
+- Melhor experiência de desenvolvimento
+- Redução de erros em tempo de execução
+
+---
+
+# Banco de Dados
+
+## PostgreSQL
+
+Escolhido por:
+
+- Robustez
+- Confiabilidade
+- Escalabilidade
+- Excelente suporte relacional
+- Software Open Source
+
+---
+
+# ORM
+
+## Prisma
+
+Escolhido para facilitar:
+
+- Modelagem do banco
+- Migrações
+- Segurança de tipos
+- Produtividade
+
+---
+
+# API
+
+Seguiremos arquitetura REST.
+
+Princípios:
+
+- Recursos bem definidos
+- Versionamento
+- Padronização
+- Baixo acoplamento
+
+---
+
+# Autenticação
+
+JWT será utilizado inicialmente.
+
+No futuro, a estratégia poderá evoluir conforme as necessidades da plataforma.
+
+---
+
+# Ferramentas de Desenvolvimento
+
+- Git
+- GitHub
+- GitHub Projects
+- GitHub Actions
+- ESLint
+- Prettier
+
+---
+
+# Qualidade
+
+Toda tecnologia deverá atender aos seguintes critérios:
+
+- Comunidade ativa
+- Documentação oficial
+- Facilidade de manutenção
+- Boa integração com a stack atual
+- Compatibilidade com longo prazo
+
+---
+
+# Tecnologias Futuras
+
+Algumas tecnologias poderão ser incorporadas futuramente conforme a evolução do produto.
+
+Exemplos:
+
+- Docker
+- Redis
+- RabbitMQ
+- ElasticSearch
+- OpenTelemetry
+- Kubernetes
+
+Essas tecnologias não fazem parte do MVP e somente serão avaliadas quando houver necessidade comprovada.
+
+---
+
+# Processo de Escolha
+
+Nenhuma tecnologia será adotada apenas por estar em alta.
+
+Toda decisão deverá considerar:
+
+- Problema resolvido
+- Impacto técnico
+- Complexidade adicionada
+- Curva de aprendizado
+- Custos de manutenção
+
+Sempre que necessário, a decisão deverá ser registrada através de um ADR.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 09-database.md
+- 10-api.md
+- docs/decisions/README.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/07-business-model.md =====
+# 💼 Business Model
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve o modelo de negócio do LIA.
+
+Seu objetivo é definir como a plataforma cria, entrega e captura valor para usuários, comerciantes, empresas e parceiros.
+
+Mais do que um plano de monetização, este documento apresenta a estratégia de crescimento sustentável da plataforma.
+
+---
+
+# Nossa Proposta de Valor
+
+O LIA conecta pessoas, talentos e oportunidades dentro da própria comunidade.
+
+Criamos um ambiente onde:
+
+- Trabalhadores encontram oportunidades.
+- Comerciantes contratam com rapidez.
+- Empresas formam bancos de talentos.
+- Moradores encontram prestadores confiáveis.
+
+Todos ganham.
+
+---
+
+# O Problema
+
+Hoje a contratação local acontece de forma desorganizada.
+
+Currículos ficam esquecidos.
+
+Grupos de WhatsApp tornam-se caóticos.
+
+Pequenos comerciantes têm dificuldade para contratar rapidamente.
+
+Prestadores dependem exclusivamente de indicações.
+
+Oportunidades deixam de acontecer porque as pessoas simplesmente não se encontram.
+
+O LIA nasce para resolver essa desconexão.
+
+---
+
+# Público-Alvo
+
+## Trabalhadores
+
+Pessoas em busca de:
+
+- Primeiro emprego
+- Renda complementar
+- Serviços temporários
+- Trabalho autônomo
+- Desenvolvimento profissional
+
+---
+
+## Comerciantes
+
+Negócios locais que precisam contratar rapidamente.
+
+---
+
+## Empresas
+
+Organizações que desejam recrutar talentos e construir relacionamento com profissionais da região.
+
+---
+
+## Comunidade
+
+Moradores que precisam contratar serviços locais com confiança.
+
+---
+
+# Como Geramos Valor
+
+## Para Trabalhadores
+
+- Visibilidade
+- Reputação profissional
+- Oportunidades
+- Banco de Talentos
+- Networking
+- Desenvolvimento
+
+---
+
+## Para Comerciantes
+
+- Contratação rápida
+- Banco de profissionais
+- Histórico dos trabalhadores
+- Avaliações
+- Economia de tempo
+
+---
+
+## Para Empresas
+
+- RH Digital
+- Processo seletivo
+- Banco de Currículos
+- Marca empregadora
+
+---
+
+## Para Comunidade
+
+- Economia local fortalecida
+- Mais oportunidades
+- Relações de confiança
+- Incentivo ao comércio regional
+
+---
+
+# Nosso Diferencial
+
+Não somos apenas um marketplace.
+
+Não somos apenas uma plataforma de empregos.
+
+Não somos apenas uma rede profissional.
+
+Somos um ecossistema que integra:
+
+- Empregabilidade
+- Prestação de serviços
+- Banco de Talentos
+- RH Digital
+- Comunidade
+- Reputação
+- Benefícios
+
+Tudo em uma única plataforma.
+
+---
+
+# Estratégia de Crescimento
+
+## Etapa 1
+
+Conquistar Mambucaba.
+
+Entender profundamente a comunidade.
+
+Resolver um problema real.
+
+---
+
+## Etapa 2
+
+Expandir para bairros próximos.
+
+---
+
+## Etapa 3
+
+Expandir para municípios da Costa Verde.
+
+---
+
+## Etapa 4
+
+Expandir para outras regiões.
+
+---
+
+# Estratégia de Validação
+
+Antes de crescer precisamos validar.
+
+As primeiras métricas são mais importantes do que faturamento.
+
+Queremos responder perguntas como:
+
+- As pessoas utilizam o LIA?
+- Os comerciantes voltam a contratar?
+- Os trabalhadores conseguem novas oportunidades?
+- A comunidade recomenda a plataforma?
+
+Se essas respostas forem positivas, o crescimento será consequência.
+
+---
+
+# Monetização
+
+O MVP não terá monetização.
+
+Nosso foco inicial será gerar valor.
+
+Após validar o produto, poderão ser avaliados modelos como:
+
+## Assinaturas para Empresas
+
+Ferramentas avançadas de recrutamento.
+
+---
+
+## Destaque de Vagas
+
+Maior visibilidade para oportunidades.
+
+---
+
+## Clube de Benefícios
+
+Programa de vantagens para usuários e parceiros.
+
+---
+
+## Publicidade Local
+
+Espaço para divulgação de negócios parceiros.
+
+---
+
+## Serviços Premium
+
+Recursos avançados para empresas e recrutadores.
+
+---
+
+## Integrações
+
+APIs e soluções para parceiros institucionais.
+
+---
+
+# Princípios do Negócio
+
+Nunca monetizar antes de gerar valor.
+
+Nunca crescer sacrificando a confiança da comunidade.
+
+Nunca comprometer a experiência do usuário por lucro imediato.
+
+O crescimento sustentável sempre será prioridade.
+
+---
+
+# Indicadores de Sucesso
+
+O sucesso do LIA será acompanhado através de indicadores como:
+
+- Usuários ativos.
+- Empresas cadastradas.
+- Serviços concluídos.
+- Contratações realizadas.
+- Tempo médio para contratação.
+- Avaliação média dos usuários.
+- Retenção.
+- Crescimento orgânico.
+
+Esses indicadores serão revisitados continuamente para orientar a evolução do produto.
+
+---
+
+# Visão de Futuro
+
+Nosso objetivo é construir uma plataforma reconhecida pela confiança, simplicidade e impacto positivo na comunidade.
+
+Queremos que o LIA seja lembrado não apenas como um aplicativo, mas como a principal porta de entrada para oportunidades de trabalho, colaboração e desenvolvimento profissional.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 02-branding.md
+- 03-roadmap.md
+- 04-backlog.md
+- 17-kpis.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/08-design-system.md =====
+# 🎨 Design System
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+O Design System do LIA estabelece os princípios, padrões e componentes visuais utilizados em toda a plataforma.
+
+Seu objetivo é garantir consistência, acessibilidade, escalabilidade e uma experiência de uso simples para todos os usuários.
+
+Mais do que definir cores ou componentes, este documento representa a filosofia visual do produto.
+
+---
+
+# Filosofia
+
+A interface do LIA deve ser uma ferramenta.
+
+Nunca um obstáculo.
+
+Toda decisão de design deve responder à pergunta:
+
+> **Isso facilita ou dificulta a vida do usuário?**
+
+Se dificultar, deve ser repensada.
+
+---
+
+# Princípios
+
+## Simplicidade
+
+Interfaces limpas.
+
+Pouca informação por tela.
+
+Fluxos objetivos.
+
+---
+
+## Clareza
+
+O usuário deve compreender imediatamente:
+
+- Onde está.
+- O que pode fazer.
+- O que acontecerá ao executar uma ação.
+
+---
+
+## Consistência
+
+Componentes iguais devem possuir o mesmo comportamento em toda a plataforma.
+
+Um botão deve parecer e funcionar como um botão.
+
+Um link deve parecer e funcionar como um link.
+
+---
+
+## Acessibilidade
+
+O LIA será desenvolvido para atender o maior número possível de pessoas.
+
+Sempre considerar:
+
+- Contraste adequado
+- Navegação por teclado
+- Leitores de tela
+- Tamanho mínimo de fonte
+- Áreas de toque confortáveis
+- Feedback visual e textual
+
+---
+
+## Performance
+
+Interfaces devem carregar rapidamente.
+
+Animações somente quando agregarem valor.
+
+---
+
+# Identidade Visual
+
+A identidade visual deverá transmitir:
+
+- Confiança
+- Proximidade
+- Organização
+- Simplicidade
+- Modernidade
+
+O usuário deve sentir que está utilizando uma ferramenta profissional, mas acolhedora.
+
+---
+
+# Linguagem Visual
+
+O design do LIA seguirá uma abordagem minimalista.
+
+Evitar:
+
+- Excesso de cores
+- Excesso de sombras
+- Muitos elementos decorativos
+- Poluição visual
+
+Priorizar:
+
+- Espaçamento
+- Hierarquia
+- Legibilidade
+- Organização
+
+---
+
+# Componentes
+
+O sistema deverá possuir componentes reutilizáveis para:
+
+- Botões
+- Campos de formulário
+- Cards
+- Modais
+- Dialogs
+- Toasts
+- Badges
+- Avatares
+- Tabs
+- Breadcrumbs
+- Paginação
+- Tabelas
+- Listas
+- Skeletons
+- Empty States
+
+Sempre reutilizar antes de criar um novo componente.
+
+---
+
+# Feedback ao Usuário
+
+Toda ação deve possuir retorno.
+
+Exemplos:
+
+- Carregando
+- Sucesso
+- Erro
+- Aviso
+- Informação
+
+O usuário nunca deve ficar sem saber o que está acontecendo.
+
+---
+
+# Formulários
+
+Os formulários deverão seguir padrões consistentes.
+
+Boas práticas:
+
+- Labels sempre visíveis
+- Mensagens de erro claras
+- Validação em tempo adequado
+- Indicação de campos obrigatórios
+- Auto foco apenas quando necessário
+
+---
+
+# Responsividade
+
+A plataforma deverá funcionar adequadamente em:
+
+- Smartphones
+- Tablets
+- Notebooks
+- Monitores
+
+O Mobile First será adotado sempre que possível.
+
+---
+
+# Escrita (UX Writing)
+
+Toda comunicação deve ser:
+
+- Simples
+- Objetiva
+- Humana
+- Respeitosa
+
+Evitar linguagem técnica quando direcionada ao usuário final.
+
+Mensagens devem orientar, nunca culpar.
+
+Exemplo:
+
+❌ "Erro 500."
+
+✅ "Não foi possível concluir sua solicitação. Tente novamente em alguns instantes."
+
+---
+
+# Estados da Interface
+
+Todo componente deve prever:
+
+- Estado padrão
+- Hover
+- Focus
+- Active
+- Disabled
+- Loading
+- Error
+- Empty
+
+---
+
+# Ícones
+
+Os ícones deverão:
+
+- Ser consistentes
+- Possuir significado claro
+- Nunca substituir completamente textos importantes
+
+---
+
+# Evolução
+
+Novos componentes deverão seguir os princípios deste documento.
+
+Antes de criar um novo padrão visual, verificar se um componente existente pode ser reutilizado.
+
+---
+
+# Filosofia do Design
+
+Uma interface bonita chama atenção.
+
+Uma interface simples resolve problemas.
+
+O LIA sempre escolherá simplicidade.
+
+Cada clique deve aproximar o usuário do seu objetivo.
+
+Nunca afastá-lo.
+
+---
+
+## Documentos Relacionados
+
+- 02-branding.md
+- 14-user-flows.md
+- 15-wireframes.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/09-database.md =====
+# 🗄 Database
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define os princípios utilizados na modelagem do banco de dados do LIA.
+
+Seu objetivo é garantir consistência, integridade e escalabilidade durante toda a evolução da plataforma.
+
+A modelagem deverá representar o negócio da forma mais fiel possível, evitando duplicidade de informações e facilitando futuras expansões.
+
+---
+
+# Filosofia
+
+O banco de dados representa a memória do LIA.
+
+Cada tabela existe para armazenar informações relevantes do negócio.
+
+Modelamos entidades do mundo real, não telas da aplicação.
+
+---
+
+# Princípios
+
+## Integridade
+
+Os dados devem permanecer consistentes durante todo o ciclo de vida da aplicação.
+
+---
+
+## Clareza
+
+Nomes de tabelas, colunas e relacionamentos devem ser autoexplicativos.
+
+---
+
+## Normalização
+
+Sempre que possível, evitar redundância de dados.
+
+Duplicação somente será aceita quando houver justificativa técnica.
+
+---
+
+## Escalabilidade
+
+A estrutura deverá permitir crescimento sem necessidade de grandes reestruturações.
+
+---
+
+## Auditoria
+
+Sempre que fizer sentido, registrar informações de criação, atualização e exclusão lógica.
+
+---
+
+# Convenções
+
+## Idioma
+
+Toda estrutura será escrita em inglês.
+
+---
+
+## Nomeação
+
+Utilizar nomes claros.
+
+Exemplos:
+
+users
+
+jobs
+
+companies
+
+services
+
+applications
+
+ratings
+
+---
+
+## Chaves Primárias
+
+Todas as entidades utilizarão identificadores únicos.
+
+---
+
+## Datas
+
+Sempre armazenar:
+
+createdAt
+
+updatedAt
+
+Quando necessário:
+
+deletedAt
+
+---
+
+# Entidades Principais
+
+A modelagem inicial deverá contemplar entidades como:
+
+- Users
+- Profiles
+- Companies
+- Jobs
+- Applications
+- Services
+- Categories
+- Skills
+- Ratings
+- Messages
+- Conversations
+- Notifications
+
+Novas entidades poderão ser adicionadas conforme evolução do produto.
+
+---
+
+# Relacionamentos
+
+Os relacionamentos deverão representar regras reais do negócio.
+
+Sempre priorizar integridade referencial.
+
+Evitar relacionamentos desnecessariamente complexos.
+
+---
+
+# Evolução
+
+Mudanças estruturais deverão ocorrer através de migrations.
+
+Nunca alterar diretamente bancos em produção.
+
+---
+
+# Segurança
+
+Dados sensíveis deverão receber tratamento adequado.
+
+Sempre considerar:
+
+- Criptografia
+- Restrições
+- Índices
+- Integridade
+- Performance
+
+---
+
+# Documentação
+
+Toda alteração relevante na modelagem deverá atualizar:
+
+- Diagrama ER
+- Documentação
+- ADR, quando necessário
+
+---
+
+# Filosofia
+
+O banco de dados deve representar o negócio.
+
+Nunca a interface.
+
+As telas podem mudar.
+
+O modelo de domínio deve permanecer consistente.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 06-tech-stack.md
+- 10-api.md
+- 14-user-flows.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/10-api.md =====
+# 📡 API
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define os princípios da API do LIA.
+
+A API será responsável por conectar todas as aplicações da plataforma, garantindo comunicação consistente, segura e previsível.
+
+Ela representa o contrato oficial entre clientes e servidor.
+
+---
+
+# Filosofia
+
+A API existe para servir o produto.
+
+Não deve refletir a estrutura do banco de dados.
+
+Deve refletir as necessidades do negócio.
+
+Mudanças internas não devem quebrar consumidores da API.
+
+---
+
+# Princípios
+
+## Consistência
+
+Endpoints semelhantes devem possuir comportamento semelhante.
+
+---
+
+## Clareza
+
+Os recursos devem possuir nomes intuitivos.
+
+---
+
+## Versionamento
+
+Mudanças incompatíveis deverão ocorrer através de novas versões.
+
+---
+
+## Segurança
+
+Toda requisição deverá respeitar autenticação e autorização quando necessário.
+
+---
+
+## Performance
+
+A API deve retornar apenas os dados necessários para cada operação.
+
+---
+
+# Arquitetura
+
+A comunicação ocorrerá através de uma API REST.
+
+Todas as aplicações consumirão a mesma API.
+
+```text
+Web
+
+↓
+
+REST API
+
+↑
+
+Mobile
+
+↓
+
+Painel Administrativo
+```
+
+---
+
+# Recursos
+
+A API será organizada por recursos de negócio.
+
+Exemplos:
+
+- Users
+- Profiles
+- Jobs
+- Companies
+- Services
+- Categories
+- Skills
+- Applications
+- Ratings
+- Messages
+- Notifications
+
+Cada recurso possuirá responsabilidades bem definidas.
+
+---
+
+# Convenções
+
+## URLs
+
+Utilizar substantivos.
+
+Exemplo:
+
+```text
+/users
+
+/jobs
+
+/companies
+```
+
+Evitar verbos na URL.
+
+---
+
+## Métodos HTTP
+
+GET
+
+Consultar informações.
+
+POST
+
+Criar recursos.
+
+PUT
+
+Atualizar completamente.
+
+PATCH
+
+Atualizar parcialmente.
+
+DELETE
+
+Remover recursos.
+
+---
+
+# Formato
+
+Toda comunicação utilizará JSON.
+
+---
+
+# Tratamento de Erros
+
+As respostas de erro deverão conter informações suficientes para auxiliar o consumidor da API.
+
+Mensagens técnicas nunca deverão ser exibidas diretamente ao usuário final.
+
+---
+
+# Paginação
+
+Listagens deverão suportar paginação.
+
+---
+
+# Filtros
+
+Sempre que possível, recursos deverão oferecer filtros para facilitar consultas.
+
+---
+
+# Ordenação
+
+Resultados deverão permitir ordenação quando fizer sentido.
+
+---
+
+# Segurança
+
+A autenticação inicial utilizará JWT.
+
+Todas as permissões serão controladas no Backend.
+
+Nenhuma autorização deverá depender exclusivamente do Frontend.
+
+---
+
+# Documentação
+
+A API deverá possuir documentação clara e atualizada.
+
+Sempre que possível utilizar OpenAPI (Swagger).
+
+Toda alteração de contrato deverá atualizar a documentação correspondente.
+
+---
+
+# Evolução
+
+Novos endpoints deverão respeitar os princípios definidos neste documento.
+
+Mudanças incompatíveis deverão ser evitadas.
+
+Quando inevitáveis, deverão ser planejadas e documentadas.
+
+---
+
+# Filosofia
+
+Uma boa API deve ser previsível.
+
+Quanto menos o desenvolvedor precisar consultar a documentação, melhor será seu design.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 06-tech-stack.md
+- 09-database.md
+- 13-decisions.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/11-contributing.md =====
+# 🤝 Contributing
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve as diretrizes para contribuição no projeto LIA.
+
+Seu objetivo é garantir consistência, qualidade e colaboração saudável entre todos os participantes do projeto.
+
+Independentemente do tamanho da equipe, todos deverão seguir os mesmos padrões.
+
+---
+
+# Nossa Filosofia
+
+Contribuir vai muito além de escrever código.
+
+Contribuir é ajudar o projeto a evoluir.
+
+Valorizamos qualidade, organização, aprendizado e respeito.
+
+Toda contribuição deve deixar o projeto melhor do que estava antes.
+
+---
+
+# Antes de Começar
+
+Antes de desenvolver qualquer funcionalidade, leia:
+
+- Vision
+- Roadmap
+- Backlog
+- Architecture
+- Tech Stack
+
+Compreender o produto é mais importante do que escrever código rapidamente.
+
+---
+
+# Fluxo de Trabalho
+
+Todo desenvolvimento deverá seguir o fluxo oficial do projeto.
+
+```text
+Issue
+
+↓
+
+Discussão
+
+↓
+
+Branch
+
+↓
+
+Implementação
+
+↓
+
+Testes
+
+↓
+
+Pull Request
+
+↓
+
+Code Review
+
+↓
+
+Merge
+```
+
+---
+
+# Branches
+
+Utilizar a convenção definida no Backlog.
+
+Exemplos:
+
+```text
+feature/user-registration
+
+feature/job-search
+
+fix/login-validation
+
+docs/update-roadmap
+```
+
+---
+
+# Commits
+
+Seguimos o padrão Conventional Commits.
+
+Exemplos:
+
+```text
+feat:
+
+fix:
+
+docs:
+
+refactor:
+
+test:
+
+style:
+
+chore:
+```
+
+Cada commit deve representar uma mudança clara e objetiva.
+
+---
+
+# Pull Requests
+
+Todo Pull Request deverá conter:
+
+- Objetivo
+- Issue relacionada
+- Alterações realizadas
+- Evidências (quando aplicável)
+- Checklist de validação
+
+---
+
+# Code Review
+
+Durante uma revisão buscamos melhorar o projeto.
+
+Comentários devem ser respeitosos, construtivos e fundamentados.
+
+Criticar código nunca significa criticar pessoas.
+
+---
+
+# Documentação
+
+Mudanças relevantes devem atualizar a documentação correspondente.
+
+Sempre que necessário:
+
+- Atualizar arquivos em `docs/`
+- Registrar decisões importantes em ADRs
+- Atualizar diagramas
+- Revisar exemplos
+
+---
+
+# Qualidade
+
+Antes de abrir um Pull Request, verificar:
+
+- Projeto compila
+- Testes executados
+- Código formatado
+- Lint sem erros
+- Documentação atualizada
+
+---
+
+# Comunicação
+
+Decisões técnicas relevantes devem ser registradas.
+
+Evitar decisões importantes apenas em conversas privadas.
+
+O conhecimento deve permanecer no repositório.
+
+---
+
+# Cultura
+
+Queremos construir um ambiente onde seja seguro:
+
+- Fazer perguntas
+- Compartilhar ideias
+- Aprender
+- Errar
+- Evoluir
+
+O objetivo não é provar quem sabe mais.
+
+É construir o melhor produto possível.
+
+---
+
+# Filosofia
+
+Pessoas constroem software.
+
+Software não constrói pessoas.
+
+Respeito, colaboração e aprendizado sempre terão prioridade.
+
+---
+
+## Documentos Relacionados
+
+- 04-backlog.md
+- 05-architecture.md
+- 06-tech-stack.md
+- 13-decisions.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/12-changelog.md =====
+# 📜 Changelog
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> Todas as alterações relevantes deste projeto serão documentadas neste arquivo.
+>
+> Este projeto segue os princípios do **Keep a Changelog** e, futuramente, poderá adotar **Semantic Versioning (SemVer)**.
+
+---
+
+# Filosofia
+
+O Changelog representa a memória evolutiva do LIA.
+
+Mais do que registrar funcionalidades, ele registra a história do projeto.
+
+Cada versão conta um capítulo da construção da plataforma.
+
+---
+
+# Versionamento
+
+Enquanto o projeto estiver em desenvolvimento inicial, utilizaremos versões de pré-lançamento.
+
+Exemplo:
+
+```text
+0.1.0
+
+0.2.0
+
+0.3.0
+
+...
+
+1.0.0
+```
+
+A versão **1.0.0** representará o primeiro lançamento oficial do produto para uso público.
+
+---
+
+# Estrutura
+
+Cada versão deverá conter:
+
+- Added
+- Changed
+- Fixed
+- Removed
+- Deprecated
+- Security
+
+Sempre que aplicável.
+
+---
+
+# [0.1.0] - 2026-07-03
+
+## 🎉 Fundação do Projeto
+
+### Added
+
+- Documento de Vision
+- Documento de Branding
+- Roadmap inicial
+- Backlog Master
+- Arquitetura da plataforma
+- Tech Stack oficial
+- Business Model
+- Design System
+- Diretrizes de Banco de Dados
+- Padrões da API
+- Guia de Contribuição
+- Registro de Decisões (ADR)
+- User Flows
+- Guia de Wireframes
+- Personas iniciais
+- KPIs do produto
+- Estratégia de Segurança
+- Estratégia de Deploy
+- Estratégia de Testes
+- Glossário oficial
+
+### Changed
+
+- Definição da estrutura completa de documentação.
+- Organização dos diretórios do repositório.
+- Padronização das convenções do projeto.
+
+### Security
+
+- Definição da estratégia inicial de autenticação.
+- Princípios de proteção de dados.
+- Adoção de Security by Design.
+
+---
+
+# Próximas Versões
+
+## 0.2.0
+
+Sprint 0
+
+- Revisão da documentação
+- README principal
+- ADRs iniciais
+- Templates do GitHub
+- Planejamento do MVP
+- Refinamento das Epics
+- User Stories
+- Definition of Done
+- Definition of Ready
+
+---
+
+## 0.3.0
+
+Primeira Sprint de Desenvolvimento
+
+- Estrutura inicial do Backend
+- Estrutura inicial do Frontend
+- Banco de dados
+- Autenticação
+- Primeiras funcionalidades
+
+---
+
+# Filosofia
+
+Não celebramos apenas grandes lançamentos.
+
+Celebramos cada passo consistente na construção do produto.
+
+Pequenas entregas constantes criam grandes projetos.
+
+---
+
+## Documentos Relacionados
+
+- 03-roadmap.md
+- 04-backlog.md
+- 13-decisions.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/13-decisions.md =====
+# 📜 Architectural Decisions
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento centraliza todas as decisões arquiteturais e técnicas do projeto.
+
+Cada decisão relevante deverá ser registrada através de uma ADR (Architecture Decision Record).
+
+Nosso objetivo é preservar o histórico das decisões, evitando perda de contexto durante a evolução do produto.
+
+---
+
+# O que é uma ADR?
+
+Uma ADR registra uma decisão importante tomada durante o desenvolvimento.
+
+Ela responde perguntas como:
+
+- Qual problema existia?
+- Qual decisão foi tomada?
+- Por que essa decisão foi escolhida?
+- Quais alternativas foram consideradas?
+- Quais são suas consequências?
+
+Mais importante do que registrar a decisão é registrar o raciocínio utilizado.
+
+---
+
+# Quando criar uma ADR?
+
+Uma ADR deverá ser criada quando houver decisões que impactem a arquitetura, a organização do projeto ou a estratégia técnica.
+
+Exemplos:
+
+- Escolha de tecnologias
+- Mudanças arquiteturais
+- Estratégias de autenticação
+- Integrações importantes
+- Alterações significativas na modelagem de dados
+- Definição de padrões técnicos
+
+Pequenas decisões de implementação não precisam de ADR.
+
+---
+
+# Estrutura das ADRs
+
+Todas as ADRs deverão seguir o mesmo formato.
+
+- Contexto
+- Problema
+- Decisão
+- Justificativa
+- Alternativas consideradas
+- Consequências
+- Status
+- Data
+- Referências
+
+---
+
+# Status possíveis
+
+Uma ADR poderá possuir um dos seguintes estados:
+
+- Proposed
+- Accepted
+- Deprecated
+- Superseded
+
+Quando uma decisão substituir outra, a ADR original deverá apontar para sua sucessora.
+
+---
+
+# Índice
+
+## ADR-001
+
+**Arquivo**
+
+docs/decisions/ADR-001-tech-stack.md
+
+**Título**
+
+Adoção da Stack JavaScript/TypeScript Full Stack
+
+**Status**
+
+Accepted
+
+**Resumo**
+
+Define a utilização de React, React Native, Node.js, TypeScript, PostgreSQL e Prisma como base tecnológica inicial do projeto.
+
+---
+
+## ADR-002
+
+**Arquivo**
+
+docs/decisions/ADR-002-postgresql.md
+
+**Título**
+
+PostgreSQL como banco de dados principal
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-003
+
+**Arquivo**
+
+docs/decisions/ADR-003-nodejs.md
+
+**Título**
+
+Node.js como tecnologia de Backend
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-004
+
+**Arquivo**
+
+docs/decisions/ADR-004-react-native.md
+
+**Título**
+
+React Native como tecnologia Mobile
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-005
+
+**Arquivo**
+
+docs/decisions/ADR-005-clean-architecture.md
+
+**Título**
+
+Arquitetura em camadas e separação de responsabilidades
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-006
+
+**Arquivo**
+
+docs/decisions/ADR-006-authentication.md
+
+**Título**
+
+Estratégia inicial de autenticação
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-007
+
+**Arquivo**
+
+docs/decisions/ADR-007-mvp-scope.md
+
+**Título**
+
+Escopo inicial do MVP
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-008
+
+**Arquivo**
+
+docs/decisions/ADR-008-folder-structure.md
+
+**Título**
+
+Estrutura de pastas do projeto
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-009
+
+**Arquivo**
+
+docs/decisions/ADR-009-git-workflow.md
+
+**Título**
+
+Fluxo de trabalho com Git
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## ADR-010
+
+**Arquivo**
+
+docs/decisions/ADR-010-design-system.md
+
+**Título**
+
+Design System inicial
+
+**Status**
+
+Pendente (Sprint 0)
+
+---
+
+## Próximas ADRs previstas
+
+- Arquitetura REST
+- Estratégia de Deploy
+- Estratégia de Testes
+
+Essas ADRs serão criadas apenas quando as respectivas decisões forem oficialmente tomadas.
+
+---
+
+# Filosofia
+
+Boas decisões são documentadas.
+
+Ótimas decisões também registram os motivos que levaram até elas.
+
+As ADRs representam a memória técnica do projeto.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 06-tech-stack.md
+- 09-database.md
+- 10-api.md
+- 11-contributing.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/14-user-flows.md =====
+# 🔀 User Flows
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve os principais fluxos de navegação do LIA.
+
+Seu objetivo é mapear como cada persona interage com a plataforma para atingir seus objetivos.
+
+Os fluxos aqui descritos servirão como base para wireframes, design, desenvolvimento e testes.
+
+---
+
+# Princípios
+
+Todo fluxo deve ser:
+
+- Simples
+- Objetivo
+- Intuitivo
+- Rápido
+- Consistente
+
+Cada etapa deve aproximar o usuário de seu objetivo.
+
+Nunca criar passos desnecessários.
+
+---
+
+# Fluxo 01 — Cadastro
+
+Persona
+
+- João
+- Carlos
+
+Objetivo
+
+Criar uma conta.
+
+Fluxo
+
+```text
+Tela Inicial
+
+↓
+
+Criar Conta
+
+↓
+
+Informações Básicas
+
+↓
+
+Confirmação
+
+↓
+
+Perfil
+
+↓
+
+Home
+```
+
+---
+
+# Fluxo 02 — Login
+
+Objetivo
+
+Entrar rapidamente na plataforma.
+
+Fluxo
+
+```text
+Tela Inicial
+
+↓
+
+Login
+
+↓
+
+Autenticação
+
+↓
+
+Home
+```
+
+---
+
+# Fluxo 03 — Completar Perfil
+
+Persona
+
+João
+
+Objetivo
+
+Criar um perfil profissional.
+
+Fluxo
+
+```text
+Home
+
+↓
+
+Meu Perfil
+
+↓
+
+Editar Dados
+
+↓
+
+Adicionar Experiências
+
+↓
+
+Adicionar Competências
+
+↓
+
+Salvar
+```
+
+---
+
+# Fluxo 04 — Publicar Serviço
+
+Persona
+
+Carlos
+
+Objetivo
+
+Divulgar seus serviços.
+
+Fluxo
+
+```text
+Home
+
+↓
+
+Novo Serviço
+
+↓
+
+Informações
+
+↓
+
+Categoria
+
+↓
+
+Fotos
+
+↓
+
+Publicar
+```
+
+---
+
+# Fluxo 05 — Buscar Profissionais
+
+Persona
+
+Pedro
+
+Objetivo
+
+Encontrar alguém para contratar.
+
+Fluxo
+
+```text
+Home
+
+↓
+
+Pesquisar
+
+↓
+
+Filtros
+
+↓
+
+Lista
+
+↓
+
+Perfil
+
+↓
+
+Contato
+```
+
+---
+
+# Fluxo 06 — Publicar Vaga
+
+Persona
+
+Dona Maria
+
+Objetivo
+
+Criar uma oportunidade de trabalho.
+
+Fluxo
+
+```text
+Home
+
+↓
+
+Nova Vaga
+
+↓
+
+Descrição
+
+↓
+
+Requisitos
+
+↓
+
+Publicar
+```
+
+---
+
+# Fluxo 07 — Candidatar-se
+
+Persona
+
+João
+
+Objetivo
+
+Enviar candidatura.
+
+Fluxo
+
+```text
+Vaga
+
+↓
+
+Detalhes
+
+↓
+
+Candidatar-se
+
+↓
+
+Confirmação
+```
+
+---
+
+# Fluxo 08 — Avaliar Usuário
+
+Objetivo
+
+Registrar uma experiência após um serviço.
+
+Fluxo
+
+```text
+Serviço Finalizado
+
+↓
+
+Avaliar
+
+↓
+
+Comentário
+
+↓
+
+Enviar
+```
+
+---
+
+# Fluxo 09 — Conversar
+
+Objetivo
+
+Facilitar comunicação.
+
+Fluxo
+
+```text
+Perfil
+
+↓
+
+Chat
+
+↓
+
+Mensagens
+
+↓
+
+Encerrar
+```
+
+---
+
+# Evolução
+
+Novos fluxos deverão ser adicionados conforme o crescimento da plataforma.
+
+Sempre que um fluxo sofrer alterações significativas, este documento deverá ser atualizado antes da implementação.
+
+---
+
+# Filosofia
+
+Fluxos representam jornadas humanas.
+
+Não desenhamos apenas telas.
+
+Desenhamos experiências.
+
+Quanto menor o esforço necessário para atingir um objetivo, melhor será a experiência do usuário.
+
+---
+
+## Documentos Relacionados
+
+- 15-wireframes.md
+- 16-personas.md
+- 04-backlog.md
+- 08-design-system.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/15-wireframes.md =====
+# ✏️ Wireframes
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define como os wireframes do LIA serão planejados, organizados e evoluídos durante o desenvolvimento.
+
+Os wireframes representam a estrutura das telas antes da definição do design visual.
+
+Seu objetivo é validar fluxos, organização de informações e experiência do usuário.
+
+---
+
+# Filosofia
+
+Primeiro validamos a experiência.
+
+Depois desenhamos a interface.
+
+Nunca iniciaremos uma tela diretamente em alta fidelidade.
+
+---
+
+# Processo
+
+Todo novo fluxo deverá seguir a seguinte sequência:
+
+Persona
+
+↓
+
+User Flow
+
+↓
+
+Wireframe
+
+↓
+
+Protótipo
+
+↓
+
+Implementação
+
+---
+
+# Níveis de Fidelidade
+
+## Baixa Fidelidade
+
+Objetivo:
+
+Validar estrutura.
+
+Características:
+
+- Sem cores
+- Sem imagens
+- Sem identidade visual
+- Apenas disposição dos elementos
+
+---
+
+## Média Fidelidade
+
+Objetivo:
+
+Validar componentes.
+
+Características:
+
+- Espaçamentos
+- Hierarquia visual
+- Componentes reutilizáveis
+- Navegação
+
+---
+
+## Alta Fidelidade
+
+Objetivo:
+
+Representar o produto final.
+
+Características:
+
+- Cores
+- Tipografia
+- Ícones
+- Componentes oficiais
+- Design System aplicado
+
+---
+
+# Ferramenta
+
+Inicialmente os wireframes serão desenvolvidos no Figma.
+
+Outras ferramentas poderão ser utilizadas futuramente quando agregarem valor ao processo.
+
+---
+
+# Organização
+
+Cada funcionalidade deverá possuir seu próprio conjunto de wireframes.
+
+Exemplo:
+
+```text
+wireframes/
+
+authentication/
+
+login.fig
+
+register.fig
+
+jobs/
+
+job-list.fig
+
+job-details.fig
+
+apply.fig
+
+profile/
+
+profile.fig
+
+edit-profile.fig
+```
+
+---
+
+# Telas Planejadas
+
+## Autenticação
+
+- Login
+- Cadastro
+- Recuperação de senha
+
+---
+
+## Home
+
+- Feed principal
+- Pesquisa
+- Navegação
+
+---
+
+## Perfil
+
+- Visualização
+- Edição
+- Competências
+- Cursos
+- Certificados
+
+---
+
+## Empregos
+
+- Lista de vagas
+- Detalhes
+- Publicação
+- Candidatura
+
+---
+
+## Serviços
+
+- Lista
+- Perfil profissional
+- Publicação
+
+---
+
+## Empresas
+
+- Perfil da empresa
+- Gestão de vagas
+
+---
+
+## Chat
+
+- Lista de conversas
+- Conversa
+
+---
+
+## Configurações
+
+- Conta
+- Privacidade
+- Preferências
+
+---
+
+# Critérios de Qualidade
+
+Todo wireframe deverá responder:
+
+- O objetivo da tela está claro?
+- O usuário sabe o próximo passo?
+- Existe informação desnecessária?
+- O fluxo é intuitivo?
+- A tela segue o Design System?
+
+---
+
+# Evolução
+
+Wireframes poderão ser alterados conforme entrevistas, testes de usabilidade e evolução do produto.
+
+Toda alteração significativa deverá manter compatibilidade com os User Flows.
+
+---
+
+# Filosofia
+
+Wireframes não representam estética.
+
+Representam raciocínio.
+
+Uma boa tela nasce da compreensão do problema, não da escolha de uma cor.
+
+---
+
+## Documentos Relacionados
+
+- 08-design-system.md
+- 14-user-flows.md
+- 16-personas.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/16-personas.md =====
+# 👥 Personas
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve as principais personas do LIA.
+
+As personas representam usuários reais que orientam decisões de produto, experiência do usuário e priorização de funcionalidades.
+
+Toda nova funcionalidade deverá responder claramente qual persona será beneficiada.
+
+---
+
+# Princípios
+
+As personas não representam indivíduos específicos.
+
+Representam padrões de comportamento observados na comunidade.
+
+Sempre que possível, deverão ser refinadas a partir do feedback de usuários reais.
+
+---
+
+# Persona 01 — João
+
+## Perfil
+
+- 18 anos
+- Primeiro emprego
+- Mora em Mambucaba
+- Possui apenas um smartphone
+- Pouca experiência profissional
+
+---
+
+## Objetivo
+
+Encontrar seu primeiro trabalho.
+
+Construir experiência.
+
+Ser contratado rapidamente.
+
+---
+
+## Dores
+
+- Não possui currículo.
+- Não conhece empresários.
+- Não sabe onde procurar vagas.
+- Não possui experiência.
+
+---
+
+## Necessidades
+
+- Cadastro simples.
+- Perfil fácil de preencher.
+- Currículo digital.
+- Vagas próximas.
+- Notificações.
+
+---
+
+## Como o LIA ajuda
+
+Centraliza oportunidades.
+
+Facilita contato com comerciantes.
+
+Permite construir reputação.
+
+---
+
+# Persona 02 — Dona Maria
+
+## Perfil
+
+- 47 anos
+- Proprietária de uma padaria
+- Pouco tempo disponível
+- Usa WhatsApp diariamente
+
+---
+
+## Objetivo
+
+Encontrar funcionários rapidamente.
+
+---
+
+## Dores
+
+- Demora para contratar.
+- Muitas indicações desencontradas.
+- Pouco tempo para processos seletivos.
+
+---
+
+## Necessidades
+
+- Publicar vaga em poucos minutos.
+- Encontrar pessoas próximas.
+- Visualizar avaliações.
+- Entrar em contato rapidamente.
+
+---
+
+## Como o LIA ajuda
+
+Reduz tempo de contratação.
+
+Centraliza candidatos.
+
+Facilita comunicação.
+
+---
+
+# Persona 03 — Carlos
+
+## Perfil
+
+- 29 anos
+- Eletricista autônomo
+- Vive de indicações
+
+---
+
+## Objetivo
+
+Conseguir mais clientes.
+
+Construir reputação.
+
+---
+
+## Dores
+
+- Pouca divulgação.
+- Trabalho irregular.
+- Dependência de indicações.
+
+---
+
+## Necessidades
+
+- Perfil profissional.
+- Portfólio.
+- Avaliações.
+- Contato rápido.
+
+---
+
+## Como o LIA ajuda
+
+Aumenta visibilidade.
+
+Permite receber avaliações.
+
+Facilita novos contratos.
+
+---
+
+# Persona 04 — Juliana
+
+## Perfil
+
+- Analista de RH
+- Empresa de médio porte
+
+---
+
+## Objetivo
+
+Encontrar candidatos qualificados.
+
+---
+
+## Dores
+
+- Muitos currículos.
+- Pouco tempo.
+- Processo manual.
+
+---
+
+## Necessidades
+
+- Banco de talentos.
+- Filtros.
+- Histórico profissional.
+- Gestão de candidatos.
+
+---
+
+## Como o LIA ajuda
+
+Organiza recrutamento.
+
+Facilita seleção.
+
+Reduz tempo operacional.
+
+---
+
+# Persona 05 — Pedro
+
+## Perfil
+
+- Morador da comunidade
+- Precisa contratar serviços ocasionalmente
+
+---
+
+## Objetivo
+
+Encontrar alguém confiável.
+
+---
+
+## Dores
+
+- Não conhece profissionais.
+- Receio de contratar desconhecidos.
+
+---
+
+## Necessidades
+
+- Avaliações.
+- Reputação.
+- Contato rápido.
+
+---
+
+## Como o LIA ajuda
+
+Apresenta profissionais próximos.
+
+Exibe avaliações.
+
+Facilita contratação.
+
+---
+
+# Evolução das Personas
+
+As personas representam hipóteses iniciais.
+
+Durante o desenvolvimento do produto, deverão ser revisadas com base em entrevistas, métricas e feedback dos usuários.
+
+Nosso objetivo é que cada decisão de produto seja baseada em necessidades reais.
+
+---
+
+# Como Utilizamos Personas
+
+Antes de iniciar qualquer funcionalidade, responder:
+
+- Qual persona será beneficiada?
+- Qual problema está sendo resolvido?
+- Como mediremos o impacto?
+
+Caso essas perguntas não possam ser respondidas, a funcionalidade deverá ser reavaliada.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 03-roadmap.md
+- 04-backlog.md
+- 14-user-flows.md
+- 15-wireframes.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/17-kpis.md =====
+# 📈 KPIs
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento define os principais indicadores de desempenho (KPIs) do LIA.
+
+Os KPIs serão utilizados para medir a evolução do produto, validar hipóteses e apoiar decisões baseadas em dados.
+
+Nosso foco não é medir apenas crescimento, mas principalmente impacto na comunidade.
+
+---
+
+# Filosofia
+
+O sucesso do LIA não será medido apenas pelo número de usuários.
+
+Será medido pela quantidade de oportunidades geradas.
+
+Cada métrica deve representar valor real para pessoas reais.
+
+---
+
+# Objetivos Estratégicos
+
+O LIA busca:
+
+- Facilitar contratações locais
+- Aproximar empresas e profissionais
+- Fortalecer a economia da comunidade
+- Gerar oportunidades
+- Construir confiança através da reputação
+
+---
+
+# KPIs do Produto
+
+## Usuários Cadastrados
+
+Objetivo
+
+Acompanhar o crescimento da plataforma.
+
+Indicador
+
+Número total de contas criadas.
+
+---
+
+## Usuários Ativos
+
+Objetivo
+
+Medir utilização real.
+
+Indicador
+
+Usuários ativos por dia (DAU).
+
+Usuários ativos por mês (MAU).
+
+---
+
+## Vagas Publicadas
+
+Objetivo
+
+Medir adoção por empresas.
+
+---
+
+## Serviços Publicados
+
+Objetivo
+
+Acompanhar profissionais autônomos.
+
+---
+
+## Candidaturas
+
+Objetivo
+
+Medir geração de oportunidades.
+
+---
+
+## Contratações Realizadas
+
+Objetivo
+
+Avaliar impacto real da plataforma.
+
+Este será um dos indicadores mais importantes do projeto.
+
+---
+
+## Avaliações
+
+Objetivo
+
+Medir construção de reputação.
+
+---
+
+## Tempo Médio para Contratação
+
+Objetivo
+
+Reduzir o tempo necessário para preencher uma vaga.
+
+---
+
+## Taxa de Conversão
+
+Exemplos:
+
+- Visitante → Cadastro
+- Cadastro → Perfil Completo
+- Perfil → Primeira Candidatura
+- Empresa → Primeira Vaga
+
+---
+
+## Retenção
+
+Objetivo
+
+Entender se os usuários continuam utilizando o produto.
+
+---
+
+# Indicadores Técnicos
+
+- Tempo médio de resposta
+- Disponibilidade da aplicação
+- Taxa de erros
+- Tempo de carregamento
+
+---
+
+# Indicadores de Qualidade
+
+- Bugs reportados
+- Bugs resolvidos
+- Tempo médio de correção
+- Cobertura de testes
+
+---
+
+# Indicadores da Comunidade
+
+- Empresas cadastradas
+- Profissionais cadastrados
+- Cursos publicados
+- Certificados adicionados
+- Conexões realizadas
+- Avaliações positivas
+
+---
+
+# Evolução
+
+Novos KPIs poderão ser adicionados conforme o produto amadurecer.
+
+Toda nova métrica deverá responder:
+
+- Qual decisão ela ajuda a tomar?
+- Qual comportamento queremos incentivar?
+- Como ela melhora o produto?
+
+---
+
+# Filosofia
+
+Nem tudo que pode ser medido importa.
+
+E nem tudo que importa pode ser resumido em um número.
+
+Os KPIs existem para apoiar decisões, nunca para substituir o bom senso.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 03-roadmap.md
+- 04-backlog.md
+- 07-business-model.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/18-security.md =====
+# 🔒 Security
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento estabelece os princípios de segurança do LIA.
+
+Segurança não será tratada como uma etapa final do desenvolvimento.
+
+Ela fará parte do produto desde a primeira linha de código.
+
+---
+
+# Filosofia
+
+A confiança da comunidade é um dos maiores ativos do LIA.
+
+Toda decisão técnica deverá considerar a proteção dos usuários, seus dados e sua privacidade.
+
+---
+
+# Princípios
+
+## Security by Design
+
+Segurança será considerada desde o planejamento.
+
+Nunca adicionada apenas após incidentes.
+
+---
+
+## Menor Privilégio
+
+Usuários e sistemas terão apenas as permissões necessárias para executar suas funções.
+
+---
+
+## Defesa em Camadas
+
+Nenhum mecanismo isolado será considerado suficiente.
+
+A segurança será construída em múltiplas camadas.
+
+---
+
+## Privacidade
+
+Coletaremos apenas os dados necessários para o funcionamento do produto.
+
+Evitar armazenamento desnecessário de informações pessoais.
+
+---
+
+# Autenticação
+
+A autenticação utilizará JWT na versão inicial do projeto.
+
+Senhas nunca serão armazenadas em texto puro.
+
+Sempre utilizar algoritmos seguros para hash.
+
+---
+
+# Autorização
+
+Toda operação sensível deverá validar permissões no Backend.
+
+O Frontend nunca será responsável pela segurança da aplicação.
+
+---
+
+# Proteção de Dados
+
+Dados sensíveis deverão ser protegidos durante armazenamento e transmissão.
+
+Sempre utilizar HTTPS em ambientes públicos.
+
+---
+
+# Logs
+
+Eventos importantes deverão ser registrados.
+
+Nunca registrar:
+
+- Senhas
+- Tokens
+- Dados sensíveis
+- Informações pessoais desnecessárias
+
+---
+
+# Dependências
+
+As bibliotecas utilizadas deverão ser mantidas atualizadas.
+
+Dependências vulneráveis deverão ser corrigidas com prioridade.
+
+---
+
+# Backups
+
+A estratégia de backup deverá ser definida antes da entrada em produção.
+
+Recuperação deverá ser testada periodicamente.
+
+---
+
+# LGPD
+
+O projeto buscará respeitar os princípios da Lei Geral de Proteção de Dados.
+
+Sempre que possível:
+
+- Transparência
+- Consentimento
+- Minimização de dados
+- Direito de exclusão
+
+---
+
+# Incidentes
+
+Problemas de segurança deverão ser tratados com prioridade máxima.
+
+Sempre documentar:
+
+- O ocorrido
+- O impacto
+- A correção
+- As ações preventivas
+
+---
+
+# Evolução
+
+Este documento será atualizado conforme novas necessidades surgirem.
+
+Segurança é um processo contínuo.
+
+---
+
+# Filosofia
+
+A melhor falha de segurança é aquela que nunca chegou à produção.
+
+Construímos confiança antes mesmo de construir funcionalidades.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 09-database.md
+- 10-api.md
+- 13-decisions.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/19-deployment.md =====
+# 🚀 Deployment
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve a estratégia de publicação, entrega e operação do LIA.
+
+Seu objetivo é garantir que novas versões possam ser disponibilizadas de forma segura, previsível e com o menor impacto possível para os usuários.
+
+---
+
+# Filosofia
+
+Deploy não é o fim do desenvolvimento.
+
+É o início da vida do software em produção.
+
+Cada publicação deve aumentar a confiança no produto.
+
+Nunca diminuir.
+
+---
+
+# Ambientes
+
+O projeto será dividido em ambientes independentes.
+
+## Desenvolvimento
+
+Utilizado diariamente pelos desenvolvedores.
+
+Características:
+
+- Dados de teste
+- Alterações frequentes
+- Ambiente instável
+
+---
+
+## Homologação
+
+Utilizado para validação antes da publicação.
+
+Características:
+
+- Próximo ao ambiente de produção
+- Testes integrados
+- Validação funcional
+
+---
+
+## Produção
+
+Ambiente utilizado pelos usuários finais.
+
+Características:
+
+- Alta disponibilidade
+- Monitoramento
+- Backups
+- Estabilidade
+
+---
+
+# Estratégia de Deploy
+
+Toda publicação deverá seguir um fluxo previsível.
+
+```text
+Desenvolvimento
+
+↓
+
+Pull Request
+
+↓
+
+Code Review
+
+↓
+
+Testes
+
+↓
+
+Homologação
+
+↓
+
+Produção
+```
+
+---
+
+# Automação
+
+Sempre que possível, o processo deverá ser automatizado através de pipelines de CI/CD.
+
+A automação reduz erros humanos e aumenta a confiabilidade das entregas.
+
+---
+
+# Rollback
+
+Toda nova versão deverá permitir retorno rápido para a versão anterior em caso de falhas críticas.
+
+---
+
+# Banco de Dados
+
+Alterações estruturais deverão ocorrer através de migrations versionadas.
+
+Nunca alterar o banco manualmente em produção.
+
+---
+
+# Observabilidade
+
+Após cada deploy, acompanhar indicadores como:
+
+- Disponibilidade
+- Tempo de resposta
+- Erros
+- Uso de recursos
+
+Problemas deverão ser investigados imediatamente.
+
+---
+
+# Evolução
+
+A infraestrutura poderá evoluir conforme o crescimento do projeto.
+
+Novas tecnologias de hospedagem e automação poderão ser adotadas quando agregarem valor.
+
+---
+
+# Filosofia
+
+Deploys pequenos são mais seguros que deploys gigantes.
+
+Entregas frequentes reduzem riscos.
+
+---
+
+## Documentos Relacionados
+
+- 05-architecture.md
+- 06-tech-stack.md
+- 18-security.md
+- 20-testing.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/20-testing.md =====
+# 🧪 Testing
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento descreve a estratégia de testes do LIA.
+
+Seu objetivo é garantir que o produto evolua com qualidade, segurança e previsibilidade, reduzindo regressões e aumentando a confiança em cada entrega.
+
+---
+
+# Filosofia
+
+Testes não existem apenas para encontrar erros.
+
+Eles existem para proteger o comportamento esperado do produto.
+
+Cada teste deve aumentar a confiança da equipe para evoluir o sistema sem medo.
+
+---
+
+# Pirâmide de Testes
+
+A estratégia seguirá a pirâmide de testes.
+
+```text
+        E2E
+     Integration
+        Unit
+```
+
+A base deverá ser composta por testes rápidos e focados.
+
+Testes mais amplos deverão validar fluxos críticos, sem substituir os testes de unidade e integração.
+
+---
+
+# Testes Unitários
+
+Testes unitários deverão validar pequenas partes do sistema de forma isolada.
+
+Devem cobrir principalmente:
+
+- Regras de negócio
+- Casos de uso
+- Validações
+- Funções utilitárias
+- Comportamentos de domínio
+
+Eles devem ser rápidos, claros e fáceis de manter.
+
+---
+
+# Testes de Integração
+
+Testes de integração deverão validar a comunicação entre partes importantes do sistema.
+
+Devem cobrir principalmente:
+
+- Casos de uso com infraestrutura
+- Integração com banco de dados
+- Endpoints da API
+- Autenticação e autorização
+- Fluxos entre camadas
+
+Esses testes ajudam a garantir que os módulos funcionem corretamente em conjunto.
+
+---
+
+# Testes E2E
+
+Testes end-to-end deverão validar jornadas críticas do usuário.
+
+Exemplos de fluxos candidatos:
+
+- Cadastro
+- Login
+- Completar perfil
+- Publicar vaga
+- Candidatar-se
+- Publicar serviço
+- Conversar
+- Avaliar usuário
+
+Os testes E2E deverão ser usados com critério, priorizando fluxos essenciais para o MVP.
+
+---
+
+# Qualidade no CI
+
+Sempre que possível, o processo de CI deverá executar verificações automáticas.
+
+Exemplos:
+
+- Lint
+- Formatação
+- Testes unitários
+- Testes de integração
+- Build
+
+O objetivo é impedir que mudanças com falhas conhecidas avancem no fluxo de desenvolvimento.
+
+---
+
+# Cobertura
+
+Cobertura de testes será utilizada como indicador de qualidade, não como objetivo isolado.
+
+Mais importante do que atingir um número alto é garantir que comportamentos relevantes estejam protegidos.
+
+Prioridade:
+
+1. Regras de negócio
+2. Fluxos críticos
+3. Segurança
+4. Integrações importantes
+5. Componentes reutilizáveis
+
+---
+
+# Critérios
+
+Uma funcionalidade somente deverá ser considerada pronta quando seus comportamentos principais estiverem validados.
+
+A validação poderá incluir:
+
+- Testes automatizados
+- Testes manuais orientados por checklist
+- Revisão de critérios de aceite
+- Evidências no Pull Request
+
+---
+
+# Evolução
+
+A estratégia de testes poderá evoluir conforme o produto amadurecer.
+
+Novas ferramentas ou níveis de teste somente deverão ser adicionados quando resolverem uma necessidade real do projeto.
+
+---
+
+# Filosofia
+
+Qualidade não deve depender de memória.
+
+Deve fazer parte do processo.
+
+Testes são uma forma de preservar confiança enquanto o produto cresce.
+
+---
+
+## Documentos Relacionados
+
+- 04-backlog.md
+- 05-architecture.md
+- 10-api.md
+- 11-contributing.md
+- 18-security.md
+- 19-deployment.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/21-glossary.md =====
+# 📚 Glossary
+
+> **Projeto:** LIA — Local Intelligence for Assistance
+>
+> **Versão:** 1.0.0
+>
+> **Status:** Ativo
+
+---
+
+# Objetivo
+
+Este documento reúne os principais termos utilizados no projeto LIA.
+
+Seu objetivo é criar uma linguagem comum entre desenvolvedores, designers, colaboradores e demais participantes do projeto.
+
+Sempre que possível, novos termos deverão ser adicionados a este documento.
+
+---
+
+# Termos Gerais
+
+## LIA
+
+Local Intelligence for Assistance.
+
+Plataforma voltada para conectar pessoas, empresas e oportunidades dentro de uma comunidade.
+
+---
+
+## MVP
+
+Minimum Viable Product.
+
+Primeira versão do produto com funcionalidades suficientes para validar a proposta de valor.
+
+---
+
+## Epic
+
+Grande funcionalidade que representa um objetivo de negócio.
+
+Uma Epic é dividida em diversas User Stories.
+
+---
+
+## User Story
+
+Descrição de uma necessidade do usuário.
+
+Representa uma funcionalidade pequena e entregue com valor.
+
+---
+
+## Task
+
+Atividade técnica necessária para concluir uma User Story.
+
+---
+
+## Bug
+
+Comportamento inesperado da aplicação.
+
+---
+
+## Backlog
+
+Lista priorizada de funcionalidades, melhorias, correções e ideias do projeto.
+
+---
+
+## Icebox
+
+Área do Backlog destinada a ideias futuras que ainda não possuem prioridade de implementação.
+
+---
+
+## Milestone
+
+Marco importante do desenvolvimento do projeto.
+
+Representa um conjunto de entregas relacionadas.
+
+---
+
+## Label
+
+Categoria utilizada para organizar Issues no GitHub.
+
+---
+
+# Engenharia
+
+## ADR
+
+Architecture Decision Record.
+
+Documento utilizado para registrar decisões importantes de arquitetura.
+
+---
+
+## API
+
+Application Programming Interface.
+
+Camada responsável pela comunicação entre aplicações.
+
+---
+
+## REST
+
+Estilo arquitetural utilizado para construção da API.
+
+---
+
+## Endpoint
+
+URL responsável por disponibilizar um recurso específico da API.
+
+---
+
+## Migration
+
+Alteração versionada da estrutura do banco de dados.
+
+---
+
+## ORM
+
+Object-Relational Mapping.
+
+Ferramenta responsável por mapear objetos para tabelas do banco.
+
+---
+
+## CI/CD
+
+Integração Contínua e Entrega Contínua.
+
+Processo automatizado para validar e publicar novas versões da aplicação.
+
+---
+
+## Deploy
+
+Processo de disponibilização de uma nova versão da aplicação.
+
+---
+
+# UX e Design
+
+## Wireframe
+
+Representação estrutural de uma interface antes do design visual.
+
+---
+
+## Design System
+
+Conjunto de princípios, padrões e componentes reutilizáveis utilizados na interface.
+
+---
+
+## Persona
+
+Representação fictícia baseada no público-alvo da plataforma.
+
+---
+
+## User Flow
+
+Fluxo percorrido pelo usuário para realizar uma tarefa.
+
+---
+
+## Responsividade
+
+Capacidade da interface adaptar-se a diferentes tamanhos de tela.
+
+---
+
+# Produto
+
+## KPI
+
+Key Performance Indicator.
+
+Indicador utilizado para medir desempenho e evolução do produto.
+
+---
+
+## Roadmap
+
+Planejamento de evolução do produto ao longo do tempo.
+
+---
+
+## Produto
+
+Conjunto de soluções desenvolvidas para gerar valor aos usuários.
+
+Mais importante que funcionalidades é o problema que o produto resolve.
+
+---
+
+# Filosofia
+
+## Progressive Engineering
+
+Filosofia adotada pelo LIA.
+
+O projeto evolui conforme a complexidade do problema.
+
+Nunca implementamos soluções maiores do que a necessidade atual.
+
+---
+
+## Community First
+
+Princípio que orienta o desenvolvimento do LIA.
+
+As decisões do produto devem priorizar o benefício da comunidade antes de interesses técnicos ou métricas de vaidade.
+
+---
+
+# Evolução
+
+Este glossário deverá crescer junto com o projeto.
+
+Sempre que um novo conceito surgir, ele deverá ser documentado para manter uma linguagem comum entre todos os colaboradores.
+
+---
+
+## Documentos Relacionados
+
+- 01-vision.md
+- 05-architecture.md
+- 13-decisions.md
+- 14-user-flows.md
+
+---
+
+## Histórico de Alterações
+
+| Data | Versão | Alteração |
+|-------|---------|-----------|
+| 03/07/2026 | 1.0.0 | Criação do documento |
+
+===== FILE: docs/22-playbook.md =====
+# 📖 Playbook LIA
+
+> "Não desenvolvemos funcionalidades. Desenvolvemos produto."
+
+Este documento define como o LIA é planejado, desenvolvido, documentado e evoluído.
+
+Todo colaborador deve seguir este Playbook.
+
+---
+
+# 🧭 Filosofia
+
+Antes de escrever qualquer linha de código devemos responder:
+
+- Qual problema estamos resolvendo?
+- Quem será beneficiado?
+- Em qual Epic essa funcionalidade pertence?
+- Existe uma User Story para ela?
+- O valor entregue justifica sua implementação?
+
+No LIA:
+
+> Produto antes de tecnologia.
+
+---
+
+# 🌱 Ritual de Desenvolvimento
+
+Todo desenvolvimento segue obrigatoriamente o fluxo abaixo.
+
+```text
+💡 Ideia
+
+        ↓
+
+📦 Identificar a Epic
+
+        ↓
+
+📚 Refinar User Story
+
+        ↓
+
+✅ Definition of Ready (DoR)
+
+        ↓
+
+📝 Criar Task
+
+        ↓
+
+🌿 Criar Branch
+
+        ↓
+
+💻 Desenvolver
+
+        ↓
+
+🧪 Testar
+
+        ↓
+
+📚 Atualizar Documentação
+
+        ↓
+
+🔍 Checkup
+
+        ↓
+
+📤 Commit
+
+        ↓
+
+☁️ Push
+
+        ↓
+
+🔀 Pull Request
+
+        ↓
+
+👀 Review
+
+        ↓
+
+✅ Merge
+
+        ↓
+
+📈 Atualizar GitHub Projects
+
+        ↓
+
+🏁 Fechar Task
+
+        ↓
+
+🏆 Fechar User Story
+
+        ↓
+
+🎉 Sprint Review
+```
+
+---
+
+# ✅ Definition of Ready (DoR)
+
+Nenhuma Task pode iniciar sem que todos os itens abaixo estejam atendidos.
+
+```
+☐ Epic definida
+
+☐ User Story refinada
+
+☐ Critérios de aceite definidos
+
+☐ Escopo compreendido
+
+☐ Dependências identificadas
+
+☐ Arquitetura conhecida
+
+☐ Dúvidas esclarecidas
+```
+
+---
+
+# 🌿 Estratégia de Branches
+
+## Branch principal
+
+```
+main
+```
+
+A branch `main` representa sempre uma versão estável.
+
+Nunca desenvolvemos diretamente nela.
+
+Todo trabalho ocorre em branches temporárias.
+
+---
+
+## Features
+
+```
+feature/us-001-register-user
+
+feature/us-014-create-service
+
+feature/us-022-rate-worker
+```
+
+---
+
+## Documentação
+
+```
+docs/playbook
+
+docs/readme
+
+docs/api
+
+docs/epics
+```
+
+---
+
+## Correções
+
+```
+fix/login-validation
+```
+
+---
+
+## Refatoração
+
+```
+refactor/auth-module
+```
+
+---
+
+## Hotfix
+
+```
+hotfix/login-crash
+```
+
+---
+
+# 📝 Commits
+
+Seguimos o padrão **Conventional Commits**.
+
+Formato:
+
+```
+tipo(contexto): descrição
+```
+
+Exemplos:
+
+```text
+feat(auth): create user registration
+
+fix(api): validate cpf
+
+docs(playbook): update development flow
+
+refactor(database): simplify repositories
+
+test(auth): add registration tests
+
+chore(release): v0.2.0
+```
+
+---
+
+# 📚 Documentação Obrigatória
+
+Código e documentação evoluem juntos.
+
+Antes do Merge verificar se algum documento precisa ser atualizado.
+
+Checklist:
+
+```
+☐ README
+
+☐ Changelog
+
+☐ Sprint Journal
+
+☐ Architecture
+
+☐ Database
+
+☐ API
+
+☐ Security
+
+☐ Testing
+
+☐ ADR
+
+☐ Epic
+
+☐ Story
+
+☐ Glossary
+```
+
+---
+
+# 🔍 Checkup Antes do Commit
+
+Antes de criar um Commit responder:
+
+```
+☐ Estou na branch correta?
+
+☐ A Task foi concluída?
+
+☐ A User Story continua válida?
+
+☐ Os testes passaram?
+
+☐ Atualizei a documentação?
+
+☐ Rodei git status?
+
+☐ O Commit segue Conventional Commits?
+
+☐ Estou pronto para abrir um Pull Request?
+```
+
+---
+
+# ✔️ Definition of Done (DoD)
+
+Uma Task só pode ser considerada concluída quando:
+
+```
+☐ Código implementado
+
+☐ Testes executados
+
+☐ Critérios de aceite atendidos
+
+☐ Documentação atualizada
+
+☐ Pull Request aprovado
+
+☐ Merge realizado
+
+☐ GitHub Projects atualizado
+```
+
+---
+
+# 🏛️ Constituição do LIA
+
+## Regras de Ouro
+
+⭐ Nada entra em código sem pertencer a uma Epic.
+
+⭐ Toda Epic possui User Stories.
+
+⭐ Toda User Story possui Tasks.
+
+⭐ Toda Task possui Definition of Ready.
+
+⭐ Toda Task possui Definition of Done.
+
+⭐ Código e documentação evoluem juntos.
+
+⭐ A branch `main` é sagrada.
+
+⭐ Todo desenvolvimento acontece em branches.
+
+⭐ Antes de automatizar, compreender o problema.
+
+⭐ Simplicidade antes de complexidade.
+
+⭐ Produto antes de tecnologia.
+
+⭐ Melhorar o processo faz parte do desenvolvimento.
+
+---
+
+# 🤖 Uso de Inteligência Artificial
+
+A Inteligência Artificial faz parte do processo de engenharia do LIA.
+
+Ela acelera pesquisas, auxilia na implementação e apoia decisões técnicas.
+
+Entretanto:
+
+- IA não substitui pensamento crítico.
+- IA não substitui arquitetura.
+- IA não substitui decisões de produto.
+
+Ferramentas como ChatGPT, Codex, Copilot, NotebookLM e outras possuem papel consultivo.
+
+A responsabilidade final sobre qualquer decisão pertence à equipe do projeto.
+
+---
+
+# 📦 Gestão do Produto
+
+Todo desenvolvimento segue a hierarquia:
+
+```text
+Milestone
+
+↓
+
+Epic
+
+↓
+
+User Story
+
+↓
+
+Task
+
+↓
+
+Código
+```
+
+Nenhuma funcionalidade deve "pular" etapas.
+
+---
+
+# 🎉 Ritual de Encerramento da Sprint
+
+Ao final de cada Sprint responder:
+
+```
+🎯 O objetivo foi alcançado?
+
+📦 O backlog foi atualizado?
+
+📚 A documentação continua consistente?
+
+🧪 Os testes passaram?
+
+🚀 O GitHub representa o estado real do projeto?
+
+📝 O Changelog foi atualizado?
+
+📖 O Sprint Journal foi atualizado?
+
+🎉 O que aprendemos?
+
+💡 O que melhoraremos na próxima Sprint?
+```
+
+---
+
+# 💙 Cultura LIA
+
+O LIA é desenvolvido como um produto real.
+
+Cada documento preserva conhecimento.
+
+Cada ADR registra uma decisão.
+
+Cada Epic representa um objetivo.
+
+Cada Story entrega valor.
+
+Cada Task aproxima o produto da comunidade.
+
+Construímos software.
+
+Construímos conhecimento.
+
+Construímos um processo.
+
+Porque acreditamos que grandes produtos nascem de boas decisões, não de grandes quantidades de código.
+
+---
+
+> "Software é a consequência. Produto é a intenção."
+
+===== FILE: docs/23-sprint-journal.md =====
+# 📖 Sprint Journal
+
+> "Construímos software. Registramos conhecimento."
+
+Este documento registra a evolução do LIA ao longo das Sprints, preservando não apenas as entregas técnicas, mas também as decisões, aprendizados e melhorias de processo.
+
+---
+
+# 🏁 Sprint 0 — Foundation
+
+**Período:** Julho/2026
+
+**Status:** ✅ Concluída
+
+---
+
+## 🎯 Objetivo
+
+Construir toda a fundação estratégica e técnica do projeto antes do início do desenvolvimento do MVP.
+
+---
+
+## 📦 Entregas
+
+- ✅ Identidade visual e branding
+- ✅ Vision
+- ✅ Roadmap
+- ✅ Business Model
+- ✅ Architecture
+- ✅ Tech Stack
+- ✅ Design System
+- ✅ Database Design
+- ✅ API Design
+- ✅ Security Strategy
+- ✅ Testing Strategy
+- ✅ Deployment Strategy
+- ✅ Glossary
+- ✅ Architecture Decision Records (ADRs)
+- ✅ README profissional
+- ✅ Development Playbook
+- ✅ Product Backlog
+- ✅ 9 Epics documentadas
+- ✅ 45 User Stories mapeadas
+
+---
+
+## 🧠 Principais Decisões
+
+- Documentation First
+- Progressive Engineering
+- Clean Architecture
+- PostgreSQL como banco oficial
+- API REST
+- Git Flow simplificado
+- Conventional Commits
+- A `main` é uma branch protegida
+- Toda funcionalidade deve pertencer a uma Epic
+
+---
+
+## 📚 Aprendizados
+
+Durante a Sprint percebemos que um bom produto começa muito antes da primeira linha de código.
+
+Também evoluímos nosso processo de desenvolvimento, criando um Playbook para padronizar branches, commits, documentação e fluxo de trabalho.
+
+---
+
+## 📊 Indicadores da Sprint
+
+| Indicador | Resultado |
+|-----------|----------:|
+| Documentos | 23 |
+| ADRs | 10 |
+| Epics | 9 |
+| User Stories | 45 |
+| Tasks | 0 |
+| Linhas de código | 0 |
+
+---
+
+## 🚀 Próxima Sprint
+
+**Sprint 1 — MVP**
+
+Objetivo inicial:
+
+- 🚀 EPIC-001 — Gestão de Contas e Autenticação
+
+---
+
+## 💙 Retrospectiva
+
+### O que funcionou bem?
+
+- Forte planejamento antes da implementação.
+- Documentação consistente.
+- Definição de padrões técnicos.
+- Organização do Product Backlog.
+
+### O que podemos melhorar?
+
+- Evoluir continuamente o Playbook.
+- Automatizar validações e CI futuramente.
+- Refinar Stories antes da implementação.
+
+---
+
+> 🌱 **"Antes de escrever código, aprendemos a construir um produto."**
+
+===== FILE: docs/debug/Debug-Report.md =====
+# 🐛 Debug Report
+
+## Problema
+
+- **Título:** `Nome do problema`
+- **Data:** `DD/MM/AAAA`
+- **Ambiente:** `Local / Staging / Produção`
+
+---
+
+# 💥 Sintoma
+
+Descreva o comportamento observado, o erro apresentado e o impacto percebido.
+
+---
+
+# 🔎 Investigação
+
+## Hipótese 01
+
+- **Resultado:**
+
+## Hipótese 02
+
+- **Resultado:**
+
+---
+
+# 🎯 Causa Raiz
+
+Explique o motivo real do problema, com base na investigação realizada.
+
+---
+
+# 🔧 Correção Aplicada
+
+Descreva o que foi alterado.
+
+## Arquivos
+
+- `arquivo1`
+- `arquivo2`
+
+---
+
+# 🧪 Validação
+
+Descreva como foi comprovado que a correção resolveu o problema.
+
+---
+
+# 🧠 Aprendizado
+
+Esse problema gera:
+
+- ADR?
+- Refatoração?
+- Nova regra?
+
+===== FILE: docs/decisions/ADR-001-tech-stack.md =====
+# ADR-001 — Adoção de uma Stack JavaScript/TypeScript Full Stack
+
+> **Status:** Accepted
+>
+> **Data:** 03/07/2026
+
+---
+
+# Contexto
+
+O LIA será composto por múltiplas aplicações:
+
+- Frontend Web
+- Aplicativo Mobile
+- Backend
+- Painel Administrativo
+
+Era necessário definir uma stack tecnológica que reduzisse a complexidade do desenvolvimento e facilitasse a evolução do produto.
+
+---
+
+# Decisão
+
+Adotar JavaScript/TypeScript como linguagem principal de toda a plataforma.
+
+A stack inicial será composta por:
+
+- React
+- React Native
+- Node.js
+- TypeScript
+- PostgreSQL
+- Prisma
+
+---
+
+# Justificativa
+
+Essa decisão reduz significativamente a troca de contexto entre aplicações.
+
+Permite compartilhar conhecimento entre frontend, backend e mobile.
+
+Facilita manutenção.
+
+Reduz curva de aprendizado.
+
+Aumenta produtividade.
+
+Possui enorme comunidade.
+
+Possui excelente mercado.
+
+---
+
+# Alternativas Consideradas
+
+## Java + Spring
+
+Excelente robustez.
+
+Maior complexidade para um time pequeno.
+
+---
+
+## C# + .NET
+
+Excelente ecossistema.
+
+Curva de aprendizado maior para o momento atual do projeto.
+
+---
+
+## Flutter
+
+Boa experiência mobile.
+
+Não compartilha conhecimento com React Web.
+
+---
+
+## Python
+
+Excelente para diversas aplicações.
+
+Menor alinhamento com a estratégia Full Stack adotada.
+
+---
+
+# Consequências
+
+## Positivas
+
+- Uma única linguagem predominante.
+- Menor curva de aprendizado.
+- Maior velocidade de desenvolvimento.
+- Compartilhamento de conhecimento.
+- Grande disponibilidade de documentação.
+
+---
+
+## Negativas
+
+- Dependência maior do ecossistema JavaScript.
+- Algumas bibliotecas evoluem rapidamente, exigindo atualização constante.
+
+---
+
+# Revisão
+
+Esta decisão poderá ser revisada caso existam mudanças significativas nos objetivos do projeto ou no ecossistema tecnológico.
+
+---
+
+# Referências
+
+- 05-architecture.md
+- 06-tech-stack.md
+
+===== FILE: docs/decisions/ADR-002-postgresql.md =====
+# ADR-002 — PostgreSQL como banco de dados principal
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-003-nodejs.md =====
+# ADR-003 — Node.js como tecnologia de Backend
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-004-react-native.md =====
+# ADR-004 — React Native como tecnologia Mobile
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-005-clean-architecture.md =====
+# ADR-005 — Arquitetura em camadas e separação de responsabilidades
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-006-authentication.md =====
+# ADR-006 — Estratégia inicial de autenticação
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-007-mvp-scope.md =====
+# ADR-007 — Escopo inicial do MVP
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-008-folder-structure.md =====
+# ADR-008 — Estrutura de pastas do projeto
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-009-git-workflow.md =====
+# ADR-009 — Fluxo de trabalho com Git
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/ADR-010-design-system.md =====
+# ADR-010 — Design System inicial
+
+> **Status:** Pendente (Sprint 0)
+
+---
+
+Será preenchido na Sprint 0.
+
+===== FILE: docs/decisions/README.md =====
+# Architectural Decision Records
+
+Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
+
+## Índice
+
+| ADR | Título | Status |
+|------|--------|--------|
+| ADR-001 | Adoção de uma Stack JavaScript/TypeScript Full Stack | Accepted |
+| ADR-002 | PostgreSQL como banco de dados principal | Pendente (Sprint 0) |
+| ADR-003 | Node.js como tecnologia de Backend | Pendente (Sprint 0) |
+| ADR-004 | React Native como tecnologia Mobile | Pendente (Sprint 0) |
+| ADR-005 | Arquitetura em camadas e separação de responsabilidades | Pendente (Sprint 0) |
+| ADR-006 | Estratégia inicial de autenticação | Pendente (Sprint 0) |
+| ADR-007 | Escopo inicial do MVP | Pendente (Sprint 0) |
+| ADR-008 | Estrutura de pastas do projeto | Pendente (Sprint 0) |
+| ADR-009 | Fluxo de trabalho com Git | Pendente (Sprint 0) |
+| ADR-010 | Design System inicial | Pendente (Sprint 0) |
+
+ADRs pendentes serão preenchidas na Sprint 0.
+
+===== FILE: docs/development/Dev-Brief.md =====
+# 💻 Dev Brief
+
+## Contexto
+
+- **Sprint:** `X`
+- **Epic:** `Nome da Epic`
+- **User Story:** `Código ou nome da Story`
+- **Task:** `Descrição da task`
+- **Branch:** `feature/...` ou `fix/...`
+
+---
+
+# 🎯 Objetivo da Implementação
+
+Descreva o que foi desenvolvido e qual valor foi entregue com essa implementação.
+
+---
+
+# 🏗️ Alterações Realizadas
+
+## Arquivos modificados
+
+- `src/`
+- `backend/`
+- `database/`
+
+Descreva resumidamente o que mudou em cada área.
+
+---
+
+# 🔧 Decisões Técnicas
+
+Explique escolhas importantes da implementação.
+
+Exemplo:
+
+> Foi utilizado o Repository Pattern para desacoplar o acesso ao banco e manter a camada de domínio mais limpa.
+
+---
+
+# 🧪 Testes Realizados
+
+## Unitários
+
+- **Status:** `Não executado / Executado com sucesso / Com falhas`
+
+## Integração
+
+- **Status:** `Não executado / Executado com sucesso / Com falhas`
+
+## Manual
+
+- **Status:** `Não executado / Executado com sucesso / Com falhas`
+
+---
+
+# 📸 Evidências
+
+- **Screenshots:**
+- **Logs:**
+- **Vídeos:**
+
+---
+
+# ⚠️ Pontos para Revisão
+
+Identifique itens que merecem atenção durante o review.
+
+- Performance
+- Segurança
+- Arquitetura
+- Débito técnico
+
+---
+
+# 🚀 Próximo Passo
+
+- **Merge?**
+- **Ajustes?**
+- **Nova task?**
+
+===== FILE: docs/engineering/00-development-playbook.md =====
+# LIA Development Playbook
+
+> "Um bom software nasce muito antes da primeira linha de código."
+
+## Introdução
+
+Este documento define a forma oficial como desenvolvemos software nos projetos da organização.
+
+Mais do que um conjunto de regras, este playbook representa nossa cultura de engenharia.
+
+Acreditamos que software é resultado de boas decisões, documentação clara, comunicação eficiente e evolução contínua.
+
+Tecnologias mudam.
+
+Processos amadurecem.
+
+Produtos evoluem.
+
+Nossa forma de trabalhar deve permanecer consistente.
+
+---
+
+# Princípios
+
+Todo desenvolvimento deve respeitar os seguintes princípios:
+
+* Documentation First
+* Community First
+* Progressive Engineering
+* Simplicidade antes da complexidade
+* Qualidade acima da velocidade
+* Pequenas entregas constantes
+* Código é consequência do planejamento
+
+---
+
+# Nosso Ritual de Desenvolvimento
+
+Toda funcionalidade percorre obrigatoriamente o seguinte fluxo:
+
+Ideia
+
+↓
+
+Vision
+
+↓
+
+Backlog
+
+↓
+
+Epic
+
+↓
+
+User Stories
+
+↓
+
+Tasks
+
+↓
+
+Sprint Planning
+
+↓
+
+Branch
+
+↓
+
+Desenvolvimento
+
+↓
+
+Testes
+
+↓
+
+Review
+
+↓
+
+Merge
+
+↓
+
+Release
+
+↓
+
+Changelog
+
+Nenhuma etapa deve ser ignorada.
+
+---
+
+# Antes de Programar
+
+Antes de abrir o editor de código, responda:
+
+* Esta funcionalidade existe no Backlog?
+* Ela pertence a uma Epic?
+* Existe uma User Story?
+* Existe uma Task definida?
+* Os critérios de aceite estão claros?
+
+Se alguma resposta for "não", pare e volte ao planejamento.
+
+---
+
+# Início do Dia
+
+Antes de escrever código:
+
+1. Atualizar a branch principal.
+2. Ler a Epic da Sprint.
+3. Revisar a User Story.
+4. Confirmar a Task.
+5. Criar a branch de trabalho.
+6. Iniciar o desenvolvimento.
+
+---
+
+# Branches
+
+Seguimos uma convenção simples e previsível.
+
+feature/EPIC-001-login
+
+feature/EPIC-003-user-profile
+
+fix/EPIC-002-validation
+
+docs/update-readme
+
+chore/dependencies
+
+---
+
+# Commits
+
+Utilizamos Conventional Commits.
+
+Exemplos:
+
+feat(auth): add login endpoint
+
+fix(api): validate email
+
+docs(playbook): update workflow
+
+refactor(user): simplify service
+
+test(auth): add login tests
+
+chore(release): publish v1.0.0
+
+Cada commit deve representar uma alteração coesa.
+
+---
+
+# Antes do Commit
+
+Confirme:
+
+* O código funciona.
+* Não existem arquivos temporários.
+* A documentação foi atualizada quando necessário.
+* A Task está concluída.
+* Os testes passaram.
+
+---
+
+# Pull Request
+
+Todo Pull Request deve responder:
+
+* O que foi desenvolvido?
+* Qual problema resolve?
+* Existe impacto em outras áreas?
+* Existe ADR relacionada?
+* Existe documentação atualizada?
+
+---
+
+# Após o Merge
+
+Após concluir uma entrega:
+
+* Atualizar o Changelog quando necessário.
+* Encerrar a Task.
+* Atualizar o status da Story.
+* Revisar a Sprint.
+* Planejar a próxima entrega.
+
+---
+
+# Filosofia
+
+Nosso objetivo não é escrever mais código.
+
+Nosso objetivo é construir produtos sustentáveis.
+
+Planejamos antes de desenvolver.
+
+Documentamos antes de decidir.
+
+Evoluímos continuamente.
+
+Porque acreditamos que software é muito mais do que programação.
+
+Software é coordenação entre pessoas, decisões e tempo.
+
+===== FILE: docs/engineering/01-development-workflow.md =====
+# Development Workflow
+
+## Filosofia
+
+Nenhuma linha de código é escrita antes de:
+
+- Vision
+- Backlog
+- Epic
+- Story
+- Task
+
+---
+
+## Fluxo
+
+Issue
+
+↓
+
+Branch
+
+↓
+
+Implementação
+
+↓
+
+Testes
+
+↓
+
+Commit
+
+↓
+
+PR
+
+↓
+
+Review
+
+↓
+
+Merge
+
+↓
+
+Release
+
+---
+
+## Commits
+
+Seguimos Conventional Commits.
+
+Exemplos:
+
+feat(auth): add login endpoint
+
+fix(api): validate email
+
+docs(readme): update project overview
+
+refactor(user): simplify validation
+
+test(auth): add login tests
+
+chore(release): v0.1.0-foundation
+
+---
+
+## Releases
+
+Toda release deve:
+
+✔ possuir changelog
+
+✔ possuir tag
+
+✔ estar sincronizada com GitHub
+
+✔ representar um estado estável
+
+---
+
+## Definition of Ready
+
+Uma task só pode ser iniciada quando:
+
+- Epic existe
+- Story existe
+- Critérios de aceite definidos
+- Dependências resolvidas
+
+---
+
+## Definition of Done
+
+Uma task está pronta quando:
+
+✔ Código
+
+✔ Testes
+
+✔ Documentação
+
+✔ Review
+
+✔ Merge
+
+✔ Changelog atualizado (quando necessário)
+
+===== FILE: docs/engineering/api-guidelines.md =====
+
+
+===== FILE: docs/engineering/architecture-guidelines.md =====
+
+
+===== FILE: docs/engineering/branch-strategy.md =====
+
+
+===== FILE: docs/engineering/clean-code.md =====
+
+
+===== FILE: docs/engineering/coding-standards.md =====
+
+
+===== FILE: docs/engineering/database-guidelines.md =====
+
+
+===== FILE: docs/engineering/error-handling.md =====
+
+
+===== FILE: docs/engineering/folder-structure.md =====
+
+
+===== FILE: docs/engineering/git-flow.md =====
+
+
+===== FILE: docs/engineering/logging.md =====
+
+
+===== FILE: docs/engineering/performance.md =====
+
+
+===== FILE: docs/engineering/security-guidelines.md =====
+
+
+===== FILE: docs/engineering/testing-guidelines.md =====
+
+
+===== FILE: docs/epics/EPIC-001-account-management.md =====
+# 🚀 EPIC-001 — Gestão de Contas e Autenticação
+
+> 🔐 "Toda comunidade começa pela confiança."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+MVP
+
+🏷️ **Labels**
+
+- epic
+- mvp
+- (adicionar aqui somente as labels oficiais já existentes)
+
+📄 **Documento**
+
+docs/epics/EPIC-001-account-management.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Construir a base de autenticação do LIA, permitindo que qualquer usuário crie uma conta, acesse a plataforma de forma segura e mantenha uma identidade digital confiável dentro do ecossistema.
+
+Esta Epic representa a fundação de todo o sistema. Todas as demais funcionalidades dependem dela.
+
+---
+
+# 💡 Problema
+
+Hoje não existe uma identidade digital unificada para trabalhadores, empresas e prestadores de serviço da comunidade.
+
+Sem autenticação não é possível:
+
+- identificar usuários;
+- proteger informações;
+- controlar permissões;
+- construir reputação;
+- conectar pessoas com segurança.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA passa a possuir uma porta de entrada segura para toda a plataforma.
+
+Ela permitirá que usuários criem contas, façam login e iniciem sua jornada dentro do ecossistema, estabelecendo a confiança necessária para todas as funcionalidades futuras.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Cadastro de usuários
+- Login
+- Logout
+- Recuperação de senha
+- Criptografia de senhas
+- Autenticação com JWT
+- Controle básico de sessão
+- Rotas protegidas
+- Persistência de usuários
+- Validação de credenciais
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Login com Google
+- Login com Apple
+- Login com Facebook
+- Autenticação em dois fatores (MFA)
+- Biometria
+- Administração de usuários
+- Controle avançado de permissões
+- Chat
+- Notificações
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Um usuário conseguir criar uma conta.
+- Um usuário conseguir autenticar-se.
+- Um usuário autenticado conseguir acessar áreas protegidas.
+- Um usuário conseguir encerrar sua sessão.
+- Senhas estiverem armazenadas utilizando hash seguro.
+- Tokens JWT forem validados corretamente.
+- Rotas protegidas recusarem usuários não autenticados.
+- Todos os testes relacionados forem aprovados.
+
+---
+
+# 🔗 Dependências
+
+Relaciona-se diretamente com:
+
+- Architecture
+- Database
+- API
+- Security
+- Tech Stack
+
+Todas as próximas Epics dependem da conclusão desta.
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-001 | Cadastro de usuário | ⏳ Planned |
+| US-002 | Login | ⏳ Planned |
+| US-003 | Logout | ⏳ Planned |
+| US-004 | Recuperação de senha | ⏳ Planned |
+| US-005 | Controle de sessão | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] API
+- [ ] Database
+- [ ] Architecture
+- [ ] Security
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões arquiteturais sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks estiverem concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Uma comunidade forte começa pela confiança.
+
+Esta Epic garante que cada pessoa possua uma identidade segura dentro da plataforma, criando a base necessária para conectar trabalhadores, empresas e oportunidades de forma organizada.
+
+---
+
+> 🌱 **"A confiança é o primeiro serviço que entregamos à comunidade."**
+
+===== FILE: docs/epics/EPIC-002-user-profile.md =====
+# 👤 EPIC-002 — Perfil do Usuário
+
+> 👤 "Toda oportunidade começa por conhecer quem está do outro lado."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P1 - High • backend • frontend-web • mobile • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-002-user-profile.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Permitir que trabalhadores e empresas criem, visualizem e mantenham perfis completos dentro do LIA.
+
+O perfil será a identidade pública de cada usuário, reunindo informações que transmitam confiança e facilitem conexões entre pessoas e oportunidades.
+
+---
+
+# 💡 Problema
+
+Hoje trabalhadores e pequenos negócios apresentam suas informações de forma dispersa, dificultando a avaliação da experiência, disponibilidade e credibilidade.
+
+Sem um perfil estruturado torna-se difícil construir relações de confiança.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, cada usuário terá uma identidade digital dentro da plataforma.
+
+Isso permitirá que empresas conheçam melhor candidatos e que trabalhadores apresentem suas competências de maneira organizada.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Perfil do Trabalhador
+- Perfil da Empresa
+- Foto de perfil
+- Informações pessoais
+- Informações profissionais
+- Contatos
+- Localização básica
+- Edição de perfil
+- Preferências básicas
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Portfólio avançado
+- Certificados
+- Currículo em PDF
+- Redes sociais
+- Perfil verificado
+- Assinaturas
+- Gamificação
+
+Esses recursos poderão ser adicionados em futuras versões.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Um trabalhador conseguir criar seu perfil.
+- Uma empresa conseguir criar seu perfil.
+- Os perfis puderem ser editados.
+- As informações forem persistidas corretamente.
+- Fotos puderem ser atualizadas.
+- Perfis puderem ser visualizados por outros usuários conforme as regras do sistema.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão da:
+
+- EPIC-001 — Gestão de Contas e Autenticação
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-006 | Criar perfil | ⏳ Planned |
+| US-007 | Editar perfil | ⏳ Planned |
+| US-008 | Visualizar perfil | ⏳ Planned |
+| US-009 | Atualizar foto | ⏳ Planned |
+| US-010 | Atualizar informações profissionais | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Database
+- [ ] API
+- [ ] Architecture
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks estiverem concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Perfis completos facilitam conexões mais confiáveis entre trabalhadores, empresas e prestadores de serviço, fortalecendo a economia local através da transparência e da confiança.
+
+---
+
+> 🌱 **"Toda oportunidade começa por conhecer quem está do outro lado."**
+
+===== FILE: docs/epics/EPIC-003-services.md =====
+# 💼 EPIC-003 — Serviços e Oportunidades
+
+> 💼 "Toda oportunidade merece ser encontrada."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P1 - High • backend • frontend-web • mobile • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-003-services.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Permitir que trabalhadores divulguem seus serviços e que empresas publiquem oportunidades de forma simples, organizada e acessível.
+
+Esta Epic representa o núcleo do MVP e materializa a principal proposta de valor do LIA.
+
+---
+
+# 💡 Problema
+
+Hoje, oportunidades de trabalho e prestação de serviços ficam espalhadas em grupos de mensagens, redes sociais e contatos informais.
+
+Isso dificulta que trabalhadores encontrem oportunidades e que empresas encontrem profissionais qualificados.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA passa a cumprir sua principal missão: conectar oferta e demanda dentro da comunidade.
+
+Ela será responsável por gerar movimentação real na plataforma e validar a proposta de valor do produto.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Publicação de serviços
+- Publicação de vagas
+- Edição de anúncios
+- Exclusão de anúncios
+- Listagem de oportunidades
+- Visualização dos detalhes
+- Status da publicação (Ativa / Encerrada)
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Pagamentos
+- Chat interno
+- Contratação automática
+- Agendamento
+- Geolocalização avançada
+- Impulsionamento de anúncios
+- Destaques patrocinados
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Trabalhadores conseguirem publicar serviços.
+- Empresas conseguirem publicar vagas.
+- Publicações puderem ser editadas.
+- Publicações puderem ser encerradas.
+- O mural listar corretamente todas as oportunidades disponíveis.
+- Usuários conseguirem visualizar os detalhes de cada publicação.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- EPIC-001 — Gestão de Contas e Autenticação
+- EPIC-002 — Perfil do Usuário
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-011 | Publicar serviço | ⏳ Planned |
+| US-012 | Editar publicação | ⏳ Planned |
+| US-013 | Encerrar publicação | ⏳ Planned |
+| US-014 | Listar oportunidades | ⏳ Planned |
+| US-015 | Visualizar detalhes da publicação | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Database
+- [ ] API
+- [ ] Architecture
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks estiverem concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Esta Epic representa o momento em que o LIA deixa de ser apenas uma plataforma de cadastro e passa a gerar conexões reais entre pessoas.
+
+É a primeira funcionalidade capaz de movimentar a economia local de forma prática, aproximando trabalhadores, empresas e oportunidades.
+
+---
+
+> 🌱 **"Toda oportunidade merece ser encontrada."**
+
+===== FILE: docs/epics/EPIC-004-applications.md =====
+# 🤝 EPIC-004 — Candidaturas e Conexões
+
+> 🤝 "Grandes oportunidades começam com uma simples conexão."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P1 - High • backend • frontend-web • mobile • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-004-applications.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Permitir que trabalhadores se candidatem às oportunidades publicadas e que empresas gerenciem seus candidatos de maneira organizada.
+
+Esta Epic representa o momento em que o LIA passa a gerar conexões reais entre pessoas.
+
+---
+
+# 💡 Problema
+
+Hoje muitas oportunidades são divulgadas, mas o contato entre trabalhadores e contratantes acontece de forma desorganizada, dificultando o acompanhamento e a transparência do processo.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA deixa de ser apenas um mural de oportunidades e passa a facilitar efetivamente o encontro entre oferta e demanda.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Candidatura em vagas
+- Envio de propostas
+- Gerenciamento de candidatos
+- Alteração de status
+- Cancelamento de candidatura
+- Histórico de candidaturas
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Chat interno
+- Chamadas de vídeo
+- Assinatura digital
+- Contratação automática
+- Integração com WhatsApp
+- Agenda de entrevistas
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Trabalhadores conseguirem se candidatar às vagas.
+- Empresas conseguirem visualizar candidatos.
+- O status das candidaturas puder ser atualizado.
+- Trabalhadores puderem cancelar candidaturas.
+- O histórico das candidaturas estiver disponível.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- EPIC-001 — Gestão de Contas e Autenticação
+- EPIC-002 — Perfil do Usuário
+- EPIC-003 — Serviços e Oportunidades
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-016 | Candidatar-se a uma vaga | ⏳ Planned |
+| US-017 | Visualizar candidatos | ⏳ Planned |
+| US-018 | Atualizar status da candidatura | ⏳ Planned |
+| US-019 | Cancelar candidatura | ⏳ Planned |
+| US-020 | Consultar histórico de candidaturas | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Database
+- [ ] API
+- [ ] Architecture
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Esta Epic transforma oportunidades em conexões reais, aproximando trabalhadores e empresas através de um processo organizado, transparente e acessível.
+
+---
+
+> 🌱 **"Grandes oportunidades começam com uma simples conexão."**
+
+===== FILE: docs/epics/EPIC-005-reputation.md =====
+# ⭐ EPIC-005 — Reputação e Avaliações
+
+> ⭐ "A confiança se constrói a cada serviço realizado."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P1 - High • backend • frontend-web • mobile • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-005-reputation.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Permitir que trabalhadores e empresas avaliem suas experiências após uma conexão realizada através do LIA.
+
+O sistema de reputação será um dos principais mecanismos para fortalecer a confiança dentro da plataforma.
+
+---
+
+# 💡 Problema
+
+Em plataformas informais é difícil saber se um profissional é confiável ou se uma empresa cumpre o que promete.
+
+Sem histórico, todas as oportunidades começam do zero.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA passa a incentivar boas práticas através de um sistema de reputação transparente.
+
+Isso aumenta a confiança dos usuários e melhora a qualidade das conexões realizadas.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Avaliação de trabalhadores
+- Avaliação de empresas
+- Comentários
+- Nota de 1 a 5 estrelas
+- Cálculo da média
+- Histórico de avaliações
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Denúncias
+- Moderação automática
+- Inteligência artificial para avaliações
+- Ranking da comunidade
+- Medalhas
+- Gamificação
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Usuários conseguirem avaliar experiências.
+- Empresas puderem receber avaliações.
+- Trabalhadores puderem receber avaliações.
+- A nota média for calculada corretamente.
+- O histórico de avaliações estiver disponível.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- 🚀 EPIC-001 — Gestão de Contas e Autenticação
+- 👤 EPIC-002 — Perfil do Usuário
+- 💼 EPIC-003 — Serviços e Oportunidades
+- 🤝 EPIC-004 — Candidaturas e Conexões
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-021 | Avaliar trabalhador | ⏳ Planned |
+| US-022 | Avaliar empresa | ⏳ Planned |
+| US-023 | Visualizar avaliações | ⏳ Planned |
+| US-024 | Calcular nota média | ⏳ Planned |
+| US-025 | Consultar histórico de avaliações | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Database
+- [ ] API
+- [ ] Architecture
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+A reputação é um patrimônio coletivo. Ao permitir que trabalhadores e empresas sejam avaliados de forma transparente, o LIA incentiva relações de confiança, valoriza quem presta um bom serviço e ajuda toda a comunidade a tomar decisões mais seguras.
+
+---
+
+> 🌱 **"A confiança se constrói a cada serviço realizado."**
+
+===== FILE: docs/epics/EPIC-006-search.md =====
+# 🔍 EPIC-006 — Busca e Descoberta
+
+> 🔍 "Boas oportunidades só geram impacto quando podem ser encontradas."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P1 - High • backend • frontend-web • mobile • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-006-search.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Permitir que usuários encontrem rapidamente trabalhadores, empresas, serviços e oportunidades através de um mecanismo de busca simples, eficiente e intuitivo.
+
+---
+
+# 💡 Problema
+
+Mesmo com uma grande quantidade de oportunidades cadastradas, sem um mecanismo de busca eficiente os usuários terão dificuldade para localizar aquilo que realmente procuram.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA melhora significativamente a experiência do usuário, reduzindo o tempo necessário para encontrar oportunidades relevantes e aumentando a utilização da plataforma.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Busca por vagas
+- Busca por serviços
+- Busca por usuários
+- Filtros básicos
+- Ordenação dos resultados
+- Pesquisa por palavras-chave
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Busca por geolocalização
+- Recomendações por IA
+- Busca por voz
+- Pesquisa semântica
+- Sugestões inteligentes
+- Favoritos
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Usuários conseguirem pesquisar vagas.
+- Usuários conseguirem localizar trabalhadores e empresas.
+- Os filtros funcionarem corretamente.
+- A ordenação apresentar resultados consistentes.
+- A busca retornar informações relevantes.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- 🚀 EPIC-001 — Gestão de Contas e Autenticação
+- 👤 EPIC-002 — Perfil do Usuário
+- 💼 EPIC-003 — Serviços e Oportunidades
+- 🤝 EPIC-004 — Candidaturas e Conexões
+- ⭐ EPIC-005 — Reputação e Avaliações
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-026 | Buscar oportunidades | ⏳ Planned |
+| US-027 | Buscar profissionais | ⏳ Planned |
+| US-028 | Aplicar filtros | ⏳ Planned |
+| US-029 | Ordenar resultados | ⏳ Planned |
+| US-030 | Visualizar resultados | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Database
+- [ ] API
+- [ ] Architecture
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Quanto mais fácil for encontrar oportunidades e profissionais, maior será o potencial do LIA para fortalecer a economia local, reduzir o tempo de busca por trabalho e conectar pessoas que realmente precisam umas das outras.
+
+---
+
+> 🌱 **"Boas oportunidades só geram impacto quando podem ser encontradas."**
+
+===== FILE: docs/epics/EPIC-007-administration.md =====
+# 🛡️ EPIC-007 — Administração e Governança
+
+> 🛡️ "Uma comunidade forte precisa de uma plataforma bem administrada."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P2 - Medium • backend • frontend-web • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-007-administration.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Disponibilizar ferramentas para administração do LIA, permitindo gerenciar usuários, conteúdos e configurações essenciais para o funcionamento da plataforma.
+
+---
+
+# 💡 Problema
+
+Sem ferramentas administrativas, torna-se difícil manter a qualidade das informações, resolver problemas operacionais e garantir a integridade da plataforma.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA contará com mecanismos básicos de governança, facilitando sua operação e preparando o crescimento da plataforma.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Painel administrativo
+- Gerenciamento de usuários
+- Gerenciamento de publicações
+- Controle básico de permissões
+- Configurações gerais da plataforma
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Dashboard analítico avançado
+- Auditoria completa
+- Moderação por IA
+- Gestão financeira
+- Gestão de pagamentos
+- Ferramentas de Business Intelligence
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Administradores conseguirem acessar o painel.
+- Usuários puderem ser gerenciados.
+- Publicações puderem ser administradas.
+- As permissões básicas funcionarem corretamente.
+- Configurações essenciais estiverem disponíveis.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- 🚀 EPIC-001 — Gestão de Contas e Autenticação
+- 👤 EPIC-002 — Perfil do Usuário
+- 💼 EPIC-003 — Serviços e Oportunidades
+- 🤝 EPIC-004 — Candidaturas e Conexões
+- ⭐ EPIC-005 — Reputação e Avaliações
+- 🔍 EPIC-006 — Busca e Descoberta
+
+Relaciona-se diretamente com:
+
+- API
+- Database
+- Security
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-031 | Gerenciar usuários | ⏳ Planned |
+| US-032 | Gerenciar publicações | ⏳ Planned |
+| US-033 | Configurar plataforma | ⏳ Planned |
+| US-034 | Gerenciar permissões | ⏳ Planned |
+| US-035 | Visualizar painel administrativo | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Architecture
+- [ ] API
+- [ ] Security
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Uma boa administração mantém a plataforma organizada, segura e confiável, garantindo que trabalhadores e empresas tenham um ambiente saudável para criar oportunidades e conexões.
+
+---
+
+> 🌱 **"Uma comunidade forte precisa de uma plataforma bem administrada."**
+
+===== FILE: docs/epics/EPIC-008-communication.md =====
+# 💬 EPIC-008 — Comunicação e Notificações
+
+> 💬 "Boas conexões também dependem de boa comunicação."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P2 - Medium • backend • frontend-web • mobile • notifications • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-008-communication.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Implementar um sistema básico de notificações para manter trabalhadores e empresas informados sobre eventos importantes dentro do LIA.
+
+O foco desta Epic é melhorar a experiência do usuário e reduzir a necessidade de consultas constantes à plataforma.
+
+---
+
+# 💡 Problema
+
+Após uma candidatura ou avaliação, os usuários precisam saber quando algo muda.
+
+Sem notificações, a comunicação se torna lenta e aumenta o risco de oportunidades serem perdidas.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA passa a oferecer uma comunicação mais eficiente entre plataforma e usuários, aumentando o engajamento e a taxa de retorno.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Central de notificações
+- Notificações de candidaturas
+- Atualizações de status
+- Notificações de avaliações
+- Marcação de notificações como lidas
+- Preferências básicas de notificações
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Chat interno
+- Mensagens privadas
+- Chamadas de voz
+- Chamadas de vídeo
+- Push notifications
+- Integração com WhatsApp
+- E-mail automático
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Usuários receberem notificações relevantes.
+- As notificações puderem ser visualizadas.
+- As notificações puderem ser marcadas como lidas.
+- As preferências básicas funcionarem corretamente.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- 🚀 EPIC-001
+- 👤 EPIC-002
+- 💼 EPIC-003
+- 🤝 EPIC-004
+- ⭐ EPIC-005
+
+Relaciona-se diretamente com:
+
+- API
+- Notifications
+- Database
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-036 | Receber notificações | ⏳ Planned |
+| US-037 | Visualizar notificações | ⏳ Planned |
+| US-038 | Marcar notificações como lidas | ⏳ Planned |
+| US-039 | Configurar preferências | ⏳ Planned |
+| US-040 | Receber atualização de status | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] API
+- [ ] Architecture
+- [ ] Security
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Uma comunicação clara mantém trabalhadores e empresas informados, reduz falhas de acompanhamento e fortalece a confiança na plataforma.
+
+---
+
+> 🌱 **"Boas conexões também dependem de boa comunicação."**
+
+===== FILE: docs/epics/EPIC-009-analytics.md =====
+# 📊 EPIC-009 — Observabilidade e Insights
+
+> 📊 "Não se melhora aquilo que não se mede."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🟡 **Status**
+
+Planned
+
+🏁 **Milestone**
+
+Milestone 1 — MVP
+
+🏷️ **Labels**
+
+feature • P2 - Medium • backend • frontend-web • database • api • documentation • XL
+
+📄 **Documento**
+
+docs/epics/EPIC-009-observability.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 🎯 Objetivo
+
+Disponibilizar indicadores básicos que permitam acompanhar a evolução da plataforma, apoiar decisões de produto e monitorar o crescimento da comunidade.
+
+---
+
+# 💡 Problema
+
+Sem métricas é impossível saber se o produto está resolvendo o problema da comunidade ou apenas acumulando funcionalidades.
+
+---
+
+# 🚀 Valor de Negócio
+
+Ao concluir esta Epic, o LIA passa a produzir informações que apoiam decisões estratégicas, permitindo evoluir o produto com base em dados reais.
+
+---
+
+# 📦 Escopo
+
+Esta Epic contempla:
+
+- Dashboard administrativo
+- Indicadores do MVP
+- Estatísticas de usuários
+- Estatísticas de publicações
+- Indicadores de candidaturas
+- Indicadores de avaliações
+
+---
+
+# ❌ Fora do Escopo
+
+Esta Epic NÃO contempla:
+
+- Business Intelligence
+- Inteligência Artificial
+- Dashboards avançados
+- Machine Learning
+- Relatórios personalizados
+- Exportação de dados
+
+Esses recursos poderão ser implementados em versões futuras.
+
+---
+
+# ✅ Critérios de Aceite
+
+A Epic será considerada concluída quando:
+
+- Administradores conseguirem visualizar indicadores.
+- As estatísticas forem atualizadas corretamente.
+- O dashboard apresentar informações consistentes.
+- Os indicadores apoiarem a tomada de decisão.
+
+---
+
+# 🔗 Dependências
+
+Depende da conclusão das seguintes Epics:
+
+- 🚀 EPIC-001 — Gestão de Contas e Autenticação
+- 👤 EPIC-002 — Perfil do Usuário
+- 💼 EPIC-003 — Serviços e Oportunidades
+- 🤝 EPIC-004 — Candidaturas e Conexões
+- ⭐ EPIC-005 — Reputação e Avaliações
+- 🔍 EPIC-006 — Busca e Descoberta
+- 🛡️ EPIC-007 — Administração e Governança
+- 💬 EPIC-008 — Comunicação e Notificações
+
+Relaciona-se diretamente com:
+
+- Database
+- API
+- Architecture
+
+---
+
+# 📚 User Stories
+
+| ID | História | Status |
+|----|----------|--------|
+| US-041 | Visualizar dashboard | ⏳ Planned |
+| US-042 | Consultar indicadores da plataforma | ⏳ Planned |
+| US-043 | Acompanhar crescimento da comunidade | ⏳ Planned |
+| US-044 | Monitorar utilização do sistema | ⏳ Planned |
+| US-045 | Visualizar estatísticas do MVP | ⏳ Planned |
+
+---
+
+# 🔄 Impacto na Documentação
+
+Após concluir esta Epic revisar:
+
+- [ ] Architecture
+- [ ] API
+- [ ] Changelog
+- [ ] README (se necessário)
+- [ ] ADR (caso novas decisões sejam tomadas)
+
+---
+
+# 📈 Definition of Done
+
+Esta Epic somente poderá ser encerrada quando:
+
+- [ ] Todas as User Stories estiverem concluídas.
+- [ ] Todas as Tasks concluídas.
+- [ ] Código revisado.
+- [ ] Testes aprovados.
+- [ ] Documentação atualizada.
+- [ ] Changelog atualizado.
+- [ ] GitHub Projects atualizado.
+- [ ] Merge realizado na branch principal.
+- [ ] Epic movida para **Done**.
+
+---
+
+# 💙 Impacto na Comunidade
+
+Ao compreender como a plataforma está sendo utilizada, o LIA consegue evoluir de forma responsável, investindo tempo e recursos nas funcionalidades que realmente geram valor para trabalhadores, empresas e toda a comunidade.
+
+---
+
+> 🌱 **"Não se melhora aquilo que não se mede."**
+
+===== FILE: docs/epics/README.md =====
+# 📦 Product Backlog — LIA
+
+> "Todo grande produto começa com uma boa organização."
+
+---
+
+# 🎯 Objetivo
+
+Esta pasta reúne todas as **Epics** do projeto LIA.
+
+As Epics representam grandes objetivos de negócio e organizam o desenvolvimento do produto em funcionalidades de alto nível.
+
+Nenhuma implementação deve começar sem estar vinculada a uma Epic.
+
+---
+
+# 🗺️ Fluxo de Desenvolvimento
+
+Todo o desenvolvimento do LIA segue o seguinte fluxo:
+
+```text
+Epic
+   ↓
+User Stories
+   ↓
+Tasks
+   ↓
+Código
+   ↓
+Testes
+   ↓
+Review
+   ↓
+Merge
+   ↓
+Deploy
+```
+
+---
+
+# 📚 Estrutura
+
+```
+docs/epics/
+
+README.md
+
+EPIC-001-authentication.md
+EPIC-002-user-profile.md
+EPIC-003-services.md
+EPIC-004-applications.md
+EPIC-005-reputation.md
+EPIC-006-search.md
+EPIC-007-administration.md
+EPIC-008-communication.md
+EPIC-009-observability.md
+```
+
+---
+
+# 📦 Product Backlog
+
+| Epic | Nome | Status |
+|------|------|--------|
+| EPIC-001 | 🚀 Gestão de Contas e Autenticação | ⏳ Planned |
+| EPIC-002 | 👤 Perfil do Usuário | ⏳ Planned |
+| EPIC-003 | 💼 Serviços e Oportunidades | ⏳ Planned |
+| EPIC-004 | 🤝 Candidaturas e Conexões | ⏳ Planned |
+| EPIC-005 | ⭐ Reputação e Avaliações | ⏳ Planned |
+| EPIC-006 | 🔍 Busca e Descoberta | ⏳ Planned |
+| EPIC-007 | 🛡️ Administração e Governança | ⏳ Planned |
+| EPIC-008 | 💬 Comunicação e Notificações | ⏳ Planned |
+| EPIC-009 | 📊 Observabilidade e Insights | ⏳ Planned |
+
+---
+
+# 🌱 Filosofia
+
+No LIA seguimos a filosofia:
+
+> **Documentation First**
+
+Planejamos antes.
+
+Modelamos antes.
+
+Documentamos antes.
+
+Construímos depois.
+
+---
+
+# 🔄 Ciclo de Vida
+
+Cada Epic passa pelos seguintes estados:
+
+```
+📋 Planned
+
+↓
+
+🚧 In Progress
+
+↓
+
+👀 Review
+
+↓
+
+✅ Done
+```
+
+---
+
+# 💙 Nosso compromisso
+
+Cada Epic deve possuir:
+
+- Objetivo
+- Valor de negócio
+- Escopo
+- Fora do escopo
+- Critérios de aceite
+- Dependências
+- User Stories
+- Definition of Done
+- Impacto na documentação
+
+Assim garantimos consistência durante toda a evolução do produto.
+
+---
+
+> 🌱 "Produtos incríveis não nascem do código. Eles nascem de boas decisões."
+
+===== FILE: docs/reviews/Review-Brief.md =====
+# 🔍 Review Brief
+
+## Pull Request
+
+- **PR:** `#000`
+- **Branch:** `feature/...`
+- **Autor:** `Nome`
+- **Data:** `DD/MM/AAAA`
+
+---
+
+# ✅ Checklist Técnico
+
+## Arquitetura
+
+- [ ] Responsabilidades bem separadas
+- [ ] Baixo acoplamento
+- [ ] Código sustentável
+
+## Qualidade
+
+- [ ] Clean Code
+- [ ] Nomes claros
+- [ ] Sem duplicação
+
+## Segurança
+
+- [ ] Inputs validados
+- [ ] Dados sensíveis protegidos
+
+## Performance
+
+- [ ] Queries eficientes
+- [ ] Sem processamento desnecessário
+
+---
+
+# 🟢 Pontos Positivos
+
+- 
+
+---
+
+# 🔴 Problemas Encontrados
+
+## Problema
+
+- **Arquivo:**
+- **Linha:**
+- **Motivo:**
+- **Sugestão:**
+
+---
+
+# Resultado
+
+**Status:**
+
+- [x] Approved
+- [ ] Changes Requested
+
+===== FILE: docs/sprints/SPRINT-000-foundation.md =====
+📅 Sprint: 0 — Foundation
+
+🎯 Objetivo
+Concluir toda a fundação documental do LIA.
+
+✅ Entregas
+- README profissional
+- Arquitetura
+- ADRs
+- Playbook
+- 9 Epics
+- Product Backlog
+
+📚 Aprendizados
+- Melhoramos nosso fluxo Git.
+- Definimos branch strategy.
+- Criamos uma cultura de documentação.
+- Evoluímos o Playbook.
+
+🚀 Próximo passo
+Iniciar a Sprint 1 quebrando a EPIC-001 em User Stories e Tasks.
+
+===== FILE: docs/sprints/Sprint-X-Brief.md =====
+# 🚀 Sprint Brief
+
+## Informações da Sprint
+
+- **Sprint:** `X`
+- **Período:** `DD/MM/AAAA a DD/MM/AAAA`
+- **Objetivo:** Descreva o objetivo principal da sprint.
+
+---
+
+# 🎯 Objetivo de Negócio
+
+## Por que essa sprint existe?
+
+Descreva o problema, oportunidade ou necessidade que esta sprint pretende atender.
+
+## Qual problema estamos resolvendo?
+
+Descreva o contexto do problema e sua relevância para o produto.
+
+---
+
+# 📌 Epic
+
+- **Nome:** `Nome da Epic`
+- **Descrição:** Descreva a epic em uma ou duas frases.
+
+---
+
+# 👤 User Stories
+
+## Story 01
+
+### Como
+`[persona]`
+
+### Quero
+`[ação]`
+
+### Para
+`[benefício]`
+
+---
+
+# ✅ Critérios de Aceitação
+
+- [ ] Critério 1
+- [ ] Critério 2
+- [ ] Critério 3
+
+---
+
+# 🏗️ Impacto Técnico Esperado
+
+## Áreas afetadas
+
+- Backend
+- Frontend
+- Banco
+- Infra
+
+Descreva o impacto de forma clara, incluindo dependências, integrações e riscos.
+
+---
+
+# ⚠️ Restrições
+
+Liste limitações técnicas, regras de negócio, compatibilidades ou dependências externas.
+
+---
+
+# 📚 Referências
+
+- **Links:**
+- **ADRs:**
+- **Protótipos:**
+
+---
+
+# 📦 Entregável da Sprint
+
+Descreva o que precisa estar funcionando ao final da sprint para que a entrega seja considerada completa.
+
+===== FILE: docs/stories/README.md =====
+# 📚 User Stories — LIA
+
+> "Toda funcionalidade começa como uma necessidade de alguém."
+
+---
+
+# 🎯 Objetivo
+
+Esta pasta reúne todas as **User Stories** do projeto LIA.
+
+Cada Story descreve uma necessidade real do usuário e funciona como a ponte entre uma Epic e a implementação técnica.
+
+Nenhuma Task deve existir sem estar vinculada a uma User Story.
+
+---
+
+# 🗺️ Fluxo
+
+```text
+Epic
+   ↓
+User Story
+   ↓
+Task
+   ↓
+Código
+```
+
+---
+
+# 📦 Estrutura
+
+```
+docs/stories/
+
+README.md
+
+US-001-register-user.md
+US-002-login.md
+US-003-reset-password.md
+...
+```
+
+---
+
+# 📋 Template de uma Story
+
+Cada Story deve conter:
+
+- 🎯 Objetivo
+- 👤 Persona
+- 📝 História
+- ✅ Critérios de Aceite
+- 🚫 Fora do Escopo
+- 🔗 Dependências
+- 📚 Documentação afetada
+- ✔️ Definition of Done
+
+---
+
+# 🌱 Filosofia
+
+Uma Story deve ser pequena o suficiente para ser concluída em poucos dias.
+
+Se estiver grande demais, deve ser dividida.
+
+---
+
+# 🔄 Ciclo de Vida
+
+```text
+📋 Ready
+
+↓
+
+🚧 In Progress
+
+↓
+
+👀 Review
+
+↓
+
+✅ Done
+```
+
+---
+
+> 💙 "Não desenvolvemos funcionalidades. Entregamos valor ao usuário."
+
+===== FILE: docs/stories/US-001-register-user.md =====
+# 👤 US-001 — Cadastro de Usuário
+
+## 🎯 Objetivo
+
+Permitir que um novo usuário crie uma conta na plataforma LIA.
+
+---
+
+## 👤 Persona
+
+Visitante
+
+---
+
+## 📝 História
+
+Como visitante,
+
+quero criar uma conta,
+
+para acessar os recursos da plataforma.
+
+---
+
+## ✅ Critérios de Aceite
+
+- Cadastro por e-mail
+- Nome obrigatório
+- Senha criptografada
+- Confirmação de senha
+- Validação dos campos
+- Mensagens de erro claras
+- Usuário salvo no banco
+
+---
+
+## ❌ Fora do Escopo
+
+- Login Social
+- Recuperação de senha
+- Confirmação por e-mail
+- MFA
+
+---
+
+## 🔗 Dependências
+
+- EPIC-001
+- Banco de dados
+- API Auth
+
+---
+
+## 📚 Documentação impactada
+
+- Database
+- API
+- Architecture
+- Changelog
+
+---
+
+## ✔️ Definition of Done
+
+- Story implementada
+- Testes passando
+- Documentação atualizada
+- Review realizado
+
+===== FILE: docs/stories/US-002-login.md =====
+
+
+===== FILE: docs/stories/US-003-forgot-password.md =====
+
+
+===== FILE: docs/stories/US-004-edit-profile.md =====
+
+
+===== FILE: docs/stories/US-005-logout.md =====
+
+
