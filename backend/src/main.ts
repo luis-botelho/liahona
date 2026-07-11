@@ -1,1 +1,1 @@
-console.log("LIA Backend iniciado.");
+console.log('LIA Backend iniciado.');
