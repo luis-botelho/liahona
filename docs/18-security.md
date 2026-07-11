@@ -80,7 +80,7 @@ Motivos:
 - resistente a ataques por GPU;
 - padrão moderno para novas aplicações.
 
-A estratégia encontra-se registrada na ADR-012.
+A estratégia encontra-se registrada na ADR-013.
 
 ---
 

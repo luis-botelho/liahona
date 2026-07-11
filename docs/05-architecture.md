@@ -217,7 +217,7 @@ A escolha foi baseada em:
 - baixo overhead;
 - facilidade de evolução da aplicação.
 
-Essa decisão está registrada na ADR-011.
+Essa decisão está registrada na ADR-012.
 
 ---
 

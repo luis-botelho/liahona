@@ -250,11 +250,11 @@ Pendente (Sprint 0)
 
 **Arquivo**
 
-docs/decisions/ADR-011-fastify.md
+docs/decisions/ADR-011-prisma.md
 
 **Título**
 
-Fastify como Framework HTTP
+Adequação ao Prisma 7
 
 **Status**
 
@@ -266,7 +266,23 @@ Accepted
 
 **Arquivo**
 
-docs/decisions/ADR-012-password-hash.md
+docs/decisions/ADR-012-fastify.md
+
+**Título**
+
+Fastify como Framework HTTP
+
+**Status**
+
+Accepted
+
+---
+
+## ADR-013
+
+**Arquivo**
+
+docs/decisions/ADR-013-password-hash.md
 
 **Título**
 

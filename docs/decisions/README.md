@@ -16,7 +16,8 @@ Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
 | ADR-008 | Estrutura de pastas do projeto | Pendente (Sprint 0) |
 | ADR-009 | Fluxo de trabalho com Git | Pendente (Sprint 0) |
 | ADR-010 | Design System inicial | Pendente (Sprint 0) |
-| ADR-011 | Fastify como Framework HTTP | Accepted |
-| ADR-012 | Estratégia de Hash de Senhas | Accepted |
+| ADR-011 | Adequação ao Prisma 7 | Accepted |
+| ADR-012 | Fastify como Framework HTTP | Accepted |
+| ADR-013 | Estratégia de Hash de Senhas | Accepted |
 
 ADRs pendentes serão preenchidas na Sprint 0.

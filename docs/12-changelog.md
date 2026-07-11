@@ -59,8 +59,8 @@ Sempre que aplicável.
 
 ### Added
 
-- ADR-011 — Fastify como framework HTTP oficial.
-- ADR-012 — Estratégia de hash utilizando Argon2id.
+- ADR-012 — Fastify como framework HTTP oficial.
+- ADR-013 — Estratégia de hash utilizando Argon2id.
 
 ### Changed
 

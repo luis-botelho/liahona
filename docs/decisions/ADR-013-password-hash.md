@@ -1,4 +1,4 @@
-# ADR-012 — Estratégia de Hash de Senhas
+# ADR-013 — Estratégia de Hash de Senhas
 
 ## Status
 
