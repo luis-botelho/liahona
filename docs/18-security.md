@@ -68,6 +68,22 @@ Sempre utilizar algoritmos seguros para hash.
 
 ---
 
+## Armazenamento de Senhas
+
+Nenhuma senha será armazenada em texto puro.
+
+O LIA utiliza Argon2id como algoritmo oficial de hash de senhas.
+
+Motivos:
+
+- recomendado pela OWASP;
+- resistente a ataques por GPU;
+- padrão moderno para novas aplicações.
+
+A estratégia encontra-se registrada na ADR-013.
+
+---
+
 # Autorização
 
 Toda operação sensível deverá validar permissões no Backend.
