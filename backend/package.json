@@ -30,7 +30,6 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
-    "argon": "^2.0.21",
     "argon2": "^0.44.0",
     "dotenv": "^17.4.2",
     "fastify": "^5.10.0",

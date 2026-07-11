@@ -6,4 +6,3 @@ export interface User {
   createdAt: Date;
   updatedAt: Date;
 }
-Promise<Omit<User, 'password'>>;
