@@ -41,11 +41,13 @@ A escolha de tecnologias segue alguns princípios fundamentais.
 | Frontend Web | React |
 | Mobile | React Native |
 | Backend | Node.js |
+| Framework HTTP | Fastify |
 | Linguagem | TypeScript |
 | Banco de Dados | PostgreSQL |
 | ORM | Prisma |
 | API | REST |
 | Autenticação | JWT |
+| Hash de Senhas | Argon2id |
 | Versionamento | Git |
 | Repositório | GitHub |
 
@@ -85,15 +87,19 @@ Benefícios:
 
 ## Node.js
 
-Responsável pelas regras de negócio.
+O backend do LIA é desenvolvido utilizando tecnologias modernas do ecossistema Node.js, priorizando simplicidade, performance e manutenibilidade.
 
-Motivos da escolha:
+### Tecnologias oficiais
 
-- Excelente desempenho para aplicações web
-- Grande ecossistema
-- Mesmo idioma utilizado no Frontend
-- Facilidade de contratação futura
-- Alta produtividade
+- Node.js (Runtime)
+- TypeScript
+- Fastify (Framework HTTP)
+- Prisma ORM
+- PostgreSQL
+- Argon2id (Hash de senhas)
+- JWT (Autenticação)
+
+> **Fastify foi escolhido por oferecer melhor desempenho, excelente suporte ao TypeScript e arquitetura baseada em plugins, alinhando-se à filosofia de Progressive Engineering do projeto.**
 
 ---
 

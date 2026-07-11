@@ -246,6 +246,38 @@ Pendente (Sprint 0)
 
 ---
 
+## ADR-011
+
+**Arquivo**
+
+docs/decisions/ADR-011-fastify.md
+
+**Título**
+
+Fastify como Framework HTTP
+
+**Status**
+
+Accepted
+
+---
+
+## ADR-012
+
+**Arquivo**
+
+docs/decisions/ADR-012-password-hash.md
+
+**Título**
+
+Estratégia de Hash de Senhas (Argon2id)
+
+**Status**
+
+Accepted
+
+---
+
 ## Próximas ADRs previstas
 
 - Arquitetura REST

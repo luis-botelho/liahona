@@ -55,6 +55,21 @@ Sempre que aplicável.
 
 ---
 
+# [0.1.1] - 2026-07-11
+
+### Added
+
+- ADR-011 — Fastify como framework HTTP oficial.
+- ADR-012 — Estratégia de hash utilizando Argon2id.
+
+### Changed
+
+- Tech Stack atualizado para utilização do Fastify.
+- Documento de Arquitetura atualizado.
+- Documento de Segurança atualizado.
+
+---
+
 # [0.1.0] - 2026-07-03
 
 ## 🎉 Fundação do Projeto

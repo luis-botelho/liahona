@@ -205,6 +205,20 @@ Isso garante:
 - Escalabilidade
 - Reutilização
 
+### Framework HTTP
+
+A camada HTTP do backend utiliza o Fastify como framework oficial.
+
+A escolha foi baseada em:
+
+- alta performance;
+- excelente integração com TypeScript;
+- arquitetura baseada em plugins;
+- baixo overhead;
+- facilidade de evolução da aplicação.
+
+Essa decisão está registrada na ADR-011.
+
 ---
 
 # Organização dos Projetos
