@@ -49,11 +49,13 @@ export function RegisterForm() {
 
                         <Input
                             id="name"
+                            autoComplete="name"
+                            placeholder="Seu nome"
                             {...register("name")}
                         />
 
                         {errors.name && (
-                            <p className="text-sm text-red-500">
+                            <p className="mt-1 text-sm text-destructive">
                                 {errors.name.message}
                             </p>
                         )}
@@ -65,11 +67,13 @@ export function RegisterForm() {
                         <Input
                             id="email"
                             type="email"
+                            autoComplete="email"
+                            placeholder="voce@email.com"
                             {...register("email")}
                         />
 
                         {errors.email && (
-                            <p className="text-sm text-red-500">
+                            <p className="mt-1 text-sm text-destructive">
                                 {errors.email.message}
                             </p>
                         )}
@@ -83,11 +87,13 @@ export function RegisterForm() {
                         <Input
                             id="password"
                             type="password"
+                            autoComplete="new-password"
+                            placeholder="********"
                             {...register("password")}
                         />
 
                         {errors.password && (
-                            <p className="text-sm text-red-500">
+                            <p className="mt-1 text-sm text-destructive">
                                 {errors.password.message}
                             </p>
                         )}
@@ -101,11 +107,13 @@ export function RegisterForm() {
                         <Input
                             id="confirmPassword"
                             type="password"
+                            autoComplete="new-password"
+                            placeholder="********"
                             {...register("confirmPassword")}
                         />
 
                         {errors.confirmPassword && (
-                            <p className="text-sm text-red-500">
+                            <p className="mt-1 text-sm text-destructive">
                                 {errors.confirmPassword.message}
                             </p>
                         )}
@@ -116,9 +124,7 @@ export function RegisterForm() {
                         type="submit"
                         disabled={mutation.isPending}
                     >
-                        {mutation.isPending
-                            ? "Criando conta..."
-                            : "Criar conta"}
+                        {mutation.isPending ? "Criando conta..." : "Criar conta"}
                     </Button>
                 </form>
             </CardContent>
