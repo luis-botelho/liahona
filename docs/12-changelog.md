@@ -55,6 +55,23 @@ Sempre que aplicável.
 
 ---
 
+# [0.1.2] - 2026-07-11
+
+### Added
+
+- ADR-014 — Frontend Stack.
+- ADR-015 — Design System Foundation.
+- ADR-016 — Estratégia de Data Fetching.
+
+### Changed
+
+- Definida stack oficial do frontend.
+- Arquitetura atualizada.
+- Documento de Wireframes atualizado.
+- Documento de Segurança atualizado.
+
+---
+
 # [0.1.1] - 2026-07-11
 
 ### Added

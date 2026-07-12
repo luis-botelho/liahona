@@ -104,6 +104,25 @@ Todas compartilham as mesmas regras de negócio através da API.
 
 Interface utilizada por empresas, comerciantes e usuários em ambiente desktop.
 
+### Arquitetura do Frontend
+
+O frontend do LIA será desenvolvido utilizando React 19 com Vite e TypeScript.
+
+A aplicação seguirá uma arquitetura baseada em componentes reutilizáveis, separação de responsabilidades e Design System próprio.
+
+Principais tecnologias:
+
+- React 19
+- Vite
+- Tailwind CSS v4
+- shadcn/ui
+- React Hook Form
+- Zod
+- Axios
+- TanStack Query
+
+Toda comunicação com a API ocorrerá através de uma camada de serviços, evitando chamadas HTTP diretamente nos componentes.
+
 ---
 
 ## Mobile

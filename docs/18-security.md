@@ -68,6 +68,26 @@ Sempre utilizar algoritmos seguros para hash.
 
 ---
 
+## Validação de Dados
+
+A validação ocorrerá em duas camadas.
+
+Frontend:
+
+- React Hook Form
+- Zod
+
+Backend:
+
+- validações de domínio
+- validações de persistência
+
+A validação no frontend possui caráter de experiência do usuário.
+
+A validação definitiva permanece no backend.
+
+---
+
 ## Armazenamento de Senhas
 
 Nenhuma senha será armazenada em texto puro.

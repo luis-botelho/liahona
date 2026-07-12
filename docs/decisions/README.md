@@ -19,5 +19,8 @@ Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
 | ADR-011 | Adequação ao Prisma 7 | Accepted |
 | ADR-012 | Fastify como Framework HTTP | Accepted |
 | ADR-013 | Estratégia de Hash de Senhas | Accepted |
+| ADR-014 | Frontend Stack | Accepted |
+| ADR-015 | Design System Foundation | Accepted |
+| ADR-016 | Estratégia de Data Fetching | Accepted |
 
 ADRs pendentes serão preenchidas na Sprint 0.
