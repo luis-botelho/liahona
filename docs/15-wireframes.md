@@ -108,6 +108,25 @@ Outras ferramentas poderão ser utilizadas futuramente quando agregarem valor ao
 
 ---
 
+## Design System
+
+O Design System do LIA será construído sobre:
+
+- Tailwind CSS v4
+- shadcn/ui
+
+Os componentes serão versionados dentro do próprio projeto, evitando dependência direta de bibliotecas externas de interface.
+
+Princípios:
+
+- consistência visual;
+- acessibilidade;
+- reutilização;
+- identidade visual própria;
+- baixo acoplamento.
+
+---
+
 # Organização
 
 Cada funcionalidade deverá possuir seu próprio conjunto de wireframes.

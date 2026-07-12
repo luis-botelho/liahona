@@ -294,6 +294,54 @@ Accepted
 
 ---
 
+## ADR-014
+
+**Arquivo**
+
+docs/decisions/ADR-014-frontend-stack.md
+
+**Título**
+
+Frontend Stack
+
+**Status**
+
+Accepted
+
+---
+
+## ADR-015
+
+**Arquivo**
+
+docs/decisions/ADR-015-design-system.md
+
+**Título**
+
+Design System Foundation
+
+**Status**
+
+Accepted
+
+---
+
+## ADR-016
+
+**Arquivo**
+
+docs/decisions/ADR-016-data-fetching.md
+
+**Título**
+
+Estratégia de Data Fetching
+
+**Status**
+
+Accepted
+
+---
+
 ## Próximas ADRs previstas
 
 - Arquitetura REST

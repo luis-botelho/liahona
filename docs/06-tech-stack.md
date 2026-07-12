@@ -55,16 +55,37 @@ A escolha de tecnologias segue alguns princípios fundamentais.
 
 # Frontend Web
 
-## React
+## React 19
 
-Escolhido por possuir:
+O frontend web do LIA foi projetado para oferecer uma experiência moderna, rápida e escalável, mantendo simplicidade no desenvolvimento.
 
-- Ecossistema consolidado
-- Grande comunidade
-- Alta produtividade
-- Excelente integração com TypeScript
-- Componentização
-- Facilidade de manutenção
+### Tecnologias oficiais
+
+- React 19
+- Vite
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- React Hook Form
+- Zod
+- Axios
+
+### Data Fetching
+
+A estratégia oficial de comunicação com a API será baseada em:
+
+- TanStack Query
+
+Sua adoção permite:
+
+- cache automático;
+- sincronização de dados;
+- invalidação inteligente;
+- gerenciamento de loading;
+- retry automático;
+- otimizações de performance.
+
+A comunicação HTTP será realizada utilizando Axios.
 
 ---
 
