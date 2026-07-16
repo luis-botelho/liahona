@@ -21,9 +21,22 @@ export async function loginController(
       password,
     });
 
+    const token = await reply.jwtSign(
+      {
+        sub: user.id,
+        email: user.email,
+      },
+      {
+        expiresIn: process.env.JWT_EXPIRES_IN,
+      },
+    );
+
     return reply.status(200).send({
       success: true,
-      data: user,
+      data: {
+        token,
+        user,
+      },
     });
   } catch (error) {
     if (error instanceof Error && error.message === 'Invalid credentials') {
