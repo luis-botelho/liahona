@@ -1,3 +1,13 @@
+---
+title: User Flows
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 14-user-flows]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 🔀 User Flows
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -363,3 +373,11 @@ Quanto menor o esforço necessário para atingir um objetivo, melhor será a exp
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

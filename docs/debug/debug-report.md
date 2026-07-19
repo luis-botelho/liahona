@@ -1,3 +1,13 @@
+---
+title: Debug Report
+description: Documento de engineering do projeto LIA.
+area: engineering
+tags: [engineering, debug-report]
+used-by: [debug, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 🐛 Debug Report
 
 ## Problema
@@ -56,3 +66,11 @@ Esse problema gera:
 - ADR?
 - Refatoração?
 - Nova regra?
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](../engineering/INDEX.md)
+- [Context Map](../context-map.yaml)

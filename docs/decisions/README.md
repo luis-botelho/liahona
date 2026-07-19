@@ -1,3 +1,13 @@
+---
+title: Architectural Decision Records
+description: Documento de architecture do projeto LIA.
+area: architecture
+tags: [architecture, readme]
+used-by: [development, review, analysis]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # Architectural Decision Records
 
 Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
@@ -24,3 +34,11 @@ Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
 | ADR-016 | Estratégia de Data Fetching | Accepted |
 
 ADRs pendentes serão preenchidas na Sprint 0.
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

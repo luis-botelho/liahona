@@ -1,3 +1,13 @@
+---
+title: Product Backlog - LIA
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, readme]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 📦 Product Backlog — LIA
 
 > "Todo grande produto começa com uma boa organização."
@@ -131,3 +141,11 @@ Assim garantimos consistência durante toda a evolução do produto.
 ---
 
 > 🌱 "Produtos incríveis não nascem do código. Eles nascem de boas decisões."
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

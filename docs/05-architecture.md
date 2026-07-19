@@ -1,3 +1,13 @@
+---
+title: Architecture
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 05-architecture]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 🏗 Architecture
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -334,3 +344,11 @@ Nosso objetivo é construir a arquitetura certa para o momento do LIA.
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

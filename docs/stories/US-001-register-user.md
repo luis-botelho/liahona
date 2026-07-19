@@ -1,3 +1,13 @@
+---
+title: 👤 US-001 - Cadastro de Usuário
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, us-001-register-user]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 👤 US-001 — Cadastro de Usuário
 
 ## 🎯 Objetivo
@@ -66,3 +76,11 @@ para acessar os recursos da plataforma.
 - Testes passando
 - Documentação atualizada
 - Review realizado
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

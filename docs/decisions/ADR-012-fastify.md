@@ -1,3 +1,13 @@
+---
+title: ADR-012 - Fastify como Framework HTTP
+description: Documento de architecture do projeto LIA.
+area: architecture
+tags: [architecture, adr-012-fastify]
+used-by: [development, review, analysis]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # ADR-012 — Fastify como Framework HTTP
 
 ## Status
@@ -57,3 +67,11 @@ Mudanças futuras deverão ser discutidas através de nova ADR.
 - 05-architecture.md
 - 06-tech-stack.md
 - 10-api.md
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

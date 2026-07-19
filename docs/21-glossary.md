@@ -1,3 +1,13 @@
+---
+title: Glossary
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 21-glossary]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📚 Glossary
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -246,3 +256,11 @@ Sempre que um novo conceito surgir, ele deverá ser documentado para manter uma 
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

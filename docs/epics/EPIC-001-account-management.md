@@ -1,3 +1,13 @@
+---
+title: EPIC-001 - Gestão de Contas e Autenticação
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-001-account-management]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 🚀 EPIC-001 — Gestão de Contas e Autenticação
 
 > 🔐 "Toda comunidade começa pela confiança."
@@ -169,3 +179,11 @@ Esta Epic garante que cada pessoa possua uma identidade segura dentro da platafo
 ---
 
 > 🌱 **"A confiança é o primeiro serviço que entregamos à comunidade."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

@@ -1,3 +1,13 @@
+---
+title: EPIC-006 - Busca e Descoberta
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-006-search]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 🔍 EPIC-006 — Busca e Descoberta
 
 > 🔍 "Boas oportunidades só geram impacto quando podem ser encontradas."
@@ -146,3 +156,11 @@ Quanto mais fácil for encontrar oportunidades e profissionais, maior será o po
 ---
 
 > 🌱 **"Boas oportunidades só geram impacto quando podem ser encontradas."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

@@ -1,3 +1,13 @@
+---
+title: Dev Brief
+description: Documento de workflow do projeto LIA.
+area: workflow
+tags: [workflow, development-brief]
+used-by: [development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 💻 Dev Brief
 
 ## Contexto
@@ -78,3 +88,11 @@ Identifique itens que merecem atenção durante o review.
 - **Merge?**
 - **Ajustes?**
 - **Nova task?**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](../README.md)
+- [Context Map](../context-map.yaml)

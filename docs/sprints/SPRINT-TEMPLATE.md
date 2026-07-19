@@ -1,3 +1,13 @@
+---
+title: Sprint Brief
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, sprint-template]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 🚀 Sprint Brief
 
 ## Informações da Sprint
@@ -80,3 +90,11 @@ Liste limitações técnicas, regras de negócio, compatibilidades ou dependênc
 # 📦 Entregável da Sprint
 
 Descreva o que precisa estar funcionando ao final da sprint para que a entrega seja considerada completa.
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](../README.md)
+- [Context Map](../context-map.yaml)

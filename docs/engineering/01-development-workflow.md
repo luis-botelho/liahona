@@ -1,3 +1,13 @@
+---
+title: Development Workflow
+description: Documento de engineering do projeto LIA.
+area: engineering
+tags: [engineering, 01-development-workflow]
+used-by: [development, review, debug]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # Development Workflow
 
 ## Filosofia
@@ -110,3 +120,11 @@ Uma task está pronta quando:
 ✔ Merge
 
 ✔ Changelog atualizado (quando necessário)
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

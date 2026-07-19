@@ -1,3 +1,13 @@
+---
+title: EPIC-005 - Reputação e Avaliações
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-005-reputation]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # ⭐ EPIC-005 — Reputação e Avaliações
 
 > ⭐ "A confiança se constrói a cada serviço realizado."
@@ -151,3 +161,11 @@ A reputação é um patrimônio coletivo. Ao permitir que trabalhadores e empres
 ---
 
 > 🌱 **"A confiança se constrói a cada serviço realizado."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

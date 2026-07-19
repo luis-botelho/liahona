@@ -1,3 +1,13 @@
+---
+title: 👤 EPIC-002 - Perfil do Usuário
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-002-user-profile]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 👤 EPIC-002 — Perfil do Usuário
 
 > 👤 "Toda oportunidade começa por conhecer quem está do outro lado."
@@ -153,3 +163,11 @@ Perfis completos facilitam conexões mais confiáveis entre trabalhadores, empre
 ---
 
 > 🌱 **"Toda oportunidade começa por conhecer quem está do outro lado."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

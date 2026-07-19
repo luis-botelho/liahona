@@ -1,3 +1,13 @@
+---
+title: Business Model
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 07-business-model]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 💼 Business Model
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -289,3 +299,11 @@ Queremos que o LIA seja lembrado não apenas como um aplicativo, mas como a prin
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

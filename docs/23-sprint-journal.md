@@ -1,3 +1,13 @@
+---
+title: 📖 Sprint Journal
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 23-sprint-journal]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📖 Sprint Journal
 
 > "Construímos software. Registramos conhecimento."
@@ -107,3 +117,11 @@ Objetivo inicial:
 ---
 
 > 🌱 **"Antes de escrever código, aprendemos a construir um produto."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)
