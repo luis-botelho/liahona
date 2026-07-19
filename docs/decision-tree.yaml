@@ -1,0 +1,16 @@
+rules:
+  - context: "backend"
+    require_reading:
+      - "docs/06-tech-stack.md"
+      - "docs/engineering/backend-guidelines.md"
+      - "docs/engineering/architecture-guidelines.md"
+  - context: "frontend"
+    require_reading:
+      - "docs/engineering/frontend-guidelines.md"
+      - "docs/engineering/frontend-architecture.md"
+      - "docs/engineering/routes.md"
+      - "docs/engineering/http-client.md"
+  - context: "authentication"
+    require_reading:
+      - "docs/engineering/authentication.md"
+      - "docs/api/auth.md"

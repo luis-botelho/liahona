@@ -1,3 +1,13 @@
+---
+title: ADR-013 - Estratégia de Hash de Senhas
+description: Documento de architecture do projeto LIA.
+area: architecture
+tags: [architecture, adr-013-password-hash]
+used-by: [development, review, analysis]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # ADR-013 — Estratégia de Hash de Senhas
 
 ## Status
@@ -55,3 +65,11 @@ Mudanças futuras dependerão de nova ADR.
 - 18-security.md
 - 06-tech-stack.md
 - 10-api.md
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

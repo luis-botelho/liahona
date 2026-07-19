@@ -1,3 +1,13 @@
+---
+title: Review Brief
+description: Documento de workflow do projeto LIA.
+area: workflow
+tags: [workflow, review-brief]
+used-by: [development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 🔍 Review Brief
 
 ## Pull Request
@@ -58,3 +68,11 @@
 
 - [x] Approved
 - [ ] Changes Requested
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](../README.md)
+- [Context Map](../context-map.yaml)

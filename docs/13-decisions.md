@@ -1,3 +1,13 @@
+---
+title: Architectural Decisions
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 13-decisions]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📜 Architectural Decisions
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -377,3 +387,11 @@ As ADRs representam a memória técnica do projeto.
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

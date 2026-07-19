@@ -1,3 +1,13 @@
+---
+title: ADR-001 - Adoção de uma Stack JavaScript/TypeScript Full Stack
+description: Documento de architecture do projeto LIA.
+area: architecture
+tags: [architecture, adr-001-tech-stack]
+used-by: [development, review, analysis]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # ADR-001 — Adoção de uma Stack JavaScript/TypeScript Full Stack
 
 > **Status:** Accepted
@@ -115,3 +125,11 @@ Esta decisão poderá ser revisada caso existam mudanças significativas nos obj
 
 - 05-architecture.md
 - 06-tech-stack.md
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

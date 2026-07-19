@@ -1,3 +1,13 @@
+---
+title: EPIC-004 - Candidaturas e Conexões
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-004-applications]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 🤝 EPIC-004 — Candidaturas e Conexões
 
 > 🤝 "Grandes oportunidades começam com uma simples conexão."
@@ -146,3 +156,11 @@ Esta Epic transforma oportunidades em conexões reais, aproximando trabalhadores
 ---
 
 > 🌱 **"Grandes oportunidades começam com uma simples conexão."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

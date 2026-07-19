@@ -1,3 +1,13 @@
+---
+title: EPIC-008 - Comunicação e Notificações
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-008-communication]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 💬 EPIC-008 — Comunicação e Notificações
 
 > 💬 "Boas conexões também dependem de boa comunicação."
@@ -150,3 +160,11 @@ Uma comunicação clara mantém trabalhadores e empresas informados, reduz falha
 ---
 
 > 🌱 **"Boas conexões também dependem de boa comunicação."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

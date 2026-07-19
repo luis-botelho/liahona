@@ -1,0 +1,52 @@
+workers:
+  development:
+    always:
+      - engineering/tech-stack.md
+      - engineering/folder-structure.md
+      - engineering/00-development-playbook.md
+      - engineering/01-development-workflow.md
+      - engineering/coding-standards.md
+    labels:
+      backend:
+        - engineering/architecture-guidelines.md
+        - engineering/backend-guidelines.md
+        - engineering/api-guidelines.md
+        - engineering/database-guidelines.md
+        - engineering/error-handling.md
+      frontend:
+        - engineering/tech-stack.md
+        - engineering/frontend-guidelines.md
+        - engineering/frontend-architecture.md
+        - engineering/http-client.md
+        - engineering/routes.md
+        - decisions/ADR-014-frontend-stack.md
+      auth:
+        - engineering/authentication.md
+        - decisions/ADR-006-authentication.md
+        - decisions/ADR-017-authentication-session-strategy.md
+  review:
+    always:
+      - engineering/coding-standards.md
+      - engineering/testing-guidelines.md
+      - engineering/security-guidelines.md
+      - engineering/tech-stack.md
+      - engineering/clean-code.md
+  debug:
+    always:
+      - engineering/error-handling.md
+      - engineering/logging.md
+      - engineering/tech-stack.md
+      - engineering/backend-guidelines.md
+  analysis:
+    always:
+      - README.md
+      - 01-vision.md
+      - 04-backlog.md
+      - epics/INDEX.md
+      - stories/INDEX.md
+      - knowledge/knowledge-gaps.md
+  gitops:
+    always:
+      - engineering/git-flow.md
+      - engineering/branch-strategy.md
+      - engineering/01-development-workflow.md

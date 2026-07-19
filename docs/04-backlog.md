@@ -1,3 +1,13 @@
+---
+title: Backlog Master
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 04-backlog]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📚 Backlog Master
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -333,3 +343,11 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

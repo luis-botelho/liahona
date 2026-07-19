@@ -1,3 +1,13 @@
+---
+title: LIA Development Playbook
+description: Documento de engineering do projeto LIA.
+area: engineering
+tags: [engineering, 00-development-playbook]
+used-by: [development, review, debug]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # LIA Development Playbook
 
 > "Um bom software nasce muito antes da primeira linha de código."
@@ -212,3 +222,11 @@ Evoluímos continuamente.
 Porque acreditamos que software é muito mais do que programação.
 
 Software é coordenação entre pessoas, decisões e tempo.
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

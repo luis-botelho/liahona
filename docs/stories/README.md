@@ -1,3 +1,13 @@
+---
+title: User Stories - LIA
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, readme]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 📚 User Stories — LIA
 
 > "Toda funcionalidade começa como uma necessidade de alguém."
@@ -87,3 +97,11 @@ Se estiver grande demais, deve ser dividida.
 ---
 
 > 💙 "Não desenvolvemos funcionalidades. Entregamos valor ao usuário."
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

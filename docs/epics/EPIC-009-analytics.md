@@ -1,3 +1,13 @@
+---
+title: EPIC-009 - Observabilidade e Insights
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-009-analytics]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 📊 EPIC-009 — Observabilidade e Insights
 
 > 📊 "Não se melhora aquilo que não se mede."
@@ -147,3 +157,11 @@ Ao compreender como a plataforma está sendo utilizada, o LIA consegue evoluir d
 ---
 
 > 🌱 **"Não se melhora aquilo que não se mede."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

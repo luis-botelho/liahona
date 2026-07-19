@@ -1,3 +1,13 @@
+---
+title: 👤 User Story
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, us-002-login]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 👤 User Story
 
 ## 🆔
@@ -113,3 +123,11 @@ Uma autenticação segura fortalece a confiança na plataforma e garante que tra
 - Learn Log registrado.
 - Documentação atualizada.
 - Product Office homologou a entrega.
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

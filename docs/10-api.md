@@ -1,3 +1,13 @@
+---
+title: API
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 10-api]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📡 API
 
 > **Projeto:** LIA — Local Intelligence for Assistance
@@ -236,3 +246,11 @@ Quanto menos o desenvolvedor precisar consultar a documentação, melhor será s
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

@@ -1,3 +1,13 @@
+---
+title: EPIC-003 - Serviços e Oportunidades
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-003-services]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 💼 EPIC-003 — Serviços e Oportunidades
 
 > 💼 "Toda oportunidade merece ser encontrada."
@@ -154,3 +164,11 @@ Esta Epic representa o momento em que o LIA deixa de ser apenas uma plataforma d
 ---
 
 > 🌱 **"Toda oportunidade merece ser encontrada."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

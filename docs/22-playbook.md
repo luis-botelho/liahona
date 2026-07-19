@@ -1,3 +1,13 @@
+---
+title: 📖 Playbook LIA
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, 22-playbook]
+used-by: [analysis, development, review]
+priority: medium
+last-reviewed: 2026-07-18
+---
+
 # 📖 Playbook LIA
 
 > "Não desenvolvemos funcionalidades. Desenvolvemos produto."
@@ -431,3 +441,11 @@ Porque acreditamos que grandes produtos nascem de boas decisões, não de grande
 ---
 
 > "Software é a consequência. Produto é a intenção."
+
+---
+
+## Related Documents
+
+- [Documentation Index](README.md)
+- [Area Index](README.md)
+- [Context Map](context-map.yaml)

@@ -1,3 +1,13 @@
+---
+title: EPIC-007 - Administração e Governança
+description: Documento de product do projeto LIA.
+area: product
+tags: [product, epic-007-administration]
+used-by: [analysis, development, review]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # 🛡️ EPIC-007 — Administração e Governança
 
 > 🛡️ "Uma comunidade forte precisa de uma plataforma bem administrada."
@@ -147,3 +157,11 @@ Uma boa administração mantém a plataforma organizada, segura e confiável, ga
 ---
 
 > 🌱 **"Uma comunidade forte precisa de uma plataforma bem administrada."**
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)

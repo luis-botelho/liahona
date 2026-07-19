@@ -1,3 +1,13 @@
+---
+title: ADR-002 - Adequação ao Prisma 7
+description: Documento de architecture do projeto LIA.
+area: architecture
+tags: [architecture, adr-011-prisma]
+used-by: [development, review, analysis]
+priority: high
+last-reviewed: 2026-07-18
+---
+
 # ADR-002 — Adequação ao Prisma 7
 
 ## Status
@@ -31,3 +41,11 @@ A alteração é exclusivamente de infraestrutura e configuração.
 ## Referências
 
 TASK-001 — Bootstrap do Backend.
+
+---
+
+## Related Documents
+
+- [Documentation Index](../README.md)
+- [Area Index](INDEX.md)
+- [Context Map](../context-map.yaml)
