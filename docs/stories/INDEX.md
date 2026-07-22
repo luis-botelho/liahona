@@ -17,6 +17,7 @@ last-reviewed: 2026-07-18
 | US-003 | [US 003 forgot password](./US-003-forgot-password.md) | Registro de ausência de diretriz específica para us 003 forgot password. | product | product, us-003-forgot-password |
 | US-004 | [US 004 edit profile](./US-004-edit-profile.md) | Registro de ausência de diretriz específica para us 004 edit profile. | product | product, us-004-edit-profile |
 | US-005 | [US 005 logout](./US-005-logout.md) | Registro de ausência de diretriz específica para us 005 logout. | product | product, us-005-logout |
+| TASK-004 | [TASK-004 — Gerenciamento de Sessão](./TASK-004-auth-session.md) | Especificação técnica completa para implementação de sessão via HTTP Only Cookies. | product | product, task-004, auth, session |
 
 ---
 
