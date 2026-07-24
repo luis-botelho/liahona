@@ -10,23 +10,31 @@ import {
   type LoginData,
 } from "./auth";
 
+import {
+  getSession,
+  saveSession,
+  clearSession,
+} from "@/services/auth-storage";
+
+
+import { useQueryClient } from "@tanstack/react-query";
+
 interface AuthProviderProps {
   children: ReactNode;
 }
 
-const STORAGE_KEY = "liahona.auth";
-
 export function AuthProvider({
   children,
 }: AuthProviderProps) {
+  const queryClient = useQueryClient();
+
   const [state, setState] = useState<{
     user: AuthUser | null;
     token: string | null;
   }>(() => {
-    const storage = localStorage.getItem(STORAGE_KEY);
+    const session = getSession() as LoginData | null;
 
-    if (storage) {
-      const session = JSON.parse(storage) as LoginData;
+    if (session) {
       return {
         user: session.user,
         token: session.token,
@@ -47,20 +55,19 @@ export function AuthProvider({
       token: data.token,
     });
 
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(data),
-    );
+    saveSession(data);
   }
 
   function logout() {
-    setState({
-      user: null,
-      token: null,
-    });
+  clearSession();
 
-    localStorage.removeItem(STORAGE_KEY);
-  }
+  setState({
+    user: null,
+    token: null,
+  });
+
+    queryClient.clear();
+}
 
   const value = useMemo(
     () => ({
