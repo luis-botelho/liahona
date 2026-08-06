@@ -1,8 +1,11 @@
 import {
+  useCallback,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
+
+import { useQueryClient } from "@tanstack/react-query";
 
 import {
   AuthContext,
@@ -11,16 +14,18 @@ import {
 } from "./auth";
 
 import {
+  clearSession,
   getSession,
   saveSession,
-  clearSession,
 } from "@/services/auth-storage";
-
-
-import { useQueryClient } from "@tanstack/react-query";
 
 interface AuthProviderProps {
   children: ReactNode;
+}
+
+interface AuthState {
+  user: AuthUser | null;
+  token: string | null;
 }
 
 export function AuthProvider({
@@ -28,10 +33,7 @@ export function AuthProvider({
 }: AuthProviderProps) {
   const queryClient = useQueryClient();
 
-  const [state, setState] = useState<{
-    user: AuthUser | null;
-    token: string | null;
-  }>(() => {
+  const [state, setState] = useState<AuthState>(() => {
     const session = getSession() as LoginData | null;
 
     if (session) {
@@ -49,35 +51,35 @@ export function AuthProvider({
 
   const { user, token } = state;
 
-  function login(data: LoginData) {
+  const login = useCallback((data: LoginData) => {
     setState({
       user: data.user,
       token: data.token,
     });
 
     saveSession(data);
-  }
+  }, []);
 
-  function logout() {
-  clearSession();
+  const logout = useCallback(() => {
+    clearSession();
 
-  setState({
-    user: null,
-    token: null,
-  });
+    setState({
+      user: null,
+      token: null,
+    });
 
     queryClient.clear();
-}
+  }, [queryClient]);
 
   const value = useMemo(
     () => ({
       user,
       token,
-      isAuthenticated: !!token,
+      isAuthenticated: Boolean(token),
       login,
       logout,
     }),
-    [user, token],
+    [user, token, login, logout],
   );
 
   return (
@@ -86,4 +88,3 @@ export function AuthProvider({
     </AuthContext.Provider>
   );
 }
-
