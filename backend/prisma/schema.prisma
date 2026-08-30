@@ -5,21 +5,50 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id String @id @default(cuid())
 
-  name      String
+  name String
 
-  email     String   @unique
+  email String @unique
 
-  password  String
+  password String
 
   createdAt DateTime @default(now())
 
   updatedAt DateTime @updatedAt
 
+  opportunities Opportunity[]
+
   @@index([email])
+}
+
+enum OpportunityType {
+  JOB
+  SERVICE
+}
+
+enum OpportunityStatus {
+  ACTIVE
+  CLOSED
+}
+
+model Opportunity {
+  id          String            @id @default(cuid())
+  title       String
+  description String
+  type        OpportunityType
+  location    String?
+  status      OpportunityStatus @default(ACTIVE)
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([authorId])
 }
