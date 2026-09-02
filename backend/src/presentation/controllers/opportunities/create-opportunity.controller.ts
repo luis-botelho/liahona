@@ -28,13 +28,20 @@ export async function createOpportunityController(
 
     const author = await prisma.user.findUnique({
       where: { id: payload.sub },
-      select: { id: true },
+      select: { id: true, role: true },
     });
 
     if (!author) {
       return reply.status(401).send({
         success: false,
         message: 'Usuário autenticado não encontrado.',
+      });
+    }
+
+    if (author.role !== 'RECRUITER') {
+      return reply.status(403).send({
+        success: false,
+        message: 'Only recruiters can create opportunities',
       });
     }
 
@@ -55,11 +62,15 @@ export async function createOpportunityController(
 
     return reply.status(201).send({ success: true, data: opportunity });
   } catch (error) {
-    if (error instanceof Error && error.name === 'PrismaClientKnownRequestError') {
+    if (
+      error instanceof Error &&
+      error.name === 'PrismaClientKnownRequestError'
+    ) {
       request.log.error(error);
       return reply.status(400).send({
         success: false,
-        message: 'Não foi possível vincular a oportunidade ao usuário autenticado.',
+        message:
+          'Não foi possível vincular a oportunidade ao usuário autenticado.',
       });
     }
 

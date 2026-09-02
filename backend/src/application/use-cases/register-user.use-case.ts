@@ -18,6 +18,10 @@ export class RegisterUserUseCase {
     if (!data.password.trim()) {
       throw new AppError('Senha é obrigatória.', 400);
     }
+
+    if (data.role !== 'WORKER' && data.role !== 'RECRUITER') {
+      throw new AppError('Tipo de usuário inválido.', 400);
+    }
     const existingUser = await this.repository.findByEmail(data.email);
 
     if (existingUser) {

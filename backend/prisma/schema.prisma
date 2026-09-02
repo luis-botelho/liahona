@@ -8,7 +8,8 @@ datasource db {
 }
 
 model User {
-  id String @id @default(cuid())
+  id   String   @id @default(cuid())
+  role UserRole @default(WORKER)
 
   name String
 
@@ -23,6 +24,11 @@ model User {
   opportunities Opportunity[]
 
   @@index([email])
+}
+
+enum UserRole {
+  WORKER
+  RECRUITER
 }
 
 enum OpportunityType {

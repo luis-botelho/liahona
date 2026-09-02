@@ -5,6 +5,7 @@ export interface UserRepository {
     id: string;
     name: string;
     email: string;
+    role: 'WORKER' | 'RECRUITER';
     createdAt: Date;
     updatedAt: Date;
   }>;
@@ -14,6 +15,7 @@ export interface UserRepository {
     name: string;
     email: string;
     password: string;
+    role: 'WORKER' | 'RECRUITER';
     createdAt: Date;
     updatedAt: Date;
   } | null>;

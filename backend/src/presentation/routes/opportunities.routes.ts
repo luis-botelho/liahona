@@ -2,6 +2,7 @@ import type { FastifyInstance } from 'fastify';
 
 import { createOpportunityController } from '../controllers/opportunities/create-opportunity.controller.js';
 import { listOpportunitiesController } from '../controllers/opportunities/list-opportunities.controller.js';
+import { listMyOpportunitiesController } from '../controllers/opportunities/list-my-opportunities.controller.js';
 
 const createOpportunitySchema = {
   body: {
@@ -19,6 +20,7 @@ const createOpportunitySchema = {
 
 export async function opportunitiesRoutes(app: FastifyInstance) {
   app.get('/opportunities', listOpportunitiesController);
+  app.get('/opportunities/mine', listMyOpportunitiesController);
   app.post(
     '/opportunities',
     { schema: createOpportunitySchema },
