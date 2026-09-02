@@ -1,9 +1,6 @@
 import { api } from "@/services/api";
 
-import type {
-  CreateOpportunityInput,
-  Opportunity,
-} from "../types/opportunity";
+import type { CreateOpportunityInput, Opportunity } from "../types/opportunity";
 
 interface ApiResponse<T> {
   success: true;
@@ -12,6 +9,13 @@ interface ApiResponse<T> {
 
 export async function listOpportunities() {
   const response = await api.get<ApiResponse<Opportunity[]>>("/opportunities");
+  return response.data.data;
+}
+
+export async function listMyOpportunities() {
+  const response = await api.get<ApiResponse<Opportunity[]>>(
+    "/opportunities/mine",
+  );
   return response.data.data;
 }
 

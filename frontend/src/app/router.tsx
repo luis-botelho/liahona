@@ -6,6 +6,7 @@ import { DashboardPage } from "@/features/dashboard/pages/dashboard.page";
 import { NewOpportunityPage } from "@/features/opportunities/pages/new-opportunity.page";
 
 import { ProtectedRoute } from "@/components/routes/protected-route";
+import { RecruiterRoute } from "@/components/routes/recruiter-route";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,9 @@ export const router = createBrowserRouter([
     path: "/opportunities/new",
     element: (
       <ProtectedRoute>
-        <NewOpportunityPage />
+        <RecruiterRoute>
+          <NewOpportunityPage />
+        </RecruiterRoute>
       </ProtectedRoute>
     ),
   },

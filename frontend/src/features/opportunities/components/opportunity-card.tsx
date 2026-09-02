@@ -10,9 +10,13 @@ import type { Opportunity } from "../types/opportunity";
 
 interface OpportunityCardProps {
   opportunity: Opportunity;
+  showStatus?: boolean;
 }
 
-export function OpportunityCard({ opportunity }: OpportunityCardProps) {
+export function OpportunityCard({
+  opportunity,
+  showStatus = false,
+}: OpportunityCardProps) {
   return (
     <Card className="text-left">
       <CardHeader>
@@ -34,6 +38,18 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
           <p className="text-sm text-muted-foreground">
             Localização: {opportunity.location}
           </p>
+        )}
+        {showStatus && (
+          <div className="flex items-center justify-between border-t pt-3 text-xs text-muted-foreground">
+            <span>
+              Status: {opportunity.status === "ACTIVE" ? "Ativa" : "Encerrada"}
+            </span>
+            <time dateTime={opportunity.createdAt}>
+              {new Intl.DateTimeFormat("pt-BR").format(
+                new Date(opportunity.createdAt),
+              )}
+            </time>
+          </div>
         )}
       </CardContent>
     </Card>

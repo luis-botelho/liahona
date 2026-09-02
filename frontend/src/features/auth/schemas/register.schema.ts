@@ -6,6 +6,9 @@ export const registerSchema = z
     email: z.email("E-mail inválido"),
     password: z.string().min(6, "A senha deve possuir no mínimo 6 caracteres"),
     confirmPassword: z.string(),
+    role: z.enum(["WORKER", "RECRUITER"], {
+      error: "Escolha o que você quer fazer no LIA",
+    }),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],

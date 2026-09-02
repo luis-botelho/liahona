@@ -17,12 +17,14 @@ export interface RegisterRequest {
   name: string;
   email: string;
   password: string;
+  role: "WORKER" | "RECRUITER";
 }
 
 export interface RegisterResponse {
   id: string;
   name: string;
   email: string;
+  role: "WORKER" | "RECRUITER";
 }
 
 export async function register(data: RegisterRequest) {
@@ -50,14 +52,12 @@ export interface LoginResponse {
     id: string;
     name: string;
     email: string;
+    role: "WORKER" | "RECRUITER";
   };
 }
 
 export async function login(data: LoginRequest) {
-  const response = await api.post<ApiResponse<LoginResponse>>(
-    "/login",
-    data,
-  );
+  const response = await api.post<ApiResponse<LoginResponse>>("/login", data);
 
   return response.data.data;
 }
