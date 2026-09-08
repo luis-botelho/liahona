@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 1.1.0
 >
 > **Status:** Ativo
 
@@ -44,6 +44,46 @@ Nosso objetivo é conectar essas pessoas através da tecnologia, tornando o aces
 O LIA nasce para ser a principal plataforma de empregabilidade, prestação de serviços e conexão profissional da comunidade, criando um ambiente onde trabalhadores, comerciantes e moradores possam crescer juntos.
 
 Mais do que gerar renda, queremos fortalecer comunidades.
+
+---
+
+# Definição Central
+
+> **O LIA encontra oportunidades, talentos e caminhos de desenvolvimento dentro da comunidade.**
+
+## Regra principal
+
+> **Você não precisa de uma conta para encontrar uma oportunidade.**
+> **Você cria uma conta para fazer o LIA trabalhar por você.**
+
+## Princípios centrais
+
+- **A oportunidade deve encontrar a pessoa.** O LIA não se limita a apresentar uma lista — ele conecta pessoas certas às oportunidades e caminhos certos.
+- **O LIA não deve exigir cadastro antes de entregar valor.** A descoberta de oportunidades e o contato rápido devem estar acessíveis sem barreira de conta.
+
+---
+
+# Um Ecossistema Local
+
+O LIA evolui de uma plataforma de empregabilidade comunitária para um ecossistema local que reúne:
+
+- Empregos
+- Oportunidades
+- Serviços e tarefas remuneradas
+- Recrutamento
+- Banco de talentos
+- Currículo profissional
+- Matching
+- Alertas via WhatsApp
+- Qualificação
+- Cursos
+- Trilhas de aprendizagem
+- Educadores
+- Certificados
+- Oportunidades externas
+- IA aplicada à empregabilidade
+
+O produto nasce em Mambucaba e prioriza **simplicidade, comunidade e confiança**.
 
 ---
 
@@ -85,7 +125,7 @@ Queremos que ajudar alguém seja natural.
 
 # O Que Somos
 
-O LIA é uma plataforma digital de empregabilidade comunitária.
+O LIA é uma plataforma digital de empregabilidade comunitária em evolução para um ecossistema local de oportunidades, talentos, serviços, carreira, aprendizagem e recrutamento.
 
 Nosso ecossistema conecta:
 
@@ -96,6 +136,10 @@ Nosso ecossistema conecta:
 - Profissionais autônomos
 - Pessoas em busca da primeira oportunidade
 - Moradores que precisam de ajuda
+- Educadores
+- Estudantes em transição profissional
+- Instituições de ensino
+- Associações locais
 
 Tudo dentro de uma única plataforma.
 
@@ -194,6 +238,8 @@ Acreditamos que produtos sólidos crescem pela qualidade da experiência ofereci
 Após validar o modelo localmente, o projeto poderá expandir para outras regiões, mantendo o mesmo princípio:
 
 Fortalecer comunidades através da tecnologia.
+
+Ao longo do tempo, o LIA evolui para um ecossistema onde oportunidades, talentos, serviços, aprendizagem e recrutamento se conectam, colocando a pessoa no centro — ajudando-a não apenas a encontrar vagas, mas a desenvolver um caminho profissional completo dentro da comunidade.
 
 ---
 
@@ -316,6 +362,7 @@ Cada pequena oportunidade representa alguém mudando sua própria realidade.
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 1.1.0 | Expansão para ecossistema local (oportunidades, talentos, serviços, carreira, aprendizagem, recrutamento). Adição de definição central, regra principal e princípios de acesso público e "a oportunidade deve encontrar a pessoa". |
 
 ---
 
