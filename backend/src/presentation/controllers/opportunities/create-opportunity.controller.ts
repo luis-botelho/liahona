@@ -1,12 +1,16 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 import { prisma } from '../../../infrastructure/database/prisma.js';
+import { normalizeTags } from '../../../shared/matching/match.js';
+import { notifyMatchingWorkers } from '../../../shared/notifications/notify-matching-workers.js';
 
 interface CreateOpportunityBody {
   title: string;
   description: string;
   type: 'JOB' | 'SERVICE';
   location?: string;
+  category?: string;
+  tags?: string[];
 }
 
 export async function createOpportunityController(
@@ -15,9 +19,10 @@ export async function createOpportunityController(
 ) {
   try {
     const payload = await request.jwtVerify<{ sub: string }>();
-    const { title, description, type, location } = request.body;
+    const { title, description, type, location, category, tags } = request.body;
     const normalizedTitle = title.trim();
     const normalizedDescription = description.trim();
+    const normalizedCategory = category?.trim() || null;
 
     if (normalizedTitle.length < 3 || normalizedDescription.length < 10) {
       return reply.status(400).send({
@@ -51,6 +56,9 @@ export async function createOpportunityController(
         description: normalizedDescription,
         type,
         location: location?.trim() || null,
+        category: normalizedCategory,
+        tags: normalizeTags(tags ?? []),
+        source: 'LIA',
         authorId: payload.sub,
       },
       include: {
@@ -60,7 +68,11 @@ export async function createOpportunityController(
       },
     });
 
-    return reply.status(201).send({ success: true, data: opportunity });
+    reply.status(201).send({ success: true, data: opportunity });
+
+    void notifyMatchingWorkers(opportunity).catch((error) => {
+      request.log.error(error);
+    });
   } catch (error) {
     if (
       error instanceof Error &&
