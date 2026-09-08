@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 import { useLoginMutation } from "../hooks/use-login-mutation";
 
@@ -14,6 +15,8 @@ import {
     type LoginSchema,
 } from "../schemas/login.schema";
 
+import { useAuth } from "../hooks/use-auth";
+
 export function LoginForm() {
     const {
         register,
@@ -23,11 +26,15 @@ export function LoginForm() {
         resolver: zodResolver(loginSchema),
     });
     const loginMutation = useLoginMutation();
+    const { login } = useAuth();
+    const navigate = useNavigate();
     async function onSubmit(data: LoginSchema) {
         try {
-            await loginMutation.mutateAsync(data);
+            const response = await loginMutation.mutateAsync(data);
 
+            login(response)
             toast.success("Login realizado com sucesso!");
+            navigate("/dashboard");
         } catch {
             toast.error("E-mail ou senha inválidos.");
         }

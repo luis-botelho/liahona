@@ -4,21 +4,29 @@ import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
-  js.configs.recommended, // Configurações recomendadas do ESLint
+  {
+    ignores: ['dist/**', 'generated/**', 'src/generated/**', 'node_modules/**'],
+  },
+
+  js.configs.recommended,
+
   {
     files: ['**/*.js'],
+
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
-        ...globals.node, // Define o ambiente como Node.js para o backend
+        ...globals.node,
       },
     },
+
     plugins: {
       prettier: prettierPlugin,
     },
+
     rules: {
-      ...prettierConfig.rules, // Desativa regras que conflitam com o Prettier
+      ...prettierConfig.rules,
       'prettier/prettier': 'error',
       'no-console': 'warn',
     },

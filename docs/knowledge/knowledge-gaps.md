@@ -78,7 +78,7 @@ Este documento registra todas as decisões técnicas que ainda não foram tomada
 - **Impacto:** A implementação atual não segue a ADR aprovada. Existem duas opções:
   1. Implementar a ADR-017 (HTTP Only Cookies) — mais seguro.
   2. Criar uma nova ADR substituindo a ADR-017 com a estratégia atual (localStorage).
-- **Próximo passo:** Executive Board deve decidir qual estratégia seguir.
+- **Próximo passo:** Executive Board deve decidir qual estratégia seguir. Ver também #14 (Development Worker Blockers).
 
 ---
 
@@ -121,7 +121,7 @@ Este documento registra todas as decisões técnicas que ainda não foram tomada
 
 - **Situação:** `routes.md` e `authentication.md` documentam um componente `ProtectedRoute` e rotas públicas/protetidas, mas nada disso existe no código.
 - **Impacto:** Sem roteamento, não há proteção de rotas.
-- **Próximo passo:** Implementar após decidir biblioteca de roteamento.
+- **Próximo passo:** Implementar após decidir biblioteca de roteamento. Ver também #14 (Development Worker Blockers).
 
 ---
 
@@ -165,7 +165,28 @@ Este documento registra todas as decisões técnicas que ainda não foram tomada
 
 ---
 
-## 14. Repository Manifest Desatualizado
+## 14. Development Worker — Blockers de Implementação
+
+**Status:** BLOQUEADO — Requer definição do Executive Board
+
+- **Origem:** Development Worker — blocker report (task de autenticação).
+
+- **Blocker:** "Falta informação sobre como implementar a expiração da sessão e o redirecionamento automático."
+
+- **Estado real do código (análise realizada):**
+  1. **Expiração da sessão:** Token expira em `1d` via `JWT_EXPIRES_IN` em `backend/.env`. `@fastify/jwt` converte para timestamp `exp` no `login.controller.ts:30`. **Sem refresh token, sem logout.**
+  2. **Redirecionamento automático:** NÃO IMPLEMENTADO — nenhum middleware de auth no backend, componente `ProtectedRoute` no frontend apenas planejado (`routes.md`). Todas as rotas são públicas.
+
+- **Decisões pendentes (Executive Board):**
+  1. Expiração: manter `1d`, implementar refresh token, seguir ADR-017 (HTTP Only Cookies)?
+  2. Backend: criar middleware (`preHandler`, decorator, plugin)?
+  3. Frontend: implementar `ProtectedRoute` com qual roteador?
+
+- **Ref:** `docs/engineering/authentication.md` → "Regras Técnicas Extraídas do Código" e `docs/stories/TASK-004-auth-session.md`
+
+---
+
+## 15. Repository Manifest Desatualizado
 
 **Status:** DÍVIDA TÉCNICA — Low Priority
 

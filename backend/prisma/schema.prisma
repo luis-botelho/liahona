@@ -5,21 +5,114 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id   String   @id @default(cuid())
+  role UserRole @default(WORKER)
 
-  name      String
+  name String
 
-  email     String   @unique
+  email String @unique
 
-  password  String
+  password String
 
   createdAt DateTime @default(now())
 
   updatedAt DateTime @updatedAt
 
+  opportunities    Opportunity[]
+  workerProfile    WorkerProfile?
+  recruiterProfile RecruiterProfile?
+  applications     Application[]
+
   @@index([email])
+}
+
+enum UserRole {
+  WORKER
+  RECRUITER
+}
+
+enum OpportunityType {
+  JOB
+  SERVICE
+}
+
+enum OpportunityStatus {
+  ACTIVE
+  CLOSED
+}
+
+enum OpportunitySource {
+  LIA
+  EXTERNAL
+}
+
+model Opportunity {
+  id          String            @id @default(cuid())
+  title       String
+  description String
+  type        OpportunityType
+  location    String?
+  status      OpportunityStatus @default(ACTIVE)
+  category    String?
+  tags        String[]
+  source      OpportunitySource @default(LIA)
+  externalUrl String?
+  sourceName  String?
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id])
+
+  applications Application[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([authorId])
+}
+
+model WorkerProfile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  whatsapp      String?
+  city          String?
+  neighborhood  String?
+  bio           String?
+  skills        String[]
+  interests     String[]
+  whatsappOptIn Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RecruiterProfile {
+  id               String  @id @default(cuid())
+  userId           String  @unique
+  user             User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organizationName String
+  whatsapp         String?
+  city             String?
+  neighborhood     String?
+  description      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Application {
+  id            String      @id @default(cuid())
+  opportunityId String
+  workerId      String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  worker        User        @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([opportunityId, workerId])
+  @@index([workerId])
 }

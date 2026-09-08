@@ -1,32 +1,44 @@
 import { api } from "@/services/api";
 
+// ----------------------
+// Tipos compartilhados
+// ----------------------
+
+interface ApiResponse<T> {
+  success: boolean;
+  data: T;
+}
+
+// ----------------------
 // Register
+// ----------------------
 
 export interface RegisterRequest {
   name: string;
   email: string;
   password: string;
+  role: "WORKER" | "RECRUITER";
 }
 
 export interface RegisterResponse {
   id: string;
   name: string;
   email: string;
+  role: "WORKER" | "RECRUITER";
 }
 
-
-
 export async function register(data: RegisterRequest) {
-  const response = await api.post<RegisterResponse>(
+  const response = await api.post<ApiResponse<RegisterResponse>>(
     "/register",
     data,
   );
 
-  return response.data;
+  return response.data.data;
 }
 
-// Login 
-
+// ----------------------
+// Login
+// ----------------------
 
 export interface LoginRequest {
   email: string;
@@ -40,14 +52,12 @@ export interface LoginResponse {
     id: string;
     name: string;
     email: string;
+    role: "WORKER" | "RECRUITER";
   };
 }
 
 export async function login(data: LoginRequest) {
-  const response = await api.post<LoginResponse>(
-    "/login",
-    data,
-  );
+  const response = await api.post<ApiResponse<LoginResponse>>("/login", data);
 
-  return response.data;
+  return response.data.data;
 }
