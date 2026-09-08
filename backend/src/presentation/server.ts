@@ -6,12 +6,18 @@ import jwtPlugin from '../infrastructure/http/plugins/jwt.js';
 import { opportunitiesRoutes } from './routes/opportunities.routes.js';
 import { profilesRoutes } from './routes/profiles.routes.js';
 
+const corsOrigin = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
+  : true;
+
 export const app = Fastify({
   logger: true,
 });
 
+// Em desenvolvimento, sem FRONTEND_URL definida, o CORS reflete qualquer origem.
+// Em produção, defina FRONTEND_URL com a (ou as, separadas por vírgula) origem permitida.
 await app.register(cors, {
-  origin: true, // Em desenvolvimento, isso libera para qualquer origem (como o seu localhost:5173)
+  origin: corsOrigin,
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Garante que os métodos principais estão liberados
 });
 
