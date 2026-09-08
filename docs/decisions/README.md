@@ -22,7 +22,7 @@ Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
 | ADR-004 | React Native como tecnologia Mobile | Pendente (Sprint 0) |
 | ADR-005 | Arquitetura em camadas e separação de responsabilidades | Pendente (Sprint 0) |
 | ADR-006 | Estratégia inicial de autenticação | Pendente (Sprint 0) |
-| ADR-007 | Escopo inicial do MVP | Pendente (Sprint 0) |
+| ADR-007 | Escopo inicial do MVP | Superseded / Revised |
 | ADR-008 | Estrutura de pastas do projeto | Pendente (Sprint 0) |
 | ADR-009 | Fluxo de trabalho com Git | Pendente (Sprint 0) |
 | ADR-010 | Design System inicial | Pendente (Sprint 0) |
@@ -32,8 +32,12 @@ Este diretório reúne os registros de decisões arquiteturais do projeto LIA.
 | ADR-014 | Frontend Stack | Accepted |
 | ADR-015 | Design System Foundation | Accepted |
 | ADR-016 | Estratégia de Data Fetching | Accepted |
+| ADR-017 | Authentication Session Strategy | Accepted |
+| ADR-018 | User Identity and Capability Model | Proposed |
 
 ADRs pendentes serão preenchidas na Sprint 0.
+
+O ADR-007 foi revisado e superado pela direção de produto v2 (ver Roadmap v2 e ADR-018).
 
 ---
 

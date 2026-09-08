@@ -29,6 +29,7 @@ last-reviewed: 2026-07-18
 | ADR-015 | [ADR-015 - Design System Foundation](./ADR-015-design-system.md) | Documento de architecture do projeto LIA. | architecture | architecture, adr-015-design-system |
 | ADR-016 | [ADR-016 - Estratégia de Data Fetching](./ADR-016-data-fetching.md) | Documento de architecture do projeto LIA. | architecture | architecture, adr-016-data-fetching |
 | ADR-017 | [ADR-017 - Authentication Session Strategy](./ADR-017-authentication-session-strategy.md) | Documento de architecture do projeto LIA. | architecture | architecture, adr-017-authentication-session-strategy |
+| ADR-018 | [ADR-018 - User Identity and Capability Model](./ADR-018-user-capability-model.md) | Documento de architecture do projeto LIA. | architecture | architecture, adr-018-user-capability-model |
 
 ---
 
