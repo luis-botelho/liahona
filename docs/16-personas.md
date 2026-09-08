@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 2.0.0
 >
 > **Status:** Ativo
 
@@ -43,7 +43,7 @@ Sempre que possível, deverão ser refinadas a partir do feedback de usuários r
 ## Perfil
 
 - 18 anos
-- Primeiro emprego
+- Worker / procura primeiro emprego
 - Mora em Mambucaba
 - Possui apenas um smartphone
 - Pouca experiência profissional
@@ -94,6 +94,7 @@ Permite construir reputação.
 ## Perfil
 
 - 47 anos
+- Comerciante / recruiter
 - Proprietária de uma padaria
 - Pouco tempo disponível
 - Usa WhatsApp diariamente
@@ -138,6 +139,7 @@ Facilita comunicação.
 ## Perfil
 
 - 29 anos
+- Autônomo / prestador de serviços e potencial educador
 - Eletricista autônomo
 - Vive de indicações
 
@@ -182,6 +184,7 @@ Facilita novos contratos.
 
 ## Perfil
 
+- RH / recruiter profissional
 - Analista de RH
 - Empresa de médio porte
 
@@ -260,9 +263,93 @@ Facilita contratação.
 
 ---
 
+# Persona 06 — Marcos (Educador)
+
+## Perfil
+
+- Profissional experiente
+- Deseja ensinar uma habilidade prática
+- Não domina a criação de cursos
+
+---
+
+## Objetivo
+
+Transmitir seu conhecimento e construir alcance local.
+
+---
+
+## Dores
+
+- Não sabe como estruturar um curso.
+- Não possui ferramentas de publicação.
+- Dificuldade de alcançar alunos.
+
+---
+
+## Necessidades
+
+- Ajuda para estruturar conteúdo.
+- Publicação simplificada.
+- Acompanhamento de alunos.
+
+---
+
+## Como o LIA ajuda
+
+Ajuda a estruturar o curso.
+
+Publica o conteúdo.
+
+Permite emitir certificados quando aplicável.
+
+---
+
+# Persona 07 — Ana (Estudante em transição)
+
+## Perfil
+
+- Jovem buscando melhorar a empregabilidade
+- Tem disposição para aprender
+- Precisa orientação sobre caminhos de desenvolvimento
+
+---
+
+## Objetivo
+
+Melhorar a empregabilidade e fechar gaps de habilidade.
+
+---
+
+## Dores
+
+- Vê vagas, mas não se sente qualificada.
+- Não sabe por onde começar a estudar.
+- Não possui currículo atrativo.
+
+---
+
+## Necessidades
+
+- Trilhas de aprendizagem.
+- Cursos acessíveis.
+- Currículo que reflita o aprendizado.
+
+---
+
+## Como o LIA ajuda
+
+Identifica o gap a partir de uma oportunidade.
+
+Orienta uma trilha.
+
+Atualiza o currículo conforme aprende.
+
+---
+
 # Evolução das Personas
 
-As personas representam hipóteses iniciais.
+As personas **representam hipóteses iniciais**, não indivíduos garantidos.
 
 Durante o desenvolvimento do produto, deverão ser revisadas com base em entrevistas, métricas e feedback dos usuários.
 
@@ -297,6 +384,7 @@ Caso essas perguntas não possam ser respondidas, a funcionalidade deverá ser r
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Adição das personas Marcos (Educador) e Ana (Estudante em transição). Atualização dos papéis de João (worker), Dona Maria (recruiter), Carlos (prestador/educador) e Juliana (RH). Reforço de que personas são hipóteses. |
 
 ---
 
