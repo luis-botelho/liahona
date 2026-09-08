@@ -27,6 +27,7 @@ export function OpportunityDetailPage() {
   const applied = (opportunity?.hasApplied ?? false) || appliedAtRuntime;
 
   const isOwnerRecruiter = opportunity?.author.id === user.id;
+  const isExternal = Boolean(opportunity?.externalUrl);
 
   async function handleApply() {
     if (!id) return;
@@ -51,10 +52,8 @@ export function OpportunityDetailPage() {
   }
 
   return (
-    <main className="min-h-screen px-5 py-10 text-left sm:px-8">
+    <div className="px-4 py-10 sm:px-6">
       <div className="mx-auto max-w-3xl">
-        <p className="text-sm font-medium text-muted-foreground">LIAHONA</p>
-
         {query.isPending && (
           <p className="mt-8 rounded-2xl border p-8 text-center text-muted-foreground">
             Carregando oportunidade...
@@ -78,13 +77,18 @@ export function OpportunityDetailPage() {
 
         {opportunity && (
           <>
-            <div className="my-3 flex items-center gap-3">
+            <div className="my-3 flex flex-wrap items-center gap-3">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {opportunity.title}
               </h1>
               <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
                 {opportunity.type === "JOB" ? "Trabalho" : "Serviço"}
               </span>
+              {opportunity.category && (
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  {opportunity.category}
+                </span>
+              )}
             </div>
             <p className="mb-8 text-muted-foreground">
               {opportunity.author.name}
@@ -101,11 +105,6 @@ export function OpportunityDetailPage() {
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {opportunity.category && (
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                      {opportunity.category}
-                    </span>
-                  )}
                   {(opportunity.tags ?? []).map((tag) => (
                     <span
                       key={tag}
@@ -117,6 +116,15 @@ export function OpportunityDetailPage() {
                 </div>
 
                 <div className="border-t pt-4 text-sm text-muted-foreground">
+                  {opportunity.location && (
+                    <p>Localização: {opportunity.location}</p>
+                  )}
+                  <p>
+                    Origem:{" "}
+                    {opportunity.source === "EXTERNAL"
+                      ? (opportunity.sourceName ?? "Externa")
+                      : "LIA (comunidade)"}
+                  </p>
                   <p>
                     Status:{" "}
                     {opportunity.status === "ACTIVE" ? "Ativa" : "Encerrada"}
@@ -131,7 +139,7 @@ export function OpportunityDetailPage() {
               </CardContent>
             </Card>
 
-            <div className="mt-8 flex justify-end gap-3">
+            <div className="mt-8 flex flex-wrap justify-end gap-3">
               <Button variant="outline" onClick={() => navigate("/dashboard")}>
                 Voltar
               </Button>
@@ -146,14 +154,29 @@ export function OpportunityDetailPage() {
                 </Button>
               )}
 
+              {isExternal && (
+                <Button
+                  render={
+                    <a
+                      href={opportunity.externalUrl ?? undefined}
+                      target="_blank"
+                      rel="noreferrer"
+                    />
+                  }
+                >
+                  Ver oportunidade original
+                </Button>
+              )}
+
               {user.role === "WORKER" &&
+                !isExternal &&
                 opportunity.status === "ACTIVE" && (
                   <Button
                     onClick={handleApply}
                     disabled={applied || applyMutation.isPending}
                   >
                     {applied
-                      ? "Interesse registrado"
+                      ? "Interesse enviado ✓"
                       : applyMutation.isPending
                         ? "Registrando..."
                         : "Tenho interesse"}
@@ -163,6 +186,6 @@ export function OpportunityDetailPage() {
           </>
         )}
       </div>
-    </main>
+    </div>
   );
 }

@@ -136,12 +136,13 @@ Plan
 - Applications
 - Recruiter candidates
 - WhatsApp notification infrastructure
+- Onboarding / UX polish
+- Functional CI
 
 **NEXT**
 
-- UX/onboarding polish
-- Real WhatsApp Cloud API validation
 - Deployment
+- Real WhatsApp Cloud API validation
 - External opportunity ingestion
 
 Não criamos dezenas de Tasks/User Stories neste momento: documentamos o produto real e priorizamos código funcional.

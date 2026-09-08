@@ -32,6 +32,13 @@ export function OpportunityCard({
             {opportunity.type === "JOB" ? "Trabalho" : "Serviço"}
           </span>
         </div>
+        <div className="flex flex-wrap items-center gap-2">
+          {opportunity.category && (
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+              {opportunity.category}
+            </span>
+          )}
+        </div>
         <CardDescription>
           Publicado por {opportunity.author.name}
         </CardDescription>

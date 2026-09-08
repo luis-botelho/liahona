@@ -4,6 +4,13 @@ import argon2 from 'argon2';
 import { PrismaClient } from '../src/generated/prisma/client.js';
 import { PrismaPg } from '@prisma/adapter-pg';
 
+// AVISO: este seed é estritamente para desenvolvimento/demonstração.
+// Ele nunca deve rodar em produção. A execução em NODE_ENV=production é bloqueada.
+if (process.env.NODE_ENV === 'production') {
+  console.error('O seed de demonstração não pode ser executado em produção.');
+  process.exit(1);
+}
+
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL!,
 });

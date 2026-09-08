@@ -5,8 +5,12 @@ import {
   clearSession,
 } from "./auth-storage";
 
+const API_URL =
+  (import.meta.env.VITE_API_URL as string | undefined)?.trim() ||
+  "http://localhost:3333";
+
 export const api = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
   },
