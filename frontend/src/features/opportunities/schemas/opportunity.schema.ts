@@ -14,6 +14,16 @@ export const opportunitySchema = z.object({
   type: z.enum(["JOB", "SERVICE"], {
     error: "Selecione o tipo da oportunidade.",
   }),
+  category: z
+    .string()
+    .trim()
+    .min(2, "Informe a categoria.")
+    .max(80, "A categoria deve ter no máximo 80 caracteres."),
+  tagsText: z
+    .string()
+    .trim()
+    .min(1, "Informe ao menos uma habilidade desejada.")
+    .max(500, "Muitas habilidades. Separe por vírgulas."),
   location: z
     .string()
     .trim()

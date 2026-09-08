@@ -22,13 +22,17 @@ export function OpportunityForm() {
     formState: { errors },
   } = useForm<OpportunityFormData>({
     resolver: zodResolver(opportunitySchema),
-    defaultValues: { type: "JOB", location: "" },
+    defaultValues: { type: "JOB", category: "", tagsText: "", location: "" },
   });
 
   async function onSubmit(data: OpportunityFormData) {
     try {
       await mutation.mutateAsync({
-        ...data,
+        title: data.title,
+        description: data.description,
+        type: data.type,
+        category: data.category,
+        tags: data.tagsText.split(",").map((tag) => tag.trim()).filter(Boolean),
         location: data.location || undefined,
       });
       toast.success("Oportunidade publicada com sucesso!");
@@ -69,6 +73,21 @@ export function OpportunityForm() {
           <option value="SERVICE">Serviço</option>
         </select>
         {errors.type && <p className="text-sm text-destructive">{errors.type.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="category">Categoria</Label>
+        <Input id="category" placeholder='Ex.: "Atendimento"' {...register("category")} />
+        {errors.category && <p className="text-sm text-destructive">{errors.category.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="tagsText">Tags / habilidades desejadas</Label>
+        <Input id="tagsText" placeholder='Ex.: "atendimento, caixa, vendas"' {...register("tagsText")} />
+        <p className="text-xs text-muted-foreground">
+          Separe por vírgulas. Ex.: atendimento, caixa, vendas
+        </p>
+        {errors.tagsText && <p className="text-sm text-destructive">{errors.tagsText.message}</p>}
       </div>
 
       <div className="space-y-2">
