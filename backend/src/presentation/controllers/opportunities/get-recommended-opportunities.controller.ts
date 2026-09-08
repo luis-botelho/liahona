@@ -31,7 +31,14 @@ export async function getRecommendedOpportunitiesController(
         profile ?? { skills: [], interests: [] },
       );
 
-      return { opportunity, matchScore, matchReasons };
+      return {
+        opportunity: {
+          ...opportunity,
+          tags: opportunity.tags ?? [],
+        },
+        matchScore,
+        matchReasons,
+      };
     })
     .sort(
       (a, b) =>

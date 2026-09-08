@@ -112,10 +112,33 @@ async function seedOpportunities(recruiterId: string) {
   }
 }
 
+async function backfillLegacyOpportunities(recruiterId: string) {
+  const legacy = await prisma.opportunity.findFirst({
+    where: { title: 'Auxiliar para evento local', authorId: recruiterId },
+  });
+
+  if (!legacy) return;
+
+  const needsBackfill = !legacy.category || !legacy.tags || legacy.tags.length === 0;
+
+  if (needsBackfill) {
+    await prisma.opportunity.update({
+      where: { id: legacy.id },
+      data: {
+        category: 'Eventos',
+        tags: ['auxiliar', 'eventos', 'serviços gerais'],
+      },
+    });
+
+    console.log('Oportunidade legada preenchida:', legacy.title);
+  }
+}
+
 async function main() {
   const worker = await upsertWorker();
   const recruiter = await upsertRecruiter();
   await seedOpportunities(recruiter.id);
+  await backfillLegacyOpportunities(recruiter.id);
 
   console.log('Seed finalizado.');
   console.log(`Worker:    ${worker.email} / ${DEMO_PASSWORD}`);
