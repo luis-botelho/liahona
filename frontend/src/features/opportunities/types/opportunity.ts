@@ -22,6 +22,7 @@ export interface Opportunity {
   _count?: {
     applications: number;
   };
+  hasApplied?: boolean;
 }
 
 export interface RecommendedOpportunity {

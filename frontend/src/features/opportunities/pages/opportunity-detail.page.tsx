@@ -19,11 +19,12 @@ export function OpportunityDetailPage() {
   const { user } = useAuth();
   const query = useOpportunityQuery(id);
   const applyMutation = useApplyToOpportunityMutation();
-  const [applied, setApplied] = useState(false);
+  const [appliedAtRuntime, setAppliedAtRuntime] = useState(false);
 
   if (!user) return null;
 
   const opportunity = query.data;
+  const applied = (opportunity?.hasApplied ?? false) || appliedAtRuntime;
 
   const isOwnerRecruiter = opportunity?.author.id === user.id;
 
@@ -32,7 +33,7 @@ export function OpportunityDetailPage() {
 
     try {
       await applyMutation.mutateAsync(id);
-      setApplied(true);
+      setAppliedAtRuntime(true);
       toast.success("Interesse registrado! O recrutador poderá ver seus dados.");
     } catch (error) {
       const message =
@@ -40,7 +41,7 @@ export function OpportunityDetailPage() {
           ?.data?.message ?? "";
 
       if (message.includes("já")) {
-        setApplied(true);
+        setAppliedAtRuntime(true);
         toast.success("Você já demonstrou interesse nesta oportunidade.");
         return;
       }
@@ -105,7 +106,7 @@ export function OpportunityDetailPage() {
                       {opportunity.category}
                     </span>
                   )}
-                  {opportunity.tags.map((tag) => (
+                  {(opportunity.tags ?? []).map((tag) => (
                     <span
                       key={tag}
                       className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
