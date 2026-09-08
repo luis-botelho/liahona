@@ -25,7 +25,6 @@ export function OpportunityApplicationsPage() {
   return (
     <main className="min-h-screen px-5 py-10 text-left sm:px-8">
       <div className="mx-auto max-w-3xl">
-        <p className="text-sm font-medium text-muted-foreground">LIAHONA</p>
         <h1 className="my-3 text-3xl font-semibold tracking-tight sm:text-4xl">
           Interessados
         </h1>
@@ -65,6 +64,14 @@ export function OpportunityApplicationsPage() {
             {applications.data.map((application) => {
               const profile = application.worker.workerProfile;
               const phone = sanitizePhone(profile?.whatsapp ?? null);
+              const title = detail.data?.title ?? "oportunidade";
+
+              const whatsappMessage = encodeURIComponent(
+                `Olá ${application.worker.name}, vi seu interesse na oportunidade "${title}" pelo LIA.`,
+              );
+              const whatsappLink = phone
+                ? `https://wa.me/${phone}?text=${whatsappMessage}`
+                : null;
 
               return (
                 <Card key={application.id} className="text-left">
@@ -103,12 +110,12 @@ export function OpportunityApplicationsPage() {
                       </div>
                     )}
                     <div className="border-t pt-3">
-                      {phone ? (
+                      {whatsappLink ? (
                         <Button
                           variant="outline"
                           render={
                             <a
-                              href={`https://wa.me/${phone}`}
+                              href={whatsappLink}
                               target="_blank"
                               rel="noreferrer"
                             />

@@ -14,9 +14,8 @@ export function ProfilePage() {
   const isWorker = user.role === "WORKER";
 
   return (
-    <main className="min-h-screen px-5 py-10 text-left sm:px-8">
+    <div className="px-4 py-10 sm:px-6">
       <div className="mx-auto max-w-2xl">
-        <p className="text-sm font-medium text-muted-foreground">LIAHONA</p>
         <h1 className="my-3 text-3xl font-semibold tracking-tight sm:text-4xl">
           Meu perfil
         </h1>
@@ -40,7 +39,7 @@ export function ProfilePage() {
           </CardContent>
         </Card>
       </div>
-    </main>
+    </div>
   );
 }
 

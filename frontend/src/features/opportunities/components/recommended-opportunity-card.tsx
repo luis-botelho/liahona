@@ -23,10 +23,20 @@ export function RecommendedOpportunityCard({
   return (
     <Card className="text-left">
       <CardHeader>
-        <div className="flex items-start justify-between gap-4">
-          <CardTitle className="text-lg">{opportunity.title}</CardTitle>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            {matchScore}% compatível
+        <CardTitle className="text-lg">{opportunity.title}</CardTitle>
+        <div className="flex flex-wrap items-center gap-2">
+          {matchScore > 0 && (
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              {matchScore}% compatível
+            </span>
+          )}
+          {opportunity.category && (
+            <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+              {opportunity.category}
+            </span>
+          )}
+          <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+            {opportunity.type === "JOB" ? "Trabalho" : "Serviço"}
           </span>
         </div>
         <p className="text-sm text-muted-foreground">
