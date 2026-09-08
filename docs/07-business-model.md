@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 2.0.0
 >
 > **Status:** Ativo
 
@@ -30,14 +30,16 @@ Mais do que um plano de monetização, este documento apresenta a estratégia de
 
 # Nossa Proposta de Valor
 
-O LIA conecta pessoas, talentos e oportunidades dentro da própria comunidade.
+O LIA encontra oportunidades, talentos e caminhos de desenvolvimento dentro da comunidade.
 
 Criamos um ambiente onde:
 
-- Trabalhadores encontram oportunidades.
-- Comerciantes contratam com rapidez.
-- Empresas formam bancos de talentos.
-- Moradores encontram prestadores confiáveis.
+- Trabalhadores encontram oportunidades, serviços, currículo, radar e qualificação.
+- Recrutadores publicam, recebem candidatos, gerenciam processos e acessam um banco de talentos.
+- Educadores criam conteúdo, cursos e certificados.
+- Instituições formam parcerias e oferecem trilhas de formação.
+- Moradores contratam tarefas e serviços locais.
+- Associações de comerciantes se conectam como parceiros estratégicos.
 
 Todos ganham.
 
@@ -75,15 +77,21 @@ Pessoas em busca de:
 
 ---
 
-## Comerciantes
+## Recrutadores / Empresas
 
-Negócios locais que precisam contratar rapidamente.
+Negócios locais e organizações que precisam contratar rapidamente e construir relacionamento com talentos da região.
 
 ---
 
-## Empresas
+## Educadores
 
-Organizações que desejam recrutar talentos e construir relacionamento com profissionais da região.
+Profissionais que desejam ensinar habilidades práticas e criar cursos.
+
+---
+
+## Instituições
+
+Organizações de ensino que desejam formar parcerias e oferecer trilhas de formação.
 
 ---
 
@@ -97,40 +105,47 @@ Moradores que precisam contratar serviços locais com confiança.
 
 ## Para Trabalhadores
 
-- Visibilidade
-- Reputação profissional
-- Oportunidades
-- Banco de Talentos
-- Networking
-- Desenvolvimento
+- Vagas
+- Serviços
+- Perfil profissional
+- Currículo
+- Radar
+- Qualificação
+- Candidatura
 
 ---
 
-## Para Comerciantes
+## Para Recruiters
 
-- Contratação rápida
-- Banco de profissionais
-- Histórico dos trabalhadores
-- Avaliações
-- Economia de tempo
-
----
-
-## Para Empresas
-
-- RH Digital
-- Processo seletivo
-- Banco de Currículos
-- Marca empregadora
+- Publicar vagas
+- Receber candidatos
+- Pipeline
+- Banco de talentos
+- Radar de talentos
+- Insights futuros
 
 ---
 
-## Para Comunidade
+## Para Educadores
 
-- Economia local fortalecida
-- Mais oportunidades
-- Relações de confiança
-- Incentivo ao comércio regional
+- Criação de conteúdo
+- Cursos
+- Certificados
+- Alcance local
+
+---
+
+## Para Instituições
+
+- Parceria
+- Oferta de formação
+- Trilhas
+
+---
+
+## Para a Comunidade
+
+- Tarefas e serviços
 
 ---
 
@@ -205,15 +220,21 @@ Se essas respostas forem positivas, o crescimento será consequência.
 
 # Monetização
 
-O MVP não terá monetização.
+A monetização **não é prioridade do MVP**.
 
-Nosso foco inicial será gerar valor.
+Nosso foco inicial será gerar valor e validar a proposta antes de monetizar.
 
-Após validar o produto, poderão ser avaliados modelos como:
+Modelos futuros a serem avaliados após a validação:
 
-## Assinaturas para Empresas
+## Recruiter Premium
 
-Ferramentas avançadas de recrutamento.
+Ferramentas avançadas de recrutamento para empresas e recrutadores.
+
+---
+
+## Talent Radar / Insights
+
+Acesso aprofundado ao Radar de talentos e a insights de recrutamento.
 
 ---
 
@@ -223,27 +244,23 @@ Maior visibilidade para oportunidades.
 
 ---
 
-## Clube de Benefícios
+## Parcerias Educacionais
 
-Programa de vantagens para usuários e parceiros.
-
----
-
-## Publicidade Local
-
-Espaço para divulgação de negócios parceiros.
+Cursos, trilhas e certificações em conjunto com instituições de ensino.
 
 ---
 
-## Serviços Premium
+## Benefícios
 
-Recursos avançados para empresas e recrutadores.
+Programa de vantagens para usuários e parceiros da comunidade.
 
 ---
 
-## Integrações
+# Associação de Comerciantes
 
-APIs e soluções para parceiros institucionais.
+Registrar como possível canal/parceiro estratégico futuro.
+
+A associação de comerciantes pode ampliar o alcance do LIA dentro da comunidade, conectar parceiros e fortalecer a oferta de vagas e serviços.
 
 ---
 
@@ -299,6 +316,7 @@ Queremos que o LIA seja lembrado não apenas como um aplicativo, mas como a prin
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Atualização da proposta de valor por stakeholder (trabalhador, recruiter, educador, instituições, comunidade). Adição de associação de comerciantes e direção de monetização futura. |
 
 ---
 

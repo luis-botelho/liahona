@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 2.0.0
 >
 > **Status:** Ativo
 
@@ -126,26 +126,105 @@ Plan
 
 ## Status resumido
 
-**DONE**
+**DONE ATUAL**
 
 - Auth
-- Roles
-- Profiles
+- Roles atuais
+- Worker/Recruiter profiles
 - Opportunities
-- Matching
+- Deterministic matching
 - Applications
 - Recruiter candidates
-- WhatsApp notification infrastructure
-- Onboarding / UX polish
-- Functional CI
+- WhatsApp infrastructure
+- Onboarding
+- CI
+
+**CURRENT**
+
+- Product realignment / public access
 
 **NEXT**
 
-- Deployment
-- Real WhatsApp Cloud API validation
-- External opportunity ingestion
+- Open LIA
 
-Não criamos dezenas de Tasks/User Stories neste momento: documentamos o produto real e priorizamos código funcional.
+Não apagamos histórico útil: os itens DONE representam o que já foi construído e validado.
+
+---
+
+# Priorização
+
+O backlog é organizado por prioridade (P0 → P3).
+
+Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priorização que reflete a direção atual do produto.
+
+## P0 — Fundação pública e identidade
+
+- Public Opportunity Experience
+- Guest Interest Flow
+- Progressive Authentication
+- Worker Professional Profile
+- Recruiter & Opportunities
+- Opportunity Matching
+- Worker Radar
+
+## P1 — Personalização e recrutamento
+
+- Curriculum PDF
+- Application History
+- Recruiting Pipeline
+- Talent Radar
+- Recruiter Notifications
+- Local Tasks & Services
+- Manual Opportunity Curation
+- Privacy/LGPD Controls
+
+## P2 — Aprendizagem, IA e governança
+
+- Learning Catalog
+- Learning Paths
+- EducatorProfile
+- Internal Courses
+- Certificates
+- AI Resume Assistant
+- Opportunity Discovery Agent
+- Normalization
+- Deduplication
+- Trust/Moderation
+
+## P3 — Ecossistema e monetização futura
+
+- Education Partnerships
+- Merchant Association
+- Recruiter Insights
+- Reputation
+- Rewards
+- Monetization
+
+---
+
+# LGPD e Privacidade
+
+A LGPD e a privacidade são requisitos transversais.
+
+Consentimentos e preferências devem ser separados por finalidade:
+
+- receber Radar por WhatsApp;
+- permitir recrutadores encontrarem o perfil;
+- tornar perfil público;
+- receber recomendações;
+- receber comunicações promocionais.
+
+Deve ser previsto no roadmap:
+
+- acesso aos dados;
+- edição;
+- exportação;
+- exclusão;
+- controle de visibilidade.
+
+Princípios de produto: minimização, finalidade, transparência.
+
+O LIA pretende atuar como plataforma de conexão/intermediação, sujeita às obrigações legais aplicáveis.
 
 ---
 
@@ -380,6 +459,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Reescrita do "Current MVP Delivery Focus": adição de status (DONE ATUAL, CURRENT, NEXT) e reestruturação por prioridade P0/P1/P2/P3. Adição de diretrizes LGPD/privacidade. |
 
 ---
 

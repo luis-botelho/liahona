@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 2.0.0
 >
 > **Status:** Ativo
 
@@ -86,134 +86,175 @@ Entregas
 
 Resultado esperado
 
-Equipe preparada para iniciar o desenvolvimento do MVP.
+Equipe preparada para iniciar o desenvolvimento do produto.
 
 ---
 
-# Milestone 1 — MVP
+# MILESTONE 1 — OPEN LIA
 
-Objetivo
+## Objetivo
 
-Validar o conceito do LIA em Mambucaba.
+Permitir descoberta e contato sem barreira de cadastro.
 
-Principais funcionalidades
+O LIA começa público: qualquer pessoa pode encontrar uma oportunidade e entrar em contato sem precisar criar conta.
 
-- Cadastro e login
-- Perfis WORKER e RECRUITER
-- Perfis básicos (habilidades, interesses, localização, WhatsApp)
-- Publicação de oportunidades (vagas e serviços)
-- Feed de oportunidades
-- Matching por perfil (recomendações explicáveis)
-- Candidatura/interesse em oportunidades
-- Recrutador vendo interessados
-- Contato via WhatsApp
-- Notificações WhatsApp (infraestrutura pronta)
+## Entregas
 
-Fora do escopo do MVP atual
+- Feed público
+- Detalhe público
+- WhatsApp sem login
+- Candidatura LIA opcional
+- Progressive authentication
+- Retorno à oportunidade após autenticação
 
-- Chat interno
-- Avaliações
-- Reputação avançada
-- Analytics avançado
+## Princípio
 
-Resultado esperado
-
-Primeiros usuários ativos.
-
-Primeiros comerciantes utilizando a plataforma.
-
-Validação do problema.
-
-Próxima evolução do MVP
-
-- Onboarding e UX do MVP polidos (navegação, perfis, estados vazio/erro/loading)
-- Deploy do MVP
-- Ingestão de oportunidades externas (fontes públicas/parceiras) para ampliar a oferta de vagas.
-- Validação das notificações WhatsApp reais
+> Você não precisa de uma conta para encontrar uma oportunidade.
 
 ---
 
-# Milestone 2 — Beta
+# MILESTONE 2 — PERSONAL LIA
 
-Objetivo
+## Objetivo
 
-Melhorar a experiência baseada no uso real.
+Entregar valor personalizado para o trabalhador após autenticação.
 
-Funcionalidades
+## Entregas
 
-- Notificações
-- Geolocalização
-- Melhorias de UX
-- Painel administrativo
-- Sistema de denúncias
-- Relatórios
-- Analytics
-
-Resultado esperado
-
-Produto estável para crescimento.
+- Perfil profissional
+- Currículo vivo
+- Exportação em PDF
+- Histórico
+- Matching
+- Radar do trabalhador
+- Visibilidade para recrutadores (mediante autorização)
 
 ---
 
-# Milestone 3 — RH Central
+# MILESTONE 3 — RECRUITER LIA
 
-Objetivo
+## Objetivo
 
-Transformar o LIA na principal plataforma de contratação da comunidade.
+Capacitar recrutadores e empresas a encontrar e contratar talentos.
 
-Funcionalidades
+## Entregas
 
-- Banco de currículos
-- Gestão de vagas
-- Processo seletivo
-- Empresas
-- Painéis administrativos
-- Gestão de candidatos
-
-Resultado esperado
-
-Empresas utilizando o LIA como ferramenta de recrutamento.
+- Publicação
+- Candidatos
+- Pipeline de recrutamento
+- Triagem
+- Entrevista
+- Aprovado/Rejeitado
+- Perfis desejados
+- Radar de talentos
 
 ---
 
-# Milestone 4 — Expansão Regional
+# MILESTONE 4 — SERVICES LIA
 
-Objetivo
+## Objetivo
 
-Expandir o produto para novas comunidades.
+Habilitar o marketplace de tarefas e serviços locais com segurança.
 
-Funcionalidades
+## Entregas
 
-- Multi cidades
-- Configurações regionais
-- Parceiros locais
-- Gestão por município
-
-Resultado esperado
-
-Modelo validado fora de Mambucaba.
+- Tarefas
+- Serviços
+- Matching
+- Contato
+- Regras
+- Segurança
+- Moderação
 
 ---
 
-# Milestone 5 — Plataforma Completa
+# MILESTONE 5 — LEARN LIA
 
-Objetivo
+## Objetivo
 
-Consolidar o LIA como um ecossistema completo.
+Integrar educação ao ciclo de empregabilidade.
 
-Possíveis evoluções
+## Entregas
 
-- Pagamentos
-- Clube de Benefícios
+- Catálogo
+- Cursos externos
+- Trilhas
+- EducatorProfile
+- Cursos internos
+- Progresso
+- Certificados
+
+---
+
+# MILESTONE 6 — INTELLIGENCE LIA
+
+## Objetivo
+
+Ampliar a descoberta de oportunidades e a inteligência do matching.
+
+## Entregas
+
+- Curadoria externa
+- Agentes
+- Normalização
+- Deduplicação
+- IA de currículo
+- Inteligência de matching
+
+---
+
+# MILESTONE 7 — ECOSYSTEM
+
+## Objetivo
+
+Consolidar o LIA como ecossistema local completo.
+
+## Entregas
+
+- Instituições de ensino
+- Associação de comerciantes
 - Parceiros
-- Cursos
-- Certificações
-- IA para recomendações
-- API pública
+- Reputação
+- Recompensas
+- Benefícios
+- Monetização
 
-Resultado esperado
+---
 
-Ecossistema completo de empregabilidade comunitária.
+# Roadmap até 31/12/2026
+
+Os prazos abaixo são **direção e prioridade, não contrato rígido**.
+
+O LIA deve evoluir de forma orientada por aprendizados e prioridades.
+
+## Setembro 2026 — Open LIA
+
+- Acesso público
+- Interesse via WhatsApp
+- Progressive auth
+
+## Outubro 2026 — Career + Recruiter
+
+- Perfil profissional fortalecido
+- Currículo PDF
+- Histórico
+- Pipeline de recrutamento inicial
+
+## Novembro 2026 — Radar + Services
+
+- Radar do trabalhador
+- Radar de talentos v1
+- Tarefas/serviços v1
+- Curadoria manual de oportunidades externas
+
+## Dezembro 2026 — Learning + Intelligence + Release Readiness
+
+- Catálogo/trilhas v1
+- EducatorProfile básico (se viável)
+- IA de currículo em versão inicial
+- Primeira ingestão externa automatizada (se viável)
+- Privacidade/revisão de lançamento
+- Deploy quando o fluxo estiver estável
 
 ---
 
@@ -224,6 +265,8 @@ Não buscamos construir todas as funcionalidades rapidamente.
 Buscamos construir as funcionalidades certas no momento certo.
 
 Cada etapa existe para validar aprendizados e reduzir riscos antes da próxima evolução.
+
+A prioridade imediata é alinhar o fluxo público e o progressive auth antes de retomar o deploy.
 
 ---
 
@@ -241,6 +284,7 @@ Cada etapa existe para validar aprendizados e reduzir riscos antes da próxima e
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Reestruturação do roadmap em 7 milestones (OPEN, PERSONAL, RECRUITER, SERVICES, LEARN, INTELLIGENCE, ECOSYSTEM). Adição de plano temporal orientativo até 31/12/2026. |
 
 ---
 

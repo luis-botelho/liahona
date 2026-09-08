@@ -204,7 +204,11 @@ Escopo inicial do MVP
 
 **Status**
 
-Pendente (Sprint 0)
+Superseded / Revised
+
+**Resumo**
+
+Escopo inicial revisado e superado pela direção de produto v2. Detalhes em Roadmap v2 e ADR-018.
 
 ---
 
@@ -352,6 +356,46 @@ Accepted
 
 ---
 
+## ADR-017
+
+**Arquivo**
+
+docs/decisions/ADR-017-authentication-session-strategy.md
+
+**Título**
+
+Authentication Session Strategy
+
+**Status**
+
+Accepted
+
+**Resumo**
+
+Define HTTP Only Cookies como estratégia oficial de persistência de sessão.
+
+---
+
+## ADR-018
+
+**Arquivo**
+
+docs/decisions/ADR-018-user-capability-model.md
+
+**Título**
+
+User Identity and Capability Model
+
+**Status**
+
+Proposed
+
+**Resumo**
+
+Direção arquitetural: User como identidade única, capacidades expressas por perfis (WorkerProfile, RecruiterProfile, EducatorProfile). Não implementada nesta missão.
+
+---
+
 ## Próximas ADRs previstas
 
 - Arquitetura REST
@@ -387,6 +431,7 @@ As ADRs representam a memória técnica do projeto.
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Adição de ADR-017 e ADR-018. Correção do status do ADR-007 para Superseded / Revised. |
 
 ---
 

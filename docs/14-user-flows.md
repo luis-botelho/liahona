@@ -12,7 +12,7 @@ last-reviewed: 2026-07-18
 
 > **Projeto:** LIA — Local Intelligence for Assistance
 >
-> **Versão:** 1.0.0
+> **Versão:** 2.0.0
 >
 > **Status:** Ativo
 
@@ -42,300 +42,263 @@ Cada etapa deve aproximar o usuário de seu objetivo.
 
 Nunca criar passos desnecessários.
 
+**Princípio central:** o LIA não deve exigir cadastro antes de entregar valor.
+
 ---
 
-# Fluxo 01 — Cadastro
+# FLOW 1 — Visitante procura oportunidade
 
 Persona
 
 - João
-- Carlos
+- Ana
 
 Objetivo
 
-Criar uma conta.
+Encontrar uma oportunidade sem criar conta.
 
 Fluxo
 
 ```text
-Tela Inicial
-
-↓
-
-Criar Conta
-
-↓
-
-Informações Básicas
-
-↓
-
-Confirmação
-
-↓
-
-Perfil
-
-↓
-
-Home
+Landing/feed
+→ filtro/lista
+→ detalhe
 ```
+
+SEM LOGIN.
 
 ---
 
-# Fluxo 02 — Login
-
-Objetivo
-
-Entrar rapidamente na plataforma.
-
-Fluxo
-
-```text
-Tela Inicial
-
-↓
-
-Login
-
-↓
-
-Autenticação
-
-↓
-
-Home
-```
-
----
-
-# Fluxo 03 — Completar Perfil
+# FLOW 2 — Guest interest
 
 Persona
 
-João
+- João
+- Ana
 
 Objetivo
 
-Criar um perfil profissional.
+Demonstrar interesse em uma oportunidade sem conta.
 
 Fluxo
 
 ```text
-Home
+Detalhe
+→ Tenho interesse
+→ escolha:
 
-↓
+WhatsApp
+OU
+LIA
 
-Meu Perfil
+WhatsApp:
+→ abre conversa
+→ fim.
 
-↓
-
-Editar Dados
-
-↓
-
-Adicionar Experiências
-
-↓
-
-Adicionar Competências
-
-↓
-
-Salvar
+LIA:
+→ auth.
 ```
 
 ---
 
-# Fluxo 04 — Publicar Serviço
+# FLOW 3 — Progressive auth
 
 Persona
 
-Carlos
+- João
+- Ana
 
 Objetivo
 
-Divulgar seus serviços.
-
-Fluxo
-
-```text
-Home
-
-↓
-
-Novo Serviço
-
-↓
-
-Informações
-
-↓
-
-Categoria
-
-↓
-
-Fotos
-
-↓
-
-Publicar
-```
-
----
-
-# Fluxo 05 — Buscar Profissionais
-
-Persona
-
-Pedro
-
-Objetivo
-
-Encontrar alguém para contratar.
-
-Fluxo
-
-```text
-Home
-
-↓
-
-Pesquisar
-
-↓
-
-Filtros
-
-↓
-
-Lista
-
-↓
-
-Perfil
-
-↓
-
-Contato
-```
-
----
-
-# Fluxo 06 — Publicar Vaga
-
-Persona
-
-Dona Maria
-
-Objetivo
-
-Criar uma oportunidade de trabalho.
-
-Fluxo
-
-```text
-Home
-
-↓
-
-Nova Vaga
-
-↓
-
-Descrição
-
-↓
-
-Requisitos
-
-↓
-
-Publicar
-```
-
----
-
-# Fluxo 07 — Candidatar-se
-
-Persona
-
-João
-
-Objetivo
-
-Enviar candidatura.
+Criar/login de conta a partir de uma oportunidade real.
 
 Fluxo
 
 ```text
 Vaga
-
-↓
-
-Detalhes
-
-↓
-
-Candidatar-se
-
-↓
-
-Confirmação
+→ login/cadastro
+→ volta para vaga
+→ candidatura
 ```
+
+Após autenticação, o usuário retorna à oportunidade original.
 
 ---
 
-# Fluxo 08 — Avaliar Usuário
+# FLOW 4 — Worker account
+
+Persona
+
+- João
 
 Objetivo
 
-Registrar uma experiência após um serviço.
+Ativar os benefícios da conta como trabalhador.
 
 Fluxo
 
 ```text
-Serviço Finalizado
-
-↓
-
-Avaliar
-
-↓
-
-Comentário
-
-↓
-
-Enviar
+Login
+→ perfil
+→ matching
+→ radar
+→ candidatura
+→ acompanhamento
 ```
 
 ---
 
-# Fluxo 09 — Conversar
+# FLOW 5 — Recruiter
+
+Persona
+
+- Dona Maria
+- Juliana
 
 Objetivo
 
-Facilitar comunicação.
+Publicar e gerenciar oportunidades e candidatos.
 
 Fluxo
 
 ```text
-Perfil
-
-↓
-
-Chat
-
-↓
-
-Mensagens
-
-↓
-
-Encerrar
+login
+→ perfil
+→ publicar
+→ receber candidatos
+→ processo seletivo
 ```
+
+---
+
+# FLOW 6 — Talent Radar
+
+Persona
+
+- Juliana
+
+Objetivo
+
+Receber alertas quando um talento compatível surgir.
+
+Fluxo
+
+```text
+empresa define perfil desejado
+→ worker compatível surge
+→ LIA identifica
+→ recruiter recebe alerta
+```
+
+---
+
+# FLOW 7 — Task/service
+
+Persona
+
+- Pedro
+
+Objetivo
+
+Contratar um serviço ou tarefa pontual.
+
+Fluxo
+
+```text
+necessidade
+→ publicar tarefa
+→ matching
+→ prestador
+→ contato
+```
+
+---
+
+# FLOW 8 — Career
+
+Persona
+
+- João
+- Ana
+
+Objetivo
+
+Construir e usar o currículo profissional.
+
+Fluxo
+
+```text
+perfil
+→ currículo
+→ exportar PDF
+→ adaptar para vaga
+```
+
+---
+
+# FLOW 9 — Learning
+
+Persona
+
+- Ana
+
+Objetivo
+
+Fechar um gap de habilidade através de aprendizado.
+
+Fluxo
+
+```text
+gap
+→ trilha
+→ curso
+→ conclusão
+→ certificado
+→ perfil atualizado
+```
+
+---
+
+# FLOW 10 — Educator
+
+Persona
+
+- Carlos
+- Marcos
+
+Objetivo
+
+Criar e publicar um curso.
+
+Fluxo
+
+```text
+ativar perfil educador
+→ criar curso
+→ estruturar
+→ publicar
+→ emitir certificado aplicável
+```
+
+---
+
+# FLOW 11 — External opportunity
+
+Objetivo
+
+Trazer oportunidades externas para o feed.
+
+Fluxo
+
+```text
+curadoria/agente
+→ normalização
+→ publicação com fonte
+→ feed
+→ matching
+```
+
+Toda vaga externa deve mostrar sua origem de forma transparente.
 
 ---
 
@@ -373,6 +336,7 @@ Quanto menor o esforço necessário para atingir um objetivo, melhor será a exp
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 08/09/2026 | 2.0.0 | Reescrita dos fluxos principais (visitante, guest interest, progressive auth, worker, recruiter, talent radar, task/service, career, learning, educator, external opportunity). |
 
 ---
 
