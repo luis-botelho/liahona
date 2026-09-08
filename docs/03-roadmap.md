@@ -98,14 +98,23 @@ Validar o conceito do LIA em Mambucaba.
 
 Principais funcionalidades
 
-- Cadastro
-- Login
-- Perfil
-- Publicação de serviços
-- Busca de oportunidades
-- Chat
+- Cadastro e login
+- Perfis WORKER e RECRUITER
+- Perfis básicos (habilidades, interesses, localização, WhatsApp)
+- Publicação de oportunidades (vagas e serviços)
+- Feed de oportunidades
+- Matching por perfil (recomendações explicáveis)
+- Candidatura/interesse em oportunidades
+- Recrutador vendo interessados
+- Contato via WhatsApp
+- Notificações WhatsApp (infraestrutura pronta)
+
+Fora do escopo do MVP atual
+
+- Chat interno
 - Avaliações
-- Banco de Talentos inicial
+- Reputação avançada
+- Analytics avançado
 
 Resultado esperado
 
@@ -114,6 +123,10 @@ Primeiros usuários ativos.
 Primeiros comerciantes utilizando a plataforma.
 
 Validação do problema.
+
+Próxima evolução do MVP
+
+Ingestão de oportunidades externas (fontes públicas/parceiras) para ampliar a oferta de vagas.
 
 ---
 

@@ -112,6 +112,42 @@ Caso uma atividade seja bloqueada, ela receberá a label **blocked** até que o 
 
 ---
 
+# Current MVP Delivery Focus
+
+Durante a corrida do MVP seguimos um fluxo enxuto, sem cerimônia:
+
+```text
+Plan
+→ Implement
+→ Test
+→ Review
+→ Ship
+```
+
+## Status resumido
+
+**DONE**
+
+- Auth
+- Roles
+- Profiles
+- Opportunities
+- Matching
+- Applications
+- Recruiter candidates
+- WhatsApp notification infrastructure
+
+**NEXT**
+
+- UX/onboarding polish
+- Real WhatsApp Cloud API validation
+- Deployment
+- External opportunity ingestion
+
+Não criamos dezenas de Tasks/User Stories neste momento: documentamos o produto real e priorizamos código funcional.
+
+---
+
 # Organização das Milestones
 
 As milestones representam as grandes fases do produto.
