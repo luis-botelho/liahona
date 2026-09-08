@@ -126,7 +126,10 @@ Validação do problema.
 
 Próxima evolução do MVP
 
-Ingestão de oportunidades externas (fontes públicas/parceiras) para ampliar a oferta de vagas.
+- Onboarding e UX do MVP polidos (navegação, perfis, estados vazio/erro/loading)
+- Deploy do MVP
+- Ingestão de oportunidades externas (fontes públicas/parceiras) para ampliar a oferta de vagas.
+- Validação das notificações WhatsApp reais
 
 ---
 

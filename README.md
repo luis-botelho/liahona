@@ -24,13 +24,13 @@ O LIA propõe uma plataforma digital para aproximar quem oferece trabalho, quem 
 
 No MVP, o produto será focado em:
 
-- Cadastro e login
-- Perfil profissional
-- Publicação de serviços
-- Busca de oportunidades
-- Chat
-- Avaliações
-- Banco de Talentos inicial
+- Cadastro e login (com escolha de perfil: trabalhador ou recrutador)
+- Perfis profissionais (localização, WhatsApp, habilidades e interesses)
+- Publicação de oportunidades
+- Recomendações de oportunidades por local e habilidades
+- Candidatura/interesse com acionamento do recrutador via WhatsApp
+- Lista de interessados para o recrutador
+- Notificações por e-mail/WhatsApp (infraestrutura preparada)
 
 A proposta é começar pequeno, validar o uso real e evoluir com base nas necessidades da comunidade.
 
@@ -66,29 +66,100 @@ Princípios adotados:
 
 ---
 
-## Stack oficial
+## Stack atual
 
 | Camada | Tecnologia |
 |--------|------------|
-| Frontend Web | React |
-| Mobile | React Native |
-| Backend | Node.js |
+| Frontend Web | React (Vite) + React Router + TanStack Query |
+| Backend | Node.js + Fastify |
 | Linguagem | TypeScript |
 | Banco de Dados | PostgreSQL |
 | ORM | Prisma |
 | API | REST |
 | Autenticação | JWT |
-| Versionamento | Git |
-| Repositório | GitHub |
-
-Ferramentas previstas para qualidade e automação:
-
-- GitHub Actions
-- ESLint
-- Prettier
-- Testes unitários, integração e E2E
+| Formulários | React Hook Form + Zod |
+| Estilo | Tailwind CSS |
+| CI | GitHub Actions |
+| Versionamento | Git + GitHub |
 
 ---
+
+## Como rodar localmente
+
+### Pré-requisitos
+
+- Node.js 22+
+- PostgreSQL
+
+### Backend
+
+```bash
+cd backend
+cp .env.example .env   # preencha DATABASE_URL, JWT_SECRET e JWT_EXPIRES_IN
+npm install
+npx prisma generate
+npx prisma migrate deploy   # aplicar migrations no banco
+npm run db:seed            # opcional, APENAS para desenvolvimento (cria contas demo)
+npm run dev                # sobe a API em http://localhost:3333
+```
+
+Variáveis de ambiente (backend/.env):
+
+- `DATABASE_URL` — conexão com o PostgreSQL
+- `JWT_SECRET` — segredo para assinar os tokens
+- `JWT_EXPIRES_IN` — validade do token (ex.: `1d`)
+- `FRONTEND_URL` — origens permitidas no CORS (opcional em desenvolvimento)
+- `WHATSAPP_ENABLED` — `false` deixa as notificações em modo simulado (padrão)
+
+> **Seed DEV ONLY**: `npm run db:seed` cria as contas de demonstração
+> (`demo@liahona.app`, `recrutador.demo@liahona.app`) e é bloqueado em produção.
+
+### Frontend
+
+```bash
+cd frontend
+cp .env.example .env   # aponta VITE_API_URL para o backend
+npm install
+npm run dev            # sobe o app em http://localhost:5173
+```
+
+Variáveis de ambiente (frontend/.env):
+
+- `VITE_API_URL` — endereço da API (padrão de desenvolvimento: `http://localhost:3333`)
+
+---
+
+## Fluxo atual do MVP
+
+**Trabalhador**
+
+```text
+Cadastro/Login
+→ Completa o perfil (cidade, habilidades, interesses, WhatsApp)
+→ Vê oportunidades recomendadas por ele
+→ Abre uma oportunidade e registra interesse
+→ O recrutador recebe o contato e chama no WhatsApp
+```
+
+**Recrutador**
+
+```text
+Cadastro/Login
+→ Completa o perfil do negócio (organização, WhatsApp, cidade)
+→ Publica uma oportunidade
+→ Vê suas oportunidades e a lista de interessados
+→ Conversa com o candidato no WhatsApp
+```
+
+---
+
+## Status atual
+
+**MVP funcional.** Fluxo ponta a ponta de trabalhador e recrutador funcionando em
+ambiente local, com CI configurada para validar lint e build de backend e frontend.
+
+Próximas missões: deploy, validação do WhatsApp real e ingestão de oportunidades
+externas.
 
 ## Arquitetura
 
@@ -159,24 +230,6 @@ A documentação do projeto está organizada em `docs/` e cobre a fundação do 
 | RH Central | Evoluir recrutamento e banco de talentos |
 | Expansão Regional | Levar o modelo para novas comunidades |
 | Plataforma Completa | Consolidar o ecossistema de empregabilidade |
-
----
-
-## Status atual
-
-**Foundation concluída.**
-
-O projeto está pronto para avançar para a construção do MVP, começando pela organização pública do repositório, consolidação dos ADRs e setup inicial das aplicações.
-
-Este repositório ainda não representa um produto em produção. Ele representa a fundação pública de um produto real em construção.
-
----
-
-## Como rodar
-
-O setup de execução será documentado junto com a criação das aplicações.
-
-No momento, o foco do repositório está na fundação do produto, arquitetura, decisões técnicas e preparação para o início do desenvolvimento do MVP.
 
 ---
 
