@@ -19,6 +19,7 @@ export interface Opportunity {
     id: string;
     name: string;
   };
+  authorWhatsapp?: string | null;
   _count?: {
     applications: number;
   };

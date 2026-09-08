@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,8 +12,14 @@ import {
   type RegisterSchema,
 } from "../schemas/register.schema";
 import { useRegisterMutation } from "../hooks/use-register-mutation";
+import { useLoginMutation } from "../hooks/use-login-mutation";
+import { useAuth } from "../hooks/use-auth";
 
-export function RegisterForm() {
+interface RegisterFormProps {
+  returnTo?: string | null;
+}
+
+export function RegisterForm({ returnTo }: RegisterFormProps) {
   const {
     register,
     handleSubmit,
@@ -24,14 +31,37 @@ export function RegisterForm() {
   });
 
   const mutation = useRegisterMutation(() => reset());
+  const loginMutation = useLoginMutation();
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  function onSubmit(data: RegisterSchema) {
-    mutation.mutate({
+  async function onSubmit(data: RegisterSchema) {
+    await mutation.mutateAsync({
       name: data.name,
       email: data.email,
       password: data.password,
       role: data.role,
     });
+
+    // Sem returnTo, mantém o comportamento atual: conta criada, usuário faz
+    // login manualmente quando quiser.
+    if (!returnTo) return;
+
+    // Com returnTo (ex.: vindo de uma oportunidade), entra automaticamente
+    // com a conta recém-criada e volta para a oportunidade original.
+    try {
+      const session = await loginMutation.mutateAsync({
+        email: data.email,
+        password: data.password,
+      });
+
+      login(session);
+      navigate(returnTo, { replace: true });
+    } catch {
+      navigate(`/login?returnTo=${encodeURIComponent(returnTo)}`, {
+        replace: true,
+      });
+    }
   }
 
   return (
@@ -164,9 +194,11 @@ export function RegisterForm() {
           <Button
             className="w-full"
             type="submit"
-            disabled={mutation.isPending}
+            disabled={mutation.isPending || loginMutation.isPending}
           >
-            {mutation.isPending ? "Criando conta..." : "Criar conta"}
+            {mutation.isPending || loginMutation.isPending
+              ? "Criando conta..."
+              : "Criar conta"}
           </Button>
         </form>
       </CardContent>
