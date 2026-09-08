@@ -28,6 +28,10 @@ jobs:
         run: npm ci
 
       - name: Generate Prisma client
+        env:
+          # Valor dummy: somente para o `prisma generate` resolver a variável
+          # exigida pelo prisma.config.ts. Nenhuma conexão ao banco é feita aqui.
+          DATABASE_URL: postgresql://user:password@localhost:5432/lia
         run: npx prisma generate
 
       - name: Lint
