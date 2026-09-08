@@ -21,7 +21,10 @@ model User {
 
   updatedAt DateTime @updatedAt
 
-  opportunities Opportunity[]
+  opportunities    Opportunity[]
+  workerProfile    WorkerProfile?
+  recruiterProfile RecruiterProfile?
+  applications     Application[]
 
   @@index([email])
 }
@@ -41,6 +44,11 @@ enum OpportunityStatus {
   CLOSED
 }
 
+enum OpportunitySource {
+  LIA
+  EXTERNAL
+}
+
 model Opportunity {
   id          String            @id @default(cuid())
   title       String
@@ -48,13 +56,63 @@ model Opportunity {
   type        OpportunityType
   location    String?
   status      OpportunityStatus @default(ACTIVE)
+  category    String?
+  tags        String[]
+  source      OpportunitySource @default(LIA)
+  externalUrl String?
+  sourceName  String?
 
   authorId String
   author   User   @relation(fields: [authorId], references: [id])
+
+  applications Application[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([status, createdAt])
   @@index([authorId])
+}
+
+model WorkerProfile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  whatsapp      String?
+  city          String?
+  neighborhood  String?
+  bio           String?
+  skills        String[]
+  interests     String[]
+  whatsappOptIn Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RecruiterProfile {
+  id               String  @id @default(cuid())
+  userId           String  @unique
+  user             User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organizationName String
+  whatsapp         String?
+  city             String?
+  neighborhood     String?
+  description      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Application {
+  id            String      @id @default(cuid())
+  opportunityId String
+  workerId      String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  worker        User        @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([opportunityId, workerId])
+  @@index([workerId])
 }

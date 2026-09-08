@@ -4,6 +4,7 @@ import { registerRoutes } from './routes/register.routes.js';
 import { authRoutes } from './routes/auth.routes.js';
 import jwtPlugin from '../infrastructure/http/plugins/jwt.js';
 import { opportunitiesRoutes } from './routes/opportunities.routes.js';
+import { profilesRoutes } from './routes/profiles.routes.js';
 
 export const app = Fastify({
   logger: true,
@@ -22,3 +23,4 @@ app.register(registerRoutes);
 await app.register(authRoutes);
 await app.register(jwtPlugin);
 await app.register(opportunitiesRoutes);
+await app.register(profilesRoutes);
