@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { AppLayout } from "@/components/layout/app-layout";
+import { PublicLayout } from "@/components/layout/public-layout";
 import { LoginPage } from "@/features/auth/pages/login.page";
 import { RegisterPage } from "@/features/auth/pages/register.page";
 import { DashboardPage } from "@/features/dashboard/pages/dashboard.page";
 import { NewOpportunityPage } from "@/features/opportunities/pages/new-opportunity.page";
 import { OpportunityDetailPage } from "@/features/opportunities/pages/opportunity-detail.page";
+import { PublicFeedPage } from "@/features/opportunities/pages/public-feed.page";
 import { OpportunityApplicationsPage } from "@/features/opportunities/pages/opportunity-applications.page";
 import { ProfilePage } from "@/features/profiles/pages/profile.page";
 
@@ -14,8 +16,17 @@ import { RecruiterRoute } from "@/components/routes/recruiter-route";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: <LoginPage />,
+    element: <PublicLayout />,
+    children: [
+      {
+        path: "/",
+        element: <PublicFeedPage />,
+      },
+      {
+        path: "/opportunities/:id",
+        element: <OpportunityDetailPage />,
+      },
+    ],
   },
   {
     path: "/login",
@@ -39,10 +50,6 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
-      },
-      {
-        path: "/opportunities/:id",
-        element: <OpportunityDetailPage />,
       },
       {
         path: "/opportunities/:id/applications",

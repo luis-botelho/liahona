@@ -12,6 +12,8 @@ import {
 import { useAuth } from "@/features/auth/hooks/use-auth";
 import { useApplyToOpportunityMutation } from "../hooks/use-apply-to-opportunity-mutation";
 import { useOpportunityQuery } from "../hooks/use-opportunity-query";
+import { buildWhatsAppUrl } from "../lib/whatsapp";
+import { InterestModal } from "../components/interest-modal";
 
 export function OpportunityDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,15 +21,26 @@ export function OpportunityDetailPage() {
   const { user } = useAuth();
   const query = useOpportunityQuery(id);
   const applyMutation = useApplyToOpportunityMutation();
+  const [interestModalOpen, setInterestModalOpen] = useState(false);
   const [appliedAtRuntime, setAppliedAtRuntime] = useState(false);
-
-  if (!user) return null;
 
   const opportunity = query.data;
   const applied = (opportunity?.hasApplied ?? false) || appliedAtRuntime;
-
-  const isOwnerRecruiter = opportunity?.author.id === user.id;
+  const isOwnerRecruiter = Boolean(
+    opportunity && user && opportunity.author.id === user.id,
+  );
   const isExternal = Boolean(opportunity?.externalUrl);
+  const isLia = opportunity?.source === "LIA";
+  const canShowInterest = Boolean(
+    opportunity && isLia && opportunity.status === "ACTIVE" && user?.role !== "RECRUITER",
+  );
+  const whatsappHref = opportunity?.authorWhatsapp
+    ? buildWhatsAppUrl(opportunity.authorWhatsapp, opportunity.title)
+    : null;
+
+  function goBack() {
+    navigate(user ? "/dashboard" : "/");
+  }
 
   async function handleApply() {
     if (!id) return;
@@ -35,6 +48,7 @@ export function OpportunityDetailPage() {
     try {
       await applyMutation.mutateAsync(id);
       setAppliedAtRuntime(true);
+      setInterestModalOpen(false);
       toast.success("Interesse registrado! O recrutador poderá ver seus dados.");
     } catch (error) {
       const message =
@@ -43,12 +57,24 @@ export function OpportunityDetailPage() {
 
       if (message.includes("já")) {
         setAppliedAtRuntime(true);
+        setInterestModalOpen(false);
         toast.success("Você já demonstrou interesse nesta oportunidade.");
         return;
       }
 
       toast.error(message || "Não foi possível registrar seu interesse.");
     }
+  }
+
+  function handleLiaChoice() {
+    if (!opportunity || !id) return;
+
+    if (user?.role === "WORKER") {
+      void handleApply();
+      return;
+    }
+
+    navigate(`/login?returnTo=${encodeURIComponent(`/opportunities/${id}`)}`);
   }
 
   return (
@@ -65,12 +91,8 @@ export function OpportunityDetailPage() {
             <p className="text-destructive">
               Não foi possível carregar a oportunidade.
             </p>
-            <Button
-              className="mt-4"
-              variant="outline"
-              onClick={() => navigate("/dashboard")}
-            >
-              Voltar ao início
+            <Button className="mt-4" variant="outline" onClick={goBack}>
+              Voltar
             </Button>
           </div>
         )}
@@ -90,9 +112,12 @@ export function OpportunityDetailPage() {
                 </span>
               )}
             </div>
+
             <p className="mb-8 text-muted-foreground">
               {opportunity.author.name}
-              {opportunity.location ? ` · ${opportunity.location}` : ""}
+              {opportunity.location
+                ? ` · ${opportunity.location}`
+                : ""}
             </p>
 
             <Card>
@@ -122,12 +147,14 @@ export function OpportunityDetailPage() {
                   <p>
                     Origem:{" "}
                     {opportunity.source === "EXTERNAL"
-                      ? (opportunity.sourceName ?? "Externa")
-                      : "LIA (comunidade)"}
+                      ? (opportunity.sourceName ?? "Fonte externa")
+                      : "Publicada no LIA"}
                   </p>
                   <p>
                     Status:{" "}
-                    {opportunity.status === "ACTIVE" ? "Ativa" : "Encerrada"}
+                    {opportunity.status === "ACTIVE"
+                      ? "Ativa"
+                      : "Encerrada"}
                   </p>
                   <p>
                     Publicado em:{" "}
@@ -140,11 +167,11 @@ export function OpportunityDetailPage() {
             </Card>
 
             <div className="mt-8 flex flex-wrap justify-end gap-3">
-              <Button variant="outline" onClick={() => navigate("/dashboard")}>
+              <Button variant="outline" onClick={goBack}>
                 Voltar
               </Button>
 
-              {user.role === "RECRUITER" && isOwnerRecruiter && (
+              {user?.role === "RECRUITER" && isOwnerRecruiter && (
                 <Button
                   onClick={() =>
                     navigate(`/opportunities/${opportunity.id}/applications`)
@@ -168,24 +195,30 @@ export function OpportunityDetailPage() {
                 </Button>
               )}
 
-              {user.role === "WORKER" &&
-                !isExternal &&
-                opportunity.status === "ACTIVE" && (
-                  <Button
-                    onClick={handleApply}
-                    disabled={applied || applyMutation.isPending}
-                  >
-                    {applied
-                      ? "Interesse enviado ✓"
-                      : applyMutation.isPending
-                        ? "Registrando..."
-                        : "Tenho interesse"}
-                  </Button>
-                )}
+              {canShowInterest && (
+                <Button
+                  onClick={() => setInterestModalOpen(true)}
+                  disabled={applied || applyMutation.isPending}
+                >
+                  {applied
+                    ? "Interesse enviado ✓"
+                    : "Tenho interesse"}
+                </Button>
+              )}
             </div>
           </>
         )}
       </div>
+
+      {interestModalOpen && opportunity && (
+        <InterestModal
+          opportunityTitle={opportunity.title}
+          whatsappHref={whatsappHref}
+          onWhatsApp={() => setInterestModalOpen(false)}
+          onLia={handleLiaChoice}
+          onClose={() => setInterestModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

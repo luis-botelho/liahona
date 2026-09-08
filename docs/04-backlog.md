@@ -138,14 +138,19 @@ Plan
 - WhatsApp infrastructure
 - Onboarding
 - CI
+- Public Opportunity Experience
+- Guest Interest Flow
+- Progressive Authentication (login/registro com return-to para a oportunidade)
 
 **CURRENT**
 
-- Product realignment / public access
+- Worker Professional Profile
 
 **NEXT**
 
-- Open LIA
+- Recruiter & Opportunities
+- Opportunity Matching
+- Worker Radar
 
 Não apagamos histórico útil: os itens DONE representam o que já foi construído e validado.
 

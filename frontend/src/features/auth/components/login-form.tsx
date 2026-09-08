@@ -17,7 +17,11 @@ import {
 
 import { useAuth } from "../hooks/use-auth";
 
-export function LoginForm() {
+interface LoginFormProps {
+    returnTo?: string | null;
+}
+
+export function LoginForm({ returnTo }: LoginFormProps) {
     const {
         register,
         handleSubmit,
@@ -34,7 +38,7 @@ export function LoginForm() {
 
             login(response)
             toast.success("Login realizado com sucesso!");
-            navigate("/dashboard");
+            navigate(returnTo ?? "/dashboard", { replace: true });
         } catch {
             toast.error("E-mail ou senha inválidos.");
         }
@@ -93,5 +97,3 @@ export function LoginForm() {
 
     );
 }
-
-
