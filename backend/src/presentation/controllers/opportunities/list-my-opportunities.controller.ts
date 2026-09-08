@@ -33,6 +33,9 @@ export async function listMyOpportunitiesController(
       author: {
         select: { id: true, name: true },
       },
+      _count: {
+        select: { applications: true },
+      },
     },
   });
 

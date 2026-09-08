@@ -30,6 +30,9 @@ export function RecruiterDashboard({
             </p>
           </div>
           <div className="flex gap-3">
+            <Button variant="outline" onClick={() => navigate("/profile")}>
+              Meu perfil
+            </Button>
             <Button variant="outline" onClick={onLogout}>
               Sair
             </Button>
@@ -79,6 +82,18 @@ export function RecruiterDashboard({
                   key={opportunity.id}
                   opportunity={opportunity}
                   showStatus
+                  interestedCount={opportunity._count?.applications ?? 0}
+                  action={
+                    <Button
+                      size="xs"
+                      variant="outline"
+                      onClick={() =>
+                        navigate(`/opportunities/${opportunity.id}/applications`)
+                      }
+                    >
+                      Ver interessados
+                    </Button>
+                  }
                 />
               ))}
             </div>

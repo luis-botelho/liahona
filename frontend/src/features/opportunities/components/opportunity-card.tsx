@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import {
   Card,
   CardContent,
@@ -11,11 +13,15 @@ import type { Opportunity } from "../types/opportunity";
 interface OpportunityCardProps {
   opportunity: Opportunity;
   showStatus?: boolean;
+  interestedCount?: number;
+  action?: ReactNode;
 }
 
 export function OpportunityCard({
   opportunity,
   showStatus = false,
+  interestedCount,
+  action,
 }: OpportunityCardProps) {
   return (
     <Card className="text-left">
@@ -39,16 +45,28 @@ export function OpportunityCard({
             Localização: {opportunity.location}
           </p>
         )}
-        {showStatus && (
+        {(showStatus || typeof interestedCount === "number" || action) && (
           <div className="flex items-center justify-between border-t pt-3 text-xs text-muted-foreground">
-            <span>
-              Status: {opportunity.status === "ACTIVE" ? "Ativa" : "Encerrada"}
-            </span>
-            <time dateTime={opportunity.createdAt}>
-              {new Intl.DateTimeFormat("pt-BR").format(
-                new Date(opportunity.createdAt),
+            <div className="flex items-center gap-3">
+              {showStatus && (
+                <span>
+                  Status:{" "}
+                  {opportunity.status === "ACTIVE" ? "Ativa" : "Encerrada"}
+                </span>
               )}
-            </time>
+              {typeof interestedCount === "number" && (
+                <span>
+                  {interestedCount}{" "}
+                  {interestedCount === 1 ? "interessado" : "interessados"}
+                </span>
+              )}
+              <time dateTime={opportunity.createdAt}>
+                {new Intl.DateTimeFormat("pt-BR").format(
+                  new Date(opportunity.createdAt),
+                )}
+              </time>
+            </div>
+            {action}
           </div>
         )}
       </CardContent>
