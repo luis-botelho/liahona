@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { AppLayout } from "@/components/layout/app-layout";
 import { LoginPage } from "@/features/auth/pages/login.page";
 import { RegisterPage } from "@/features/auth/pages/register.page";
 import { DashboardPage } from "@/features/dashboard/pages/dashboard.page";
@@ -25,47 +26,40 @@ export const router = createBrowserRouter([
     element: <RegisterPage />,
   },
   {
-    path: "/dashboard",
     element: (
       <ProtectedRoute>
-        <DashboardPage />
+        <AppLayout />
       </ProtectedRoute>
     ),
-  },
-  {
-    path: "/profile",
-    element: (
-      <ProtectedRoute>
-        <ProfilePage />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/opportunities/:id",
-    element: (
-      <ProtectedRoute>
-        <OpportunityDetailPage />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/opportunities/:id/applications",
-    element: (
-      <ProtectedRoute>
-        <RecruiterRoute>
-          <OpportunityApplicationsPage />
-        </RecruiterRoute>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/opportunities/new",
-    element: (
-      <ProtectedRoute>
-        <RecruiterRoute>
-          <NewOpportunityPage />
-        </RecruiterRoute>
-      </ProtectedRoute>
-    ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <DashboardPage />,
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />,
+      },
+      {
+        path: "/opportunities/:id",
+        element: <OpportunityDetailPage />,
+      },
+      {
+        path: "/opportunities/:id/applications",
+        element: (
+          <RecruiterRoute>
+            <OpportunityApplicationsPage />
+          </RecruiterRoute>
+        ),
+      },
+      {
+        path: "/opportunities/new",
+        element: (
+          <RecruiterRoute>
+            <NewOpportunityPage />
+          </RecruiterRoute>
+        ),
+      },
+    ],
   },
 ]);
