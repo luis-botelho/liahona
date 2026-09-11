@@ -133,7 +133,7 @@ Plan
 - Worker/Recruiter profiles
 - Opportunities
 - Deterministic matching
-- Applications
+- Applications (interesse/candidatura única)
 - Recruiter candidates
 - WhatsApp infrastructure
 - Onboarding
@@ -141,16 +141,22 @@ Plan
 - Public Opportunity Experience
 - Guest Interest Flow
 - Progressive Authentication (login/registro com return-to para a oportunidade)
+- Worker Professional Profile (título profissional, disponibilidade, cargos desejados, preferências, visibilidade para recrutadores, score de completude)
+- Backend test foundation (vitest + CI para regras de negócio e matching)
 
 **CURRENT**
 
-- Worker Professional Profile
+- Application History (trabalhador visualiza suas candidaturas)
+- Recruiting Pipeline (status do candidato: aplicado, revisando, entrevista, aprovado, rejeitado)
 
 **NEXT**
 
-- Recruiter & Opportunities
-- Opportunity Matching
-- Worker Radar
+- Curriculum PDF
+- Targeted Curriculum
+- Local Tasks & Services
+- Learning foundation
+- External opportunities / manual curation
+- Privacy/LGPD controls
 
 Não apagamos histórico útil: os itens DONE representam o que já foi construído e validado.
 
@@ -164,19 +170,20 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 
 ## P0 — Fundação pública e identidade
 
-- Public Opportunity Experience
-- Guest Interest Flow
-- Progressive Authentication
-- Worker Professional Profile
-- Recruiter & Opportunities
-- Opportunity Matching
-- Worker Radar
+- Public Opportunity Experience ✅
+- Guest Interest Flow ✅
+- Progressive Authentication ✅
+- Worker Professional Profile ✅
+- Recruiter & Opportunities ✅
+- Opportunity Matching ✅
+- Worker Radar ✅ (recomendação por score; notificação WhatsApp com opt-in)
 
 ## P1 — Personalização e recrutamento
 
-- Curriculum PDF
 - Application History
 - Recruiting Pipeline
+- Curriculum PDF
+- Targeted Curriculum
 - Talent Radar
 - Recruiter Notifications
 - Local Tasks & Services
@@ -465,6 +472,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
 | 08/09/2026 | 2.0.0 | Reescrita do "Current MVP Delivery Focus": adição de status (DONE ATUAL, CURRENT, NEXT) e reestruturação por prioridade P0/P1/P2/P3. Adição de diretrizes LGPD/privacidade. |
+| 11/09/2026 | 2.1.0 | Worker Professional Profile concluído (P0). Fundação de testes no backend (vitest + CI). CURRENT/NEXT atualizado para Application History e Recruiting Pipeline. Prioridades P0 marcadas conforme estado real. |
 
 ---
 
