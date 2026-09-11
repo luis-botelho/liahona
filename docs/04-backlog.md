@@ -146,6 +146,7 @@ Plan
 - Recruiting Pipeline (status do candidato: em análise, entrevista, aprovado, rejeitado; trabalhador pode retirar candidatura)
 - Backend test foundation (vitest + CI para regras de negócio e matching)
 - Curriculum PDF (geração de currículo com dados reais; versão direcionada por oportunidade)
+- Learning foundation (catálogo de cursos LIA/externos, recomendação por interesses e lacunas de habilidades, matrícula, progresso por aula, conclusão e certificado verificável)
 
 **CURRENT**
 
@@ -154,7 +155,7 @@ Plan
 **NEXT**
 
 - Local Tasks & Services
-- Learning foundation
+- Educator Profile & Internal Course Creation
 - Manual Opportunity Curation
 - Privacy/LGPD controls
 
@@ -184,6 +185,7 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 - Recruiting Pipeline ✅
 - Curriculum PDF ✅
 - Targeted Curriculum ✅ (básico)
+- Learning foundation ✅ (catálogo, matrícula, progresso, certificados)
 - Talent Radar
 - Recruiter Notifications
 - Local Tasks & Services
@@ -193,10 +195,9 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 ## P2 — Aprendizagem, IA e governança
 
 - Learning Catalog
-- Learning Paths
+- Learning Paths (foundation entregue: catálogo, matrícula, progresso, certificados)
 - EducatorProfile
-- Internal Courses
-- Certificates
+- Internal Courses (criação de cursos dentro da plataforma)
 - AI Resume Assistant
 - Opportunity Discovery Agent
 - Normalization
@@ -475,6 +476,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | 11/09/2026 | 2.1.0 | Worker Professional Profile concluído (P0). Fundação de testes no backend (vitest + CI). CURRENT/NEXT atualizado para Application History e Recruiting Pipeline. Prioridades P0 marcadas conforme estado real. |
 | 11/09/2026 | 2.2.0 | Application History e Recruiting Pipeline concluídos (P1): status de candidatura (APPLIED/REVIEWING/INTERVIEW/APPROVED/REJECTED/WITHDRAWN), endpoint de histórico do trabalhador, mudança de status pelo recrutador e retirada pelo trabalhador. CURRENT atualizado para Curriculum PDF. |
 | 11/09/2026 | 2.3.0 | Curriculum PDF e Targeted Curriculum concluídos (P1): geração de PDF com dados reais do perfil e versão direcionada por oportunidade (habilidades relevantes priorizadas). CURRENT atualizado. |
+| 11/09/2026 | 2.4.0 | Learning foundation concluída (P1/P2): modelo de cursos (LIA/externo), lições, matrícula, progresso por aula, conclusão e certificado único/verificável (código público). Recomendação de cursos por interesses e lacunas de habilidades. UI: catálogo "Aprender", detalhe do curso e página pública do certificado. |
 
 ---
 

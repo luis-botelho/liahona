@@ -312,6 +312,20 @@ O campo `completion` indica a completude do perfil:
 
 O currículo usa apenas dados existentes no perfil — nunca inventa experiência ou habilidades.
 
+## Learning
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/courses` | Público | Lista cursos (aulas, provedor; para WORKER autenticado inclui status da matrícula) |
+| GET | `/courses/:id` | Público | Detalhe do curso com aulas; para WORKER inclui matrícula e certificado |
+| GET | `/learning/recommended` | WORKER | Recomendações de curso por interesses e lacunas de habilidades (score + motivos) |
+| POST | `/courses/:id/enroll` | WORKER | Matricula o trabalhador no curso |
+| POST | `/courses/:id/lessons/:lessonId/complete` | WORKER | Marca aula como concluída; ao concluir todas, conclui o curso e emite certificado |
+| GET | `/learning/mine` | WORKER | Matrículas (com progresso) e certificados do trabalhador |
+| GET | `/certificates/:code` | Público | Dados do certificado para verificação (nome, curso, emissão) |
+
+O certificado só é emitido quando todas as aulas do curso são concluídas. O código é único e verificável publicamente.
+
 ## Health
 
 | Método | Rota | Acesso | Descrição |

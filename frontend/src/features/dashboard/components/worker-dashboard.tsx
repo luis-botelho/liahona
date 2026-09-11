@@ -86,6 +86,19 @@ export function WorkerDashboard() {
         </Button>
       </section>
 
+      <section className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border bg-muted/30 p-5">
+        <div>
+          <p className="font-medium text-foreground">Aprender</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Cursos gratuitos para desenvolver habilidades novas e melhorar seu
+            perfil.
+          </p>
+        </div>
+        <Button variant="outline" onClick={() => navigate("/learning")}>
+          Ver cursos
+        </Button>
+      </section>
+
       <section className="py-8">
         <h2 className="mb-5 text-2xl font-semibold">Oportunidades para você</h2>
 

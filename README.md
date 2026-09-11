@@ -157,12 +157,14 @@ Cadastro/Login
 
 **MVP funcional.** Fluxo ponta a ponta de trabalhador e recrutador funcionando em
 ambiente local. O trabalhador acompanha suas candidaturas e status, baixa o
-currículo em PDF (inclusive a versão preparada para uma vaga específica); o
-recrutador conduz o pipeline (em análise, entrevista, aprovado/rejeitado) e
-conversa no WhatsApp. CI valida lint, build e testes do backend.
+currículo em PDF (inclusive a versão preparada para uma vaga específica) e
+aprende em uma mini-plataforma de cursos com progresso e certificados
+verificáveis; o recrutador conduz o pipeline (em análise, entrevista,
+aprovado/rejeitado) e conversa no WhatsApp. CI valida lint, build e testes do
+backend.
 
-Próximas missões: services/tarefas, learning foundation, validação do WhatsApp
-real e ingestão de oportunidades externas.
+Próximas missões: serviços/tarefas, criação interna de cursos (educador),
+validação do WhatsApp real e ingestão de oportunidades externas.
 
 ## Arquitetura
 

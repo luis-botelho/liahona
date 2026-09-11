@@ -25,6 +25,8 @@ model User {
   workerProfile    WorkerProfile?
   recruiterProfile RecruiterProfile?
   applications     Application[]
+  enrollments      CourseEnrollment[]
+  certificates     Certificate[]
 
   @@index([email])
 }
@@ -56,6 +58,16 @@ enum ApplicationStatus {
   APPROVED
   REJECTED
   WITHDRAWN
+}
+
+enum CourseSource {
+  LIA
+  EXTERNAL
+}
+
+enum CourseEnrollmentStatus {
+  IN_PROGRESS
+  COMPLETED
 }
 
 model Opportunity {
@@ -134,4 +146,66 @@ model Application {
   @@unique([opportunityId, workerId])
   @@index([workerId])
   @@index([opportunityId, status])
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  description String
+  category    String?
+  skills      String[]
+  provider    String?
+  externalUrl String?
+  source      CourseSource @default(LIA)
+
+  lessons     Lesson[]
+  enrollments CourseEnrollment[]
+  certificates Certificate[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([source, createdAt])
+}
+
+model Lesson {
+  id         String @id @default(cuid())
+  courseId   String
+  course     Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title      String
+  orderIndex Int
+
+  @@unique([courseId, orderIndex])
+}
+
+model CourseEnrollment {
+  id        String                @id @default(cuid())
+  courseId  String
+  workerId  String
+  course    Course                @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  worker    User                  @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  completedLessonIds String[]
+  status             CourseEnrollmentStatus @default(IN_PROGRESS)
+  completedAt        DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([courseId, workerId])
+  @@index([workerId])
+}
+
+model Certificate {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  courseId  String
+  workerId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  worker    User     @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  issuedAt DateTime @default(now())
+
+  @@unique([courseId, workerId])
+  @@index([workerId])
 }
