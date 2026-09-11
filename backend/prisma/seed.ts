@@ -170,12 +170,89 @@ async function seedDemoApplication(workerId: string, recruiterId: string) {
   console.log('Candidatura demo criada para:', opportunity.title);
 }
 
+const demoCourses = [
+  {
+    title: 'Atendimento que encanta',
+    description:
+      'Aprenda a atender clientes com empatia, resolver reclamações e transformar uma visita em fidelidade.',
+    category: 'Atendimento',
+    skills: ['atendimento', 'comunicação'],
+    provider: 'LIA Academia',
+    source: 'LIA',
+    lessons: [
+      'Primeiro contato com o cliente',
+      'Escuta ativa e empatia',
+      'Lidando com reclamações',
+      'Fechar o atendimento com excelência',
+    ],
+  },
+  {
+    title: 'Operadora de caixa na prática',
+    description:
+      'Do registro de itens ao fechamento do caixa: um guia passo a passo para operar com segurança.',
+    category: 'Vendas',
+    skills: ['caixa', 'vendas'],
+    provider: 'LIA Academia',
+    source: 'LIA',
+    lessons: ['Conhecendo a máquina de cartão', 'Dinheiro e troco sem erros', 'Fechamento de caixa'],
+  },
+  {
+    title: 'Introdução à elétrica residencial',
+    description:
+      'Conceitos básicos de segurança e instalação elétrica para quem quer começar como ajudante.',
+    category: 'Elétrica',
+    skills: ['elétrica', 'segurança'],
+    provider: 'Instituto Demo',
+    source: 'EXTERNAL',
+    lessons: ['Segurança em primeiro lugar', 'Materiais e ferramentas', 'Instalação de tomadas'],
+  },
+  {
+    title: 'Organização de estoque',
+    description:
+      'Técnicas simples de recebimento, estocagem e inventário para manter tudo no lugar.',
+    category: 'Logística',
+    skills: ['estoque', 'organização'],
+    provider: 'LIA Academia',
+    source: 'LIA',
+    lessons: ['Recebimento de mercadorias', 'Etiqueta e prateleiras', 'Inventário rápido'],
+  },
+] as const;
+
+async function seedCourses() {
+  for (const course of demoCourses) {
+    const existing = await prisma.course.findFirst({
+      where: { title: course.title },
+      select: { id: true },
+    });
+
+    if (existing) continue;
+
+    await prisma.course.create({
+      data: {
+        title: course.title,
+        description: course.description,
+        category: course.category,
+        skills: [...course.skills],
+        provider: course.provider,
+        source: course.source,
+        lessons: {
+          create: course.lessons.map((title, orderIndex) => ({
+            title,
+            orderIndex,
+          })),
+        },
+      },
+    });
+  }
+}
+
 async function main() {
   const worker = await upsertWorker();
   const recruiter = await upsertRecruiter();
   await seedOpportunities(recruiter.id);
   await backfillLegacyOpportunities(recruiter.id);
   await seedDemoApplication(worker.id, recruiter.id);
+  await seedCourses();
 
   console.log('Seed finalizado.');
   console.log(`Worker:    ${worker.email} / ${DEMO_PASSWORD}`);
