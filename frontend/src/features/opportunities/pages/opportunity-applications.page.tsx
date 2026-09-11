@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/card";
 import { useOpportunityQuery } from "../hooks/use-opportunity-query";
 import { useOpportunityApplicationsQuery } from "../hooks/use-opportunity-applications-query";
+import { ApplicationStatusBadge } from "@/features/applications/components/application-status-badge";
+import { ApplicationStatusControl } from "@/features/applications/components/application-status-control";
 
 function sanitizePhone(phone: string | null): string {
   if (!phone) return "";
@@ -76,9 +78,12 @@ export function OpportunityApplicationsPage() {
               return (
                 <Card key={application.id} className="text-left">
                   <CardHeader>
-                    <CardTitle className="text-lg">
-                      {application.worker.name}
-                    </CardTitle>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <CardTitle className="text-lg">
+                        {application.worker.name}
+                      </CardTitle>
+                      <ApplicationStatusBadge status={application.status} />
+                    </div>
                     <p className="text-sm text-muted-foreground">
                       {profile?.city}
                       {profile?.neighborhood
@@ -111,18 +116,26 @@ export function OpportunityApplicationsPage() {
                     )}
                     <div className="border-t pt-3">
                       {whatsappLink ? (
-                        <Button
-                          variant="outline"
-                          render={
-                            <a
-                              href={whatsappLink}
-                              target="_blank"
-                              rel="noreferrer"
+                        <>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <ApplicationStatusControl
+                              applicationId={application.id}
+                              currentStatus={application.status}
                             />
-                          }
-                        >
-                          Conversar no WhatsApp
-                        </Button>
+                            <Button
+                              variant="outline"
+                              render={
+                                <a
+                                  href={whatsappLink}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                />
+                              }
+                            >
+                              Conversar no WhatsApp
+                            </Button>
+                          </div>
+                        </>
                       ) : (
                         <p className="text-xs text-muted-foreground">
                           Sem WhatsApp cadastrado.

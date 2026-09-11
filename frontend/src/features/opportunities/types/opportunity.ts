@@ -1,3 +1,5 @@
+import type { ApplicationStatus } from "@/features/applications/types/application";
+
 export type OpportunityType = "JOB" | "SERVICE";
 export type OpportunityStatus = "ACTIVE" | "CLOSED";
 export type OpportunitySource = "LIA" | "EXTERNAL";
@@ -34,7 +36,9 @@ export interface RecommendedOpportunity {
 
 export interface Application {
   id: string;
+  status: ApplicationStatus;
   createdAt: string;
+  updatedAt: string;
   worker: {
     id: string;
     name: string;

@@ -288,6 +288,21 @@ O campo `completion` indica a completude do perfil:
 }
 ```
 
+## Applications
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/applications/mine` | WORKER | Histórico de candidaturas do trabalhador com status |
+| PATCH | `/applications/:id/status` | RECRUITER (dono da vaga) | Altera status do candidato (`REVIEWING`, `INTERVIEW`, `APPROVED`, `REJECTED`) |
+| POST | `/applications/:id/withdraw` | WORKER (dono da candidatura) | Retira a candidatura (`WITHDRAWN`) |
+
+### Status de candidatura
+
+`APPLIED`, `REVIEWING`, `INTERVIEW`, `APPROVED`, `REJECTED`, `WITHDRAWN`.
+
+- O recrutador controla `REVIEWING`, `INTERVIEW`, `APPROVED`, `REJECTED`.
+- O trabalhador controla `WITHDRAWN` (somente enquanto a candidatura não estiver em estado final).
+
 ## Health
 
 | Método | Rota | Acesso | Descrição |

@@ -5,6 +5,7 @@ import { PublicLayout } from "@/components/layout/public-layout";
 import { LoginPage } from "@/features/auth/pages/login.page";
 import { RegisterPage } from "@/features/auth/pages/register.page";
 import { DashboardPage } from "@/features/dashboard/pages/dashboard.page";
+import { MyApplicationsPage } from "@/features/applications/pages/my-applications.page";
 import { NewOpportunityPage } from "@/features/opportunities/pages/new-opportunity.page";
 import { OpportunityDetailPage } from "@/features/opportunities/pages/opportunity-detail.page";
 import { PublicFeedPage } from "@/features/opportunities/pages/public-feed.page";
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "/applications",
+        element: <MyApplicationsPage />,
       },
       {
         path: "/opportunities/:id/applications",
