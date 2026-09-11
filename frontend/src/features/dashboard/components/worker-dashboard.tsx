@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/features/auth/hooks/use-auth";
 import { RecommendedOpportunityCard } from "@/features/opportunities/components/recommended-opportunity-card";
 import { useRecommendedOpportunitiesQuery } from "@/features/opportunities/hooks/use-recommended-opportunities-query";
 import { useWorkerProfileQuery } from "@/features/profiles/hooks/use-worker-profile";
+import { useDownloadResumeMutation } from "@/features/profiles/hooks/use-download-resume";
 
 function SkeletonCard() {
   return (
@@ -22,9 +24,19 @@ export function WorkerDashboard() {
   const { user } = useAuth();
   const recommended = useRecommendedOpportunitiesQuery();
   const profile = useWorkerProfileQuery();
+  const downloadResume = useDownloadResumeMutation();
 
   const showProfileCta =
     profile.isSuccess && !profile.data.completion.isComplete;
+
+  async function handleDownloadResume() {
+    try {
+      await downloadResume.mutateAsync(undefined);
+      toast.success("Seu currículo em PDF está sendo baixado.");
+    } catch {
+      toast.error("Não foi possível gerar o currículo. Tente novamente.");
+    }
+  }
 
   return (
     <div className="px-4 py-8 sm:px-6">
@@ -57,6 +69,22 @@ export function WorkerDashboard() {
           </Button>
         </section>
       )}
+
+      <section className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border bg-muted/30 p-5">
+        <div>
+          <p className="font-medium text-foreground">Seu currículo</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Baixe seu currículo em PDF, pronto para enviar ou imprimir.
+          </p>
+        </div>
+        <Button
+          variant="outline"
+          disabled={downloadResume.isPending}
+          onClick={handleDownloadResume}
+        >
+          {downloadResume.isPending ? "Gerando..." : "Baixar currículo (PDF)"}
+        </Button>
+      </section>
 
       <section className="py-8">
         <h2 className="mb-5 text-2xl font-semibold">Oportunidades para você</h2>

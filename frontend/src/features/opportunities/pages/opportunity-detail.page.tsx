@@ -12,6 +12,7 @@ import {
 import { useAuth } from "@/features/auth/hooks/use-auth";
 import { useApplyToOpportunityMutation } from "../hooks/use-apply-to-opportunity-mutation";
 import { useOpportunityQuery } from "../hooks/use-opportunity-query";
+import { useDownloadResumeMutation } from "@/features/profiles/hooks/use-download-resume";
 import { buildWhatsAppUrl } from "../lib/whatsapp";
 import { InterestModal } from "../components/interest-modal";
 
@@ -21,6 +22,7 @@ export function OpportunityDetailPage() {
   const { user } = useAuth();
   const query = useOpportunityQuery(id);
   const applyMutation = useApplyToOpportunityMutation();
+  const downloadResume = useDownloadResumeMutation();
   const [interestModalOpen, setInterestModalOpen] = useState(false);
   const [appliedAtRuntime, setAppliedAtRuntime] = useState(false);
 
@@ -75,6 +77,17 @@ export function OpportunityDetailPage() {
     }
 
     navigate(`/login?returnTo=${encodeURIComponent(`/opportunities/${id}`)}`);
+  }
+
+  async function handleTargetedResume() {
+    if (!id) return;
+
+    try {
+      await downloadResume.mutateAsync(id);
+      toast.success("Currículo preparado para esta vaga está sendo baixado.");
+    } catch {
+      toast.error("Não foi possível gerar o currículo. Tente novamente.");
+    }
   }
 
   return (
@@ -178,6 +191,18 @@ export function OpportunityDetailPage() {
                   }
                 >
                   Ver interessados
+                </Button>
+              )}
+
+              {user?.role === "WORKER" && (
+                <Button
+                  variant="outline"
+                  disabled={downloadResume.isPending}
+                  onClick={handleTargetedResume}
+                >
+                  {downloadResume.isPending
+                    ? "Gerando..."
+                    : "Baixar currículo para esta vaga"}
                 </Button>
               )}
 
