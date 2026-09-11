@@ -25,6 +25,11 @@ const workerData = {
   bio: 'Procurando oportunidades de trabalho na região.',
   skills: ['atendimento', 'caixa', 'vendas'],
   interests: ['vendas', 'atendimento'],
+  professionalTitle: 'Atendente / Vendas',
+  availability: 'Período integral',
+  desiredRoles: ['atendente', 'operador de caixa', 'vendedor'],
+  workPreferences: ['CLT', 'meio período'],
+  discoverableByRecruiters: true,
   whatsappOptIn: true,
 };
 
@@ -141,11 +146,36 @@ async function backfillLegacyOpportunities(recruiterId: string) {
   }
 }
 
+async function seedDemoApplication(workerId: string, recruiterId: string) {
+  const opportunity = await prisma.opportunity.findFirst({
+    where: { authorId: recruiterId },
+    orderBy: { createdAt: 'asc' },
+    select: { id: true, title: true },
+  });
+
+  if (!opportunity) return;
+
+  await prisma.application.upsert({
+    where: {
+      opportunityId_workerId: { opportunityId: opportunity.id, workerId },
+    },
+    update: {},
+    create: {
+      opportunityId: opportunity.id,
+      workerId,
+      status: 'REVIEWING',
+    },
+  });
+
+  console.log('Candidatura demo criada para:', opportunity.title);
+}
+
 async function main() {
   const worker = await upsertWorker();
   const recruiter = await upsertRecruiter();
   await seedOpportunities(recruiter.id);
   await backfillLegacyOpportunities(recruiter.id);
+  await seedDemoApplication(worker.id, recruiter.id);
 
   console.log('Seed finalizado.');
   console.log(`Worker:    ${worker.email} / ${DEMO_PASSWORD}`);
