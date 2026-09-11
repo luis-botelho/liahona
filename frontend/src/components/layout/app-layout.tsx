@@ -22,6 +22,7 @@ export function AppLayout() {
     : [
         { to: "/dashboard", label: "Início", end: true },
         { to: "/applications", label: "Minhas candidaturas", end: true },
+        { to: "/learning", label: "Aprender", end: true },
         { to: "/profile", label: "Meu perfil", end: true },
       ];
 
