@@ -6,6 +6,7 @@ import jwtPlugin from '../infrastructure/http/plugins/jwt.js';
 import { opportunitiesRoutes } from './routes/opportunities.routes.js';
 import { profilesRoutes } from './routes/profiles.routes.js';
 import { applicationsRoutes } from './routes/applications.routes.js';
+import { resumeRoutes } from './routes/resume.routes.js';
 
 const corsOrigin = process.env.FRONTEND_URL
   ? process.env.FRONTEND_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
@@ -32,3 +33,4 @@ await app.register(jwtPlugin);
 await app.register(opportunitiesRoutes);
 await app.register(profilesRoutes);
 await app.register(applicationsRoutes);
+await app.register(resumeRoutes);

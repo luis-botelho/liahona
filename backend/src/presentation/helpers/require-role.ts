@@ -11,7 +11,7 @@ export async function requireUser(
 
   const user = await prisma.user.findUnique({
     where: { id: payload.sub },
-    select: { id: true, role: true },
+    select: { id: true, role: true, name: true, email: true },
   });
 
   if (!user) {
