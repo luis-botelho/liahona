@@ -22,6 +22,11 @@ interface WorkerProfileFormProps {
         bio?: string | null;
         skills?: string[];
         interests?: string[];
+        professionalTitle?: string | null;
+        availability?: string | null;
+        desiredRoles?: string[];
+        workPreferences?: string[];
+        discoverableByRecruiters?: boolean;
         whatsappOptIn?: boolean;
       }
     | null
@@ -38,12 +43,17 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
   } = useForm<WorkerProfileFormData>({
     resolver: zodResolver(workerProfileSchema),
     defaultValues: {
+      professionalTitle: "",
       whatsapp: "",
       city: "",
       neighborhood: "",
       skillsText: "",
       interestsText: "",
+      desiredRolesText: "",
+      workPreferencesText: "",
       bio: "",
+      availability: "",
+      discoverableByRecruiters: false,
       whatsappOptIn: false,
     },
   });
@@ -52,12 +62,17 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
     if (!profile) return;
 
     reset({
+      professionalTitle: profile.professionalTitle ?? "",
       whatsapp: profile.whatsapp ?? "",
       city: profile.city ?? "",
       neighborhood: profile.neighborhood ?? "",
       skillsText: (profile.skills ?? []).join(", "),
       interestsText: (profile.interests ?? []).join(", "),
+      desiredRolesText: (profile.desiredRoles ?? []).join(", "),
+      workPreferencesText: (profile.workPreferences ?? []).join(", "),
       bio: profile.bio ?? "",
+      availability: profile.availability ?? "",
+      discoverableByRecruiters: profile.discoverableByRecruiters ?? false,
       whatsappOptIn: profile.whatsappOptIn ?? false,
     });
   }, [profile, reset]);
@@ -65,6 +80,7 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
   async function onSubmit(data: WorkerProfileFormData) {
     try {
       await mutation.mutateAsync({
+        professionalTitle: data.professionalTitle || undefined,
         whatsapp: data.whatsapp || undefined,
         city: data.city || undefined,
         neighborhood: data.neighborhood || undefined,
@@ -77,6 +93,16 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
           .split(",")
           .map((item) => item.trim())
           .filter(Boolean),
+        desiredRoles: data.desiredRolesText
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean),
+        workPreferences: data.workPreferencesText
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean),
+        availability: data.availability || undefined,
+        discoverableByRecruiters: data.discoverableByRecruiters,
         whatsappOptIn: data.whatsappOptIn,
       });
 
@@ -88,6 +114,23 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+      <div className="space-y-2">
+        <Label htmlFor="professionalTitle">O que você faz / seu cargo</Label>
+        <Input
+          id="professionalTitle"
+          placeholder="Ex.: Vendedor, Auxiliar de cozinha, Eletricista"
+          {...register("professionalTitle")}
+        />
+        <p className="text-xs text-muted-foreground">
+          Uma frase curta que resume sua área de atuação.
+        </p>
+        {errors.professionalTitle && (
+          <p className="text-sm text-destructive">
+            {errors.professionalTitle.message}
+          </p>
+        )}
+      </div>
+
       <div className="space-y-2">
         <Label htmlFor="whatsapp">WhatsApp</Label>
         <Input
@@ -157,6 +200,55 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
         )}
       </div>
 
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="desiredRolesText">Cargos que você procura</Label>
+          <Input
+            id="desiredRolesText"
+            placeholder='Ex.: "vendedor, operador de caixa"'
+            {...register("desiredRolesText")}
+          />
+          <p className="text-xs text-muted-foreground">
+            Separe por vírgulas. Ex.: vendedor, auxiliar de estoque
+          </p>
+          {errors.desiredRolesText && (
+            <p className="text-sm text-destructive">
+              {errors.desiredRolesText.message}
+            </p>
+          )}
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="availability">Disponibilidade</Label>
+          <Input
+            id="availability"
+            placeholder="Ex.: período integral, fins de semana"
+            {...register("availability")}
+          />
+          {errors.availability && (
+            <p className="text-sm text-destructive">
+              {errors.availability.message}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="workPreferencesText">Como prefere trabalhar</Label>
+        <Input
+          id="workPreferencesText"
+          placeholder='Ex.: "meio período, regime CLT, freelance"'
+          {...register("workPreferencesText")}
+        />
+        <p className="text-xs text-muted-foreground">
+          Separe por vírgulas. Ex.: meio período, freelas, CLT
+        </p>
+        {errors.workPreferencesText && (
+          <p className="text-sm text-destructive">
+            {errors.workPreferencesText.message}
+          </p>
+        )}
+      </div>
+
       <div className="space-y-2">
         <Label htmlFor="bio">Mini bio (opcional)</Label>
         <textarea
@@ -171,16 +263,30 @@ export function WorkerProfileForm({ profile }: WorkerProfileFormProps) {
         )}
       </div>
 
-      <div className="flex items-start gap-3 rounded-2xl border p-4">
-        <input
-          id="whatsappOptIn"
-          type="checkbox"
-          className="mt-0.5 size-4 accent-primary"
-          {...register("whatsappOptIn")}
-        />
-        <Label htmlFor="whatsappOptIn">
-          Quero receber oportunidades pelo WhatsApp
-        </Label>
+      <div className="space-y-3">
+        <div className="flex items-start gap-3 rounded-2xl border p-4">
+          <input
+            id="discoverableByRecruiters"
+            type="checkbox"
+            className="mt-0.5 size-4 accent-primary"
+            {...register("discoverableByRecruiters")}
+          />
+          <Label htmlFor="discoverableByRecruiters">
+            Quero ser encontrado por recrutadores
+          </Label>
+        </div>
+
+        <div className="flex items-start gap-3 rounded-2xl border p-4">
+          <input
+            id="whatsappOptIn"
+            type="checkbox"
+            className="mt-0.5 size-4 accent-primary"
+            {...register("whatsappOptIn")}
+          />
+          <Label htmlFor="whatsappOptIn">
+            Quero receber oportunidades pelo WhatsApp
+          </Label>
+        </div>
       </div>
 
       <div className="flex justify-end pt-2">
