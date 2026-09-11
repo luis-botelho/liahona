@@ -303,6 +303,15 @@ O campo `completion` indica a completude do perfil:
 - O recrutador controla `REVIEWING`, `INTERVIEW`, `APPROVED`, `REJECTED`.
 - O trabalhador controla `WITHDRAWN` (somente enquanto a candidatura não estiver em estado final).
 
+## Resume
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/resume` | WORKER | Baixa o currículo em PDF gerado a partir do perfil real |
+| GET | `/resume?opportunityId=:id` | WORKER | Currículo direcionado para a oportunidade (habilidades relevantes priorizadas) |
+
+O currículo usa apenas dados existentes no perfil — nunca inventa experiência ou habilidades.
+
 ## Health
 
 | Método | Rota | Acesso | Descrição |

@@ -145,14 +145,14 @@ Plan
 - Application History (trabalhador acompanha suas candidaturas e status)
 - Recruiting Pipeline (status do candidato: em análise, entrevista, aprovado, rejeitado; trabalhador pode retirar candidatura)
 - Backend test foundation (vitest + CI para regras de negócio e matching)
+- Curriculum PDF (geração de currículo com dados reais; versão direcionada por oportunidade)
 
 **CURRENT**
 
-- Curriculum PDF
+- Targeted Curriculum (polish) — básico entregue com o Curriculum PDF
 
 **NEXT**
 
-- Targeted Curriculum
 - Local Tasks & Services
 - Learning foundation
 - Manual Opportunity Curation
@@ -182,8 +182,8 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 
 - Application History ✅
 - Recruiting Pipeline ✅
-- Curriculum PDF
-- Targeted Curriculum
+- Curriculum PDF ✅
+- Targeted Curriculum ✅ (básico)
 - Talent Radar
 - Recruiter Notifications
 - Local Tasks & Services
@@ -474,6 +474,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | 08/09/2026 | 2.0.0 | Reescrita do "Current MVP Delivery Focus": adição de status (DONE ATUAL, CURRENT, NEXT) e reestruturação por prioridade P0/P1/P2/P3. Adição de diretrizes LGPD/privacidade. |
 | 11/09/2026 | 2.1.0 | Worker Professional Profile concluído (P0). Fundação de testes no backend (vitest + CI). CURRENT/NEXT atualizado para Application History e Recruiting Pipeline. Prioridades P0 marcadas conforme estado real. |
 | 11/09/2026 | 2.2.0 | Application History e Recruiting Pipeline concluídos (P1): status de candidatura (APPLIED/REVIEWING/INTERVIEW/APPROVED/REJECTED/WITHDRAWN), endpoint de histórico do trabalhador, mudança de status pelo recrutador e retirada pelo trabalhador. CURRENT atualizado para Curriculum PDF. |
+| 11/09/2026 | 2.3.0 | Curriculum PDF e Targeted Curriculum concluídos (P1): geração de PDF com dados reais do perfil e versão direcionada por oportunidade (habilidades relevantes priorizadas). CURRENT atualizado. |
 
 ---
 
