@@ -8,7 +8,7 @@ on:
 
 jobs:
   backend:
-    name: Backend (lint + build)
+    name: Backend (lint + build + test)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -36,6 +36,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Tests
+        run: npm test
 
       - name: Build
         run: npm run build

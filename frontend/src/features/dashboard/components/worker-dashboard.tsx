@@ -5,18 +5,6 @@ import { useAuth } from "@/features/auth/hooks/use-auth";
 import { RecommendedOpportunityCard } from "@/features/opportunities/components/recommended-opportunity-card";
 import { useRecommendedOpportunitiesQuery } from "@/features/opportunities/hooks/use-recommended-opportunities-query";
 import { useWorkerProfileQuery } from "@/features/profiles/hooks/use-worker-profile";
-import type { WorkerProfile } from "@/features/profiles/types/worker-profile";
-
-function isProfileIncomplete(profile: WorkerProfile | null | undefined) {
-  if (!profile) return true;
-
-  return (
-    !profile.whatsapp ||
-    !profile.city ||
-    profile.skills.length === 0 ||
-    profile.interests.length === 0
-  );
-}
 
 function SkeletonCard() {
   return (
@@ -35,7 +23,8 @@ export function WorkerDashboard() {
   const recommended = useRecommendedOpportunitiesQuery();
   const profile = useWorkerProfileQuery();
 
-  const showProfileCta = profile.isSuccess && isProfileIncomplete(profile.data);
+  const showProfileCta =
+    profile.isSuccess && !profile.data.completion.isComplete;
 
   return (
     <div className="px-4 py-8 sm:px-6">
@@ -50,11 +39,18 @@ export function WorkerDashboard() {
 
       {showProfileCta && (
         <section className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-5">
+          <div className="mb-3 h-2 w-full overflow-hidden rounded-full bg-primary/10">
+            <div
+              className="h-full rounded-full bg-primary transition-all"
+              style={{ width: `${profile.data.completion.completionPercentage}%` }}
+            />
+          </div>
           <p className="font-medium text-foreground">
             Complete seu perfil para receber oportunidades mais relevantes.
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Diga onde você mora, o que sabe fazer e o que procura.
+            Seu perfil está {profile.data.completion.completionPercentage}%
+            completo. Diga onde você mora, o que sabe fazer e o que procura.
           </p>
           <Button className="mt-4" onClick={() => navigate("/profile")}>
             Completar meu perfil

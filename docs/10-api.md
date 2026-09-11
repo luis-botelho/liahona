@@ -232,6 +232,70 @@ Quanto menos o desenvolvedor precisar consultar a documentação, melhor será s
 
 ---
 
+## Endpoints atuais (MVP)
+
+Referência rápida dos endpoints implementados no MVP.
+
+## Auth
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| POST | `/register` | público | Cria usuário e retorna o usuário criado |
+| POST | `/login` | público | Retorna `{ token, user }` |
+
+## Opportunities
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/opportunities` | público | Lista oportunidades ativas (mais recentes primeiro) |
+| GET | `/opportunities/:id` | público | Detalhe; expõe `authorWhatsapp` apenas para origem LIA |
+| GET | `/opportunities/recommended` | WORKER | Oportunidades pontuadas por matching (score + motivos) |
+| GET | `/opportunities/mine` | RECRUITER | Oportunidades do recrutador |
+| POST | `/opportunities` | RECRUITER | Cria oportunidade (origem `LIA`) |
+| POST | `/opportunities/:id/apply` | WORKER | Candidatura única (`opportunityId + workerId`) |
+| GET | `/opportunities/:id/applications` | RECRUITER (autor) | Candidatos da oportunidade |
+
+## Profiles
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/profile/worker` | WORKER | Retorna `{ profile, completion }` |
+| PUT | `/profile/worker` | WORKER | Upsert do perfil; retorna `{ profile, completion }` |
+| GET | `/profile/recruiter` | RECRUITER | Retorna perfil do recrutador |
+| PUT | `/profile/recruiter` | RECRUITER | Upsert do perfil do recrutador |
+
+### WorkerProfile
+
+Campos suportados:
+
+- `whatsapp`, `city`, `neighborhood`, `bio`
+- `skills[]`, `interests[]`
+- `professionalTitle`, `availability`
+- `desiredRoles[]`, `workPreferences[]`
+- `discoverableByRecruiters` (boolean)
+- `whatsappOptIn` (boolean)
+
+O campo `completion` indica a completude do perfil:
+
+```json
+{
+  "profile": { "...": "..." },
+  "completion": {
+    "isComplete": false,
+    "completionPercentage": 60,
+    "missingFields": ["professionalTitle", "whatsapp"]
+  }
+}
+```
+
+## Health
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/health` | público | `{ "status": "ok" }` |
+
+---
+
 ## Documentos Relacionados
 
 - 05-architecture.md
@@ -246,6 +310,7 @@ Quanto menos o desenvolvedor precisar consultar a documentação, melhor será s
 | Data | Versão | Alteração |
 |-------|---------|-----------|
 | 03/07/2026 | 1.0.0 | Criação do documento |
+| 11/09/2026 | 1.1.0 | Adição de referência dos endpoints atuais do MVP (auth, opportunities, profiles, health) |
 
 ---
 

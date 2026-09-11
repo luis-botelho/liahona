@@ -135,7 +135,7 @@ Variáveis de ambiente (frontend/.env):
 
 ```text
 Cadastro/Login
-→ Completa o perfil (cidade, habilidades, interesses, WhatsApp)
+→ Completa o perfil (título profissional, cidade, habilidades, interesses, cargos desejados, WhatsApp)
 → Vê oportunidades recomendadas por ele
 → Abre uma oportunidade e registra interesse
 → O recrutador recebe o contato e chama no WhatsApp
@@ -156,10 +156,12 @@ Cadastro/Login
 ## Status atual
 
 **MVP funcional.** Fluxo ponta a ponta de trabalhador e recrutador funcionando em
-ambiente local, com CI configurada para validar lint e build de backend e frontend.
+ambiente local. O perfil profissional do trabalhador inclui título, disponibilidade,
+cargos desejados, preferências e score de completude. CI valida lint, build e testes
+do backend (matching e regras de perfil) além de lint/build do frontend.
 
-Próximas missões: deploy, validação do WhatsApp real e ingestão de oportunidades
-externas.
+Próximas missões: histórico de candidatura e pipeline de recrutamento, currículo PDF,
+validação do WhatsApp real e ingestão de oportunidades externas.
 
 ## Arquitetura
 

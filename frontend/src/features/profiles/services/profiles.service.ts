@@ -1,6 +1,9 @@
 import { api } from "@/services/api";
 
-import type { WorkerProfile, WorkerProfileInput } from "../types/worker-profile";
+import type {
+  WorkerProfileInput,
+  WorkerProfileResponse,
+} from "../types/worker-profile";
 import type {
   RecruiterProfile,
   RecruiterProfileInput,
@@ -12,7 +15,7 @@ interface ApiResponse<T> {
 }
 
 export async function getWorkerProfile() {
-  const response = await api.get<ApiResponse<WorkerProfile | null>>(
+  const response = await api.get<ApiResponse<WorkerProfileResponse>>(
     "/profile/worker",
   );
 
@@ -20,7 +23,7 @@ export async function getWorkerProfile() {
 }
 
 export async function upsertWorkerProfile(input: WorkerProfileInput) {
-  const response = await api.put<ApiResponse<WorkerProfile>>(
+  const response = await api.put<ApiResponse<WorkerProfileResponse>>(
     "/profile/worker",
     input,
   );

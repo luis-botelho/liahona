@@ -54,7 +54,7 @@ function WorkerProfileFormShell() {
     );
   }
 
-  return <WorkerProfileForm profile={query.data} />;
+  return <WorkerProfileForm profile={query.data?.profile} />;
 }
 
 function RecruiterProfileFormShell() {

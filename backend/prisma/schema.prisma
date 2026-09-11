@@ -75,16 +75,22 @@ model Opportunity {
 }
 
 model WorkerProfile {
-  id            String   @id @default(cuid())
-  userId        String   @unique
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  whatsapp      String?
-  city          String?
-  neighborhood  String?
-  bio           String?
-  skills        String[]
-  interests     String[]
-  whatsappOptIn Boolean  @default(false)
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  whatsapp     String?
+  city         String?
+  neighborhood String?
+  bio          String?
+  skills       String[]
+  interests    String[]
+
+  professionalTitle        String?
+  availability             String?
+  desiredRoles             String[]
+  workPreferences          String[]
+  discoverableByRecruiters Boolean  @default(false)
+  whatsappOptIn            Boolean  @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
