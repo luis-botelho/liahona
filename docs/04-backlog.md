@@ -142,20 +142,20 @@ Plan
 - Guest Interest Flow
 - Progressive Authentication (login/registro com return-to para a oportunidade)
 - Worker Professional Profile (título profissional, disponibilidade, cargos desejados, preferências, visibilidade para recrutadores, score de completude)
+- Application History (trabalhador acompanha suas candidaturas e status)
+- Recruiting Pipeline (status do candidato: em análise, entrevista, aprovado, rejeitado; trabalhador pode retirar candidatura)
 - Backend test foundation (vitest + CI para regras de negócio e matching)
 
 **CURRENT**
 
-- Application History (trabalhador visualiza suas candidaturas)
-- Recruiting Pipeline (status do candidato: aplicado, revisando, entrevista, aprovado, rejeitado)
+- Curriculum PDF
 
 **NEXT**
 
-- Curriculum PDF
 - Targeted Curriculum
 - Local Tasks & Services
 - Learning foundation
-- External opportunities / manual curation
+- Manual Opportunity Curation
 - Privacy/LGPD controls
 
 Não apagamos histórico útil: os itens DONE representam o que já foi construído e validado.
@@ -180,8 +180,8 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 
 ## P1 — Personalização e recrutamento
 
-- Application History
-- Recruiting Pipeline
+- Application History ✅
+- Recruiting Pipeline ✅
 - Curriculum PDF
 - Targeted Curriculum
 - Talent Radar
@@ -473,6 +473,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | 03/07/2026 | 1.0.0 | Criação do documento |
 | 08/09/2026 | 2.0.0 | Reescrita do "Current MVP Delivery Focus": adição de status (DONE ATUAL, CURRENT, NEXT) e reestruturação por prioridade P0/P1/P2/P3. Adição de diretrizes LGPD/privacidade. |
 | 11/09/2026 | 2.1.0 | Worker Professional Profile concluído (P0). Fundação de testes no backend (vitest + CI). CURRENT/NEXT atualizado para Application History e Recruiting Pipeline. Prioridades P0 marcadas conforme estado real. |
+| 11/09/2026 | 2.2.0 | Application History e Recruiting Pipeline concluídos (P1): status de candidatura (APPLIED/REVIEWING/INTERVIEW/APPROVED/REJECTED/WITHDRAWN), endpoint de histórico do trabalhador, mudança de status pelo recrutador e retirada pelo trabalhador. CURRENT atualizado para Curriculum PDF. |
 
 ---
 

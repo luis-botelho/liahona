@@ -156,12 +156,13 @@ Cadastro/Login
 ## Status atual
 
 **MVP funcional.** Fluxo ponta a ponta de trabalhador e recrutador funcionando em
-ambiente local. O perfil profissional do trabalhador inclui título, disponibilidade,
-cargos desejados, preferências e score de completude. CI valida lint, build e testes
-do backend (matching e regras de perfil) além de lint/build do frontend.
+ambiente local. O trabalhador acompanha suas candidaturas e status; o recrutador
+conduz o pipeline (em análise, entrevista, aprovado/rejeitado) e conversa no
+WhatsApp. CI valida lint, build e testes do backend (matching, perfil e pipeline
+de candidatura) além de lint/build do frontend.
 
-Próximas missões: histórico de candidatura e pipeline de recrutamento, currículo PDF,
-validação do WhatsApp real e ingestão de oportunidades externas.
+Próximas missões: currículo PDF, learning foundation, validação do WhatsApp real
+e ingestão de oportunidades externas.
 
 ## Arquitetura
 
