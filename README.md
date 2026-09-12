@@ -160,8 +160,8 @@ ambiente local. O trabalhador acompanha suas candidaturas e status, baixa o
 currículo em PDF (inclusive a versão preparada para uma vaga específica) e
 aprende em uma mini-plataforma de cursos com progresso e certificados
 verificáveis; o recrutador conduz o pipeline (em análise, entrevista,
-aprovado/rejeitado) e conversa no WhatsApp. CI valida lint, build e testes do
-backend.
+aprovado/rejeitado), conversa no WhatsApp e controla seus dados com exportação
+e exclusão de conta (LGPD). CI valida lint, build e testes do backend.
 
 Próximas missões: serviços/tarefas, criação interna de cursos (educador),
 validação do WhatsApp real e ingestão de oportunidades externas.

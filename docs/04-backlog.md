@@ -147,6 +147,7 @@ Plan
 - Backend test foundation (vitest + CI para regras de negócio e matching)
 - Curriculum PDF (geração de currículo com dados reais; versão direcionada por oportunidade)
 - Learning foundation (catálogo de cursos LIA/externos, recomendação por interesses e lacunas de habilidades, matrícula, progresso por aula, conclusão e certificado verificável)
+- Privacy/LGPD controls (consentimentos, exportação de dados, exclusão de conta com cascata)
 
 **CURRENT**
 
@@ -157,7 +158,7 @@ Plan
 - Local Tasks & Services
 - Educator Profile & Internal Course Creation
 - Manual Opportunity Curation
-- Privacy/LGPD controls
+- Recruiter Notifications
 
 Não apagamos histórico útil: os itens DONE representam o que já foi construído e validado.
 
@@ -190,7 +191,7 @@ Nenhuma feature abaixo é uma ordem rígida de implementação — é uma priori
 - Recruiter Notifications
 - Local Tasks & Services
 - Manual Opportunity Curation
-- Privacy/LGPD Controls
+- Privacy/LGPD Controls ✅ (exportação de dados, exclusão de conta, painel de consentimentos)
 
 ## P2 — Aprendizagem, IA e governança
 
@@ -477,6 +478,7 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | 11/09/2026 | 2.2.0 | Application History e Recruiting Pipeline concluídos (P1): status de candidatura (APPLIED/REVIEWING/INTERVIEW/APPROVED/REJECTED/WITHDRAWN), endpoint de histórico do trabalhador, mudança de status pelo recrutador e retirada pelo trabalhador. CURRENT atualizado para Curriculum PDF. |
 | 11/09/2026 | 2.3.0 | Curriculum PDF e Targeted Curriculum concluídos (P1): geração de PDF com dados reais do perfil e versão direcionada por oportunidade (habilidades relevantes priorizadas). CURRENT atualizado. |
 | 11/09/2026 | 2.4.0 | Learning foundation concluída (P1/P2): modelo de cursos (LIA/externo), lições, matrícula, progresso por aula, conclusão e certificado único/verificável (código público). Recomendação de cursos por interesses e lacunas de habilidades. UI: catálogo "Aprender", detalhe do curso e página pública do certificado. |
+| 11/09/2026 | 2.5.0 | Privacy/LGPD controls (P1): endpoint de exportação de dados (acesso/portabilidade), exclusão de conta com remoção em cascata (esquecimento) e painel de privacidade na UI com consentimentos, export e exclusão confirmada. `Opportunity.author` agora apaga em cascata. |
 
 ---
 
