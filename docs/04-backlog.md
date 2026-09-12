@@ -480,6 +480,9 @@ Mais do que entregar funcionalidades, buscamos construir um software que possa s
 | 11/09/2026 | 2.4.0 | Learning foundation concluída (P1/P2): modelo de cursos (LIA/externo), lições, matrícula, progresso por aula, conclusão e certificado único/verificável (código público). Recomendação de cursos por interesses e lacunas de habilidades. UI: catálogo "Aprender", detalhe do curso e página pública do certificado. |
 | 11/09/2026 | 2.5.0 | Privacy/LGPD controls (P1): endpoint de exportação de dados (acesso/portabilidade), exclusão de conta com remoção em cascata (esquecimento) e painel de privacidade na UI com consentimentos, export e exclusão confirmada. `Opportunity.author` agora apaga em cascata. |
 
+| 11/09/2026 | 2.5.0 | Privacy/LGPD controls concluídos (P1): exportação de dados do usuário (portabilidade, JSON com perfil, oportunidades, candidaturas, matrículas e certificados), exclusão de conta com remoção em cascata (direito ao esquecimento) e painel de consentimentos/privacidade na UI (consents exibidos e documentos). CHANGELOG atualizado. |
+
+Ja fizemos 51 PRs - para melhorar a performance, vou compactar: apenas merges e commits essenciais a partir de agora.
 ---
 
 ## Related Documents
