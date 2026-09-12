@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/features/auth/hooks/use-auth";
+import { PrivacyPanel } from "@/features/account/components/privacy-panel";
 
 import { RecruiterProfileForm } from "../components/recruiter-profile-form";
 import { WorkerProfileForm } from "../components/worker-profile-form";
@@ -38,6 +39,10 @@ export function ProfilePage() {
             )}
           </CardContent>
         </Card>
+
+        <div className="mt-8">
+          <PrivacyPanel />
+        </div>
       </div>
     </div>
   );
