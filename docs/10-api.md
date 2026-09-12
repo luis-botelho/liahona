@@ -326,6 +326,15 @@ O currículo usa apenas dados existentes no perfil — nunca inventa experiênci
 
 O certificado só é emitido quando todas as aulas do curso são concluídas. O código é único e verificável publicamente.
 
+## Account & Privacy (LGPD)
+
+| Método | Rota | Acesso | Descrição |
+|--------|------|--------|-----------|
+| GET | `/account/data` | Autenticado | Exporta todos os dados do usuário (direito de acesso/portabilidade): perfil, oportunidades, candidaturas, inscrições e certificados |
+| POST | `/account/delete` | Autenticado | Exclui a conta e os dados associados (direito ao esquecimento); oportunidades publicadas, aplicações, inscrições e certificados são removidos em cascata |
+
+Consentimentos são mantidos no perfil: Radar por WhatsApp e visibilidade para recrutadores são gerenciados no perfil de trabalhador.
+
 ## Health
 
 | Método | Rota | Acesso | Descrição |

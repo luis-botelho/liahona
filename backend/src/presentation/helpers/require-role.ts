@@ -7,12 +7,7 @@ export async function requireUser(
   reply: FastifyReply,
   role: 'WORKER' | 'RECRUITER',
 ) {
-  const payload = await request.jwtVerify<{ sub: string }>();
-
-  const user = await prisma.user.findUnique({
-    where: { id: payload.sub },
-    select: { id: true, role: true, name: true, email: true },
-  });
+  const user = await findAuthenticatedUser(request);
 
   if (!user) {
     reply.status(401).send({
@@ -33,4 +28,38 @@ export async function requireUser(
   }
 
   return user;
+}
+
+export async function requireAnyUser(
+  request: FastifyRequest,
+  reply: FastifyReply,
+) {
+  const user = await findAuthenticatedUser(request);
+
+  if (!user) {
+    reply.status(401).send({
+      success: false,
+      message: 'Usuário autenticado não encontrado.',
+    });
+
+    return null;
+  }
+
+  return user;
+}
+
+async function findAuthenticatedUser(request: FastifyRequest) {
+  const payload = await request.jwtVerify<{ sub: string }>();
+
+  return prisma.user.findUnique({
+    where: { id: payload.sub },
+    select: {
+      id: true,
+      role: true,
+      name: true,
+      email: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+  });
 }
