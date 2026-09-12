@@ -8,6 +8,7 @@ import { profilesRoutes } from './routes/profiles.routes.js';
 import { applicationsRoutes } from './routes/applications.routes.js';
 import { resumeRoutes } from './routes/resume.routes.js';
 import { learningRoutes } from './routes/learning.routes.js';
+import { accountRoutes } from './routes/account.routes.js';
 
 const corsOrigin = process.env.FRONTEND_URL
   ? process.env.FRONTEND_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
@@ -36,3 +37,4 @@ await app.register(profilesRoutes);
 await app.register(applicationsRoutes);
 await app.register(resumeRoutes);
 await app.register(learningRoutes);
+await app.register(accountRoutes);
